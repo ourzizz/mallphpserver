@@ -12,10 +12,10 @@
      public function get_files_title($typeid = FALSE) {
          //typeid指定类型，为空代表将文件名称全部查出，或者查询指定类型的文件
          if ($typeid == FALSE) {
-             $query = $this->db->query('select fileid,pubtime,filetitle from ksfile order by fileid desc');
+             $query = $this->db->query('select fileid,pubtime,filetitle,readtime from ksfile order by fileid desc');
              return $query->result_array();
          }
-         $querystr = sprintf('select ksfile.fileid,ksfile.pubtime,ksfile.filetitle from kslist,ksfile where kslist.ksid=ksfile.ksid and kslist.kstypeid = %s order by ksfile.fileid desc',$typeid);
+         $querystr = sprintf('select ksfile.fileid,ksfile.pubtime,ksfile.filetitle,ksfile.readtime from kslist,ksfile where kslist.ksid=ksfile.ksid and kslist.kstypeid = %s order by ksfile.fileid desc',$typeid);
          $query = $this->db->query($querystr);
          return $query->result_array();
      }
@@ -83,6 +83,10 @@
          }
          $this->db->query('UPDATE guide  SET readtime=readtime+1 WHERE guideid=' . $guideid);
          $query = $this->db->query('select article from guide where guideid=' . $guideid);
+         return $query->result_array();
+     }
+     public function get_new_files() {
+         $query = $this->db->query('SELECT fileid,filetitle,pubtime,readtime from ksfile where datediff(curdate(),pubtime)<=8  ORDER by pubtime DESC');
          return $query->result_array();
      }
  }

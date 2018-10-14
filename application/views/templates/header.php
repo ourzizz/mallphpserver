@@ -1,4 +1,4 @@
 <html>
-<head> <title>CodeIgniter Tutorial</title> </head>
+<head> <title>毕节考试</title> </head>
 <body>
 

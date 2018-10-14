@@ -54,6 +54,7 @@ class Demo extends CI_Controller {
         $data['type'] = $this->file_model->get_kstype();
         $data['headline'] = $this->file_model->get_headline();
         $data['guidelist'] = $this->file_model->get_guide_list();
+        $data['newfiles'] = $this->file_model->get_new_files();
             $this->json(
                 $data
             );
@@ -100,5 +101,4 @@ class Demo extends CI_Controller {
             $data
         );
     }
-
 }

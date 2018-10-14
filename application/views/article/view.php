@@ -1,4 +1,4 @@
-<h2><?php echo "文件列表"; ?></h2>
+<h2><?php echo "阅览文件"; ?></h2>
 
 <?php foreach ($article as $files_item): ?>
 
