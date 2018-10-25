@@ -1,4 +1,4 @@
-<?php
+<?PHP
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Demo extends CI_Controller {
@@ -97,6 +97,13 @@ class Demo extends CI_Controller {
     public function get_phone_list()
     {
         $data['phonelist'] = $this->file_model->get_guide_list(2);
+        $this->json(
+            $data
+        );
+    }
+    public function get_zhuanji_files_by_ksid($ksid)
+    {
+        $data['filelist'] = $this->file_model->get_zhuanji_files($ksid);
         $this->json(
             $data
         );

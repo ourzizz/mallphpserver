@@ -15,7 +15,7 @@
              $query = $this->db->query('select fileid,pubtime,filetitle,readtime from ksfile order by fileid desc');
              return $query->result_array();
          }
-         $querystr = sprintf('select ksfile.fileid,ksfile.pubtime,ksfile.filetitle,ksfile.readtime from kslist,ksfile where kslist.ksid=ksfile.ksid and kslist.kstypeid = %s order by ksfile.fileid desc',$typeid);
+         $querystr = sprintf('select ksfile.fileid,ksfile.pubtime,ksfile.filetitle,ksfile.readtime from kslist,ksfile where kslist.ksid=ksfile.ksid and kslist.kstypeid = %s order by ksfile.pubtime desc',$typeid);
          $query = $this->db->query($querystr);
          return $query->result_array();
      }
@@ -32,7 +32,7 @@
 
      public function get_kstype($fileid = FALSE) {
          //查询类型，并且附上最近一周文件更新的数量，这个查询比较复杂，考虑是否改成view，访问量大担心数据库崩掉
-         $query = $this->db->query('SELECT kstype.*, count(if(datediff(curdate(),ksfile.pubtime)<=8,true,null)) as newfile FROM kstype,ksfile,kslist WHERE kstype.kstypeid=kslist.kstypeid and kslist.ksid=ksfile.ksid group by kstype.kstypeid');
+         $query = $this->db->query('SELECT kstype.*, count(if(datediff(curdate(),ksfile.pubtime)<=7,true,null)) as newfile FROM kstype,ksfile,kslist WHERE kstype.kstypeid=kslist.kstypeid and kslist.ksid=ksfile.ksid group by kstype.kstypeid');
          return $query->result_array();
      }
 
@@ -59,7 +59,7 @@
     }
      public function get_zhuanji_files($ksid) {
          //查询专技考试考试列表
-         $querystr = sprintf('select fileid,pubtime,filetitle from ksfile where ksid=%s order by fileid desc',$ksid);
+         $querystr = sprintf('select fileid,pubtime,filetitle,readtime from ksfile where ksid=%s order by fileid desc',$ksid);
          $query = $this->db->query($querystr);
          return $query->result_array();
     }
