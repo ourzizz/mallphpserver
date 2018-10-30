@@ -1,6 +1,7 @@
  <?php
  /**
   * Class File_model
+  * 这个模型中的全部接口全部只为小程序服务，其他复杂逻辑需要浏览器端的下一步有业务扩张再考虑抛给laravel开发
   * @author yourname
   */
  class File_model extends CI_Model
@@ -20,15 +21,6 @@
          return $query->result_array();
      }
 
-     public function get_article($fileid = FALSE) {
-         //将指定fileid的文件内容查询抛出
-         if ($fileid == FALSE) {
-             return [];
-         }
-         $this->db->query('UPDATE ksfile  SET readtime=readtime+1 WHERE fileid=' . $fileid);
-         $query = $this->db->query('select article from ksfile where fileid=' . $fileid);
-         return $query->result_array();
-     }
 
      public function get_kstype($fileid = FALSE) {
          //查询类型，并且附上最近一周文件更新的数量，这个查询比较复杂，考虑是否改成view，访问量大担心数据库崩掉
@@ -87,6 +79,33 @@
      }
      public function get_new_files() {
          $query = $this->db->query('SELECT fileid,filetitle,pubtime,readtime from ksfile where datediff(curdate(),pubtime)<=8  ORDER by pubtime DESC');
+         return $query->result_array();
+     }
+    //****************************************下面这段接口给file页面提供数据*********************************************
+     public function get_article($fileid = FALSE) {
+         //将指定fileid的文件内容查询抛出
+         if ($fileid == FALSE) {
+             return [];
+         }
+         $this->db->query('UPDATE ksfile  SET readtime=readtime+1 WHERE fileid=' . $fileid);
+         $query = $this->db->query('select article from ksfile where fileid=' . $fileid);
+         return $query->result_array();
+     }
+     public function get_eventtime($fileid = FALSE) {
+         //将指定fileid的文件内容查询抛出
+         if ($fileid == FALSE) {
+             return [];
+         }
+         $query = $this->db->query('select * from eventtime where ksfileid=' . $fileid);
+         return $query->result_array();
+         
+     }
+     public function get_notify($fileid = FALSE) {
+         //将指定fileid的文件内容查询抛出
+         if ($fileid == FALSE) {
+             return [];
+         }
+         $query = $this->db->query('select * from notify where ksfileid=' . $fileid);
          return $query->result_array();
      }
  }

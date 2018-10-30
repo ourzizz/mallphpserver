@@ -35,6 +35,7 @@ class Demo extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+
     public function get_kstype() {
         $data['type'] = $this->file_model->get_kstype();
             $this->json(
@@ -107,5 +108,22 @@ class Demo extends CI_Controller {
         $this->json(
             $data
         );
+    }
+    //********************************下面接口为给小程序的filepage提供json数据
+    public function get_article_json($fileid=FALSE)
+    {//只给出文章的内容
+        $data = $this->file_model->get_article($fileid);
+            $this->json(
+                $data
+            );
+    }
+    public function get_filepage_json($fileid)
+    {
+        $data['article'] = $this->file_model->get_article($fileid);
+        $data['eventtime'] = $this->file_model->get_eventtime($fileid);
+        $data['notify'] = $this->file_model->get_notify($fileid);
+            $this->json(
+                $data
+            );
     }
 }
