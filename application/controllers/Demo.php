@@ -1,11 +1,11 @@
 <?PHP
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Demo extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
         $this->load->model('file_model');
+        $this->load->model('user_model');
         $this->load->helper('url_helper');
     }
 
@@ -125,5 +125,51 @@ class Demo extends CI_Controller {
             $this->json(
                 $data
             );
+    }
+    public function get_if_userhasfile($openId,$fileId)
+    {
+        $ifuserhasfile = $this->file_model->get_userHasFile($openId,$fileId);
+        if(empty($ifuserhasfile))
+        {
+            $this->json(
+                ['userhasfile' => false]
+            );
+        }
+        else{
+            $this->json(
+                ['userhasfile' => true]
+            );
+        }
+    }
+    public function insert_user_file($openId,$fileId)
+    {
+        $this->file_model->insert_user_file($openId,$fileId);
+    }
+    public function delete_user_file($openId,$fileId)
+    {
+        $this->file_model->delete_user_file($openId,$fileId);
+    }
+    /*USER_PAGE*/
+    public function get_user_files($openId)
+    {
+        $data = $this->user_model->get_user_files($openId);
+        $this->json($data);
+    }
+    public function get_file_list_event($openId)
+    {
+        $data = $this->user_model->get_user_files_events($openId);
+        for($i=0;$i <= count($data);$i++)
+        {
+            echo $data[$i]['filetitle'];
+            echo $data[$i+1]['filetitle'];
+            //do{
+                //echo $data[$i]['event'];
+                //echo $i;
+            //}while($data[$i]['fileid'] == $data[$i+1]['fileid']);
+            echo '----------------';
+        }
+
+        //var_dump($data);
+        //$this->json($data);
     }
 }

@@ -78,7 +78,9 @@
          return $query->result_array();
      }
      public function get_new_files() {
-         $query = $this->db->query('SELECT fileid,filetitle,pubtime,readtime from ksfile where datediff(curdate(),pubtime)<=8  ORDER by pubtime DESC');
+     //返回最新的文件
+         //$query = $this->db->query('SELECT fileid,filetitle,pubtime,readtime from ksfile where datediff(curdate(),pubtime)<=8  ORDER by pubtime DESC');//给出7天内的更新文件
+         $query = $this->db->query('SELECT fileid,filetitle,pubtime,readtime from ksfile order by fileid desc limit 5 ');//按照fileid排序只需要前10
          return $query->result_array();
      }
     //****************************************下面这段接口给file页面提供数据*********************************************
@@ -108,6 +110,26 @@
          $query = $this->db->query('select * from notify where ksfileid=' . $fileid);
          return $query->result_array();
      }
+
+     public function get_userHasFile($openId,$fileId)
+     {
+         $querystr = sprintf('select * from userhasfiles where openid="%s" and fileid="%s"',$openId,$fileId);
+         $query = $this->db->query($querystr);
+         return $query->result_array();
+     }
+     public function insert_user_file($openId,$fileId)
+     {
+         $querystr = sprintf("INSERT INTO `bjks`.`userhasfiles` (`id`, `openid`, `fileid`, `createtime`) VALUES (NULL, '%s', '%s', NOW())",$openId,$fileId);
+         $query = $this->db->query($querystr);
+         return true;
+     }
+     public function delete_user_file($openId,$fileId)
+     {
+         $querystr = sprintf('DELETE FROM userhasfiles WHERE openid="%s" AND fileid="%s"',$openId,$fileId);
+         $query = $this->db->query($querystr);
+         return true;
+     }
+
  }
 
 ?>
