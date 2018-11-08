@@ -6,6 +6,7 @@ class Demo extends CI_Controller {
         parent::__construct();
         $this->load->model('file_model');
         $this->load->model('user_model');
+        $this->load->model('eventtime_model');
         $this->load->helper('url_helper');
     }
 
@@ -155,21 +156,63 @@ class Demo extends CI_Controller {
         $data = $this->user_model->get_user_files($openId);
         $this->json($data);
     }
-    public function get_file_list_event($openId)
-    {
-        $data = $this->user_model->get_user_files_events($openId);
-        for($i=0;$i <= count($data);$i++)
+    public function get_user_files_events($openId)
+    {//测试OPENID opexV46WZFz9Is4xAI2zZWc4YiQE
+        $data = $this->user_model->get_user_files($openId);
+        $res = array();
+        $i = 0;
+        while(!empty($data[$i]))
         {
-            echo $data[$i]['filetitle'];
-            echo $data[$i+1]['filetitle'];
-            //do{
-                //echo $data[$i]['event'];
-                //echo $i;
-            //}while($data[$i]['fileid'] == $data[$i+1]['fileid']);
-            echo '----------------';
+            $res[$i]["fileinfo"] = $data[$i];
+            $res[$i]['eventtime'] = array();
+            $temp = $this->user_model->get_file_evnets($data[$i]['fileid']);
+            foreach($temp as $v)
+            {
+                array_push($res[$i]['eventtime'],array('event'=>$v['event'],'starttime'=>$v['startime'],'endtime'=>$v['endtime']));
+            }
+            $i=$i+1;
         }
-
-        //var_dump($data);
+        $this->json($res);
+    }
+    //给正在进行页面提供数据
+    public function get_event_files()
+    {
+        $happening = $this->eventtime_model->get_happenning_event_files();
+        $impend = $this->eventtime_model->get_impend_event_files();
+        $res['happening'] = array();
+        $res['impend'] = array();
+        $i = 0;
+        $j = 0;
+        while(!empty($happening[$i])) //这里没有指针，只能用这个方法判空
+        { //用对了方法分分钟解决，这个算法虽然麻烦，但是可以作为例子解决其他的问题,写的挺辛苦留着吧
+            //正在发生的数组放到res中，这里完全可以思考封装，赶鸭子先能跑再说
+            $res['happening'][$j]["event"] = $happening[$i]["event"];
+            $res['happening'][$j]['filelist'] = array();
+            while(!empty($happening[$i+1]) && $happening[$i]['event']== $happening[$i+1]['event'])
+            {
+                array_push($res['happening'][$j]['filelist'],array('endtime'=>$happening[$i]["endtime"],'fileid'=>$happening[$i]['ksfileid'],'filetitle'=>$happening[$i]['filetitle']));
+                $i=$i+1;
+            }
+                array_push($res['happening'][$j]['filelist'],array('endtime'=>$happening[$i]["endtime"],'fileid'=>$happening[$i]['ksfileid'],'filetitle'=>$happening[$i]['filetitle']));
+            $i=$i+1;
+            $j=$j+1;
+        }
+        $i = 0;
+        $j = 0;
+        while(!empty($impend[$i])) //这里没有指针，只能用这个方法判空
+        { //用对了方法分分钟解决，这个算法虽然麻烦，但是可以作为例子解决其他的问题,写的挺辛苦留着吧
+            $res['impend'][$j]["event"] = $impend[$i]["event"];
+            $res['impend'][$j]['filelist'] = array();
+            while(!empty($impend[$i+1]) && $impend[$i]['event']== $impend[$i+1]['event'])
+            {
+                array_push($res['impend'][$j]['filelist'],array('startime'=>$impend[$i]["startime"],'fileid'=>$impend[$i]['ksfileid'],'filetitle'=>$impend[$i]['filetitle']));
+                $i=$i+1;
+            }
+                array_push($res['impend'][$j]['filelist'],array('startime'=>$impend[$i]["startime"],'fileid'=>$impend[$i]['ksfileid'],'filetitle'=>$impend[$i]['filetitle']));
+            $i=$i+1;
+            $j=$j+1;
+        }
+        $this->json($res);
         //$this->json($data);
     }
 }
