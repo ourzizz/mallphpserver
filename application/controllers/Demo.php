@@ -111,6 +111,14 @@ class Demo extends CI_Controller {
         );
     }
     //********************************下面接口为给小程序的filepage提供json数据
+    public function get_user_info()
+    {
+        $user=$this->user_model->get_user_info();
+            $this->json(
+                $user
+            );
+
+    }
     public function get_article_json($fileid=FALSE)
     {//只给出文章的内容
         $data = $this->file_model->get_article($fileid);

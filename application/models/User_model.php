@@ -27,6 +27,13 @@
          $query = $this->db->query($querystr);
          return $query->result_array();
      }
+     public function get_user_info()
+     {
+         $querystr = sprintf("select user_info from cSessionInfo");//查询得出的结果中没有event的行都不见了
+         $query = $this->db->query($querystr);
+         return $query->result_array();
+
+     }
  }
 
 ?>

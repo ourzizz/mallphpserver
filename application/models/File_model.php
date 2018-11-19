@@ -119,7 +119,7 @@
      }
      public function insert_user_file($openId,$fileId)
      {
-         $querystr = sprintf("INSERT INTO `bjks`.`userhasfiles` (`id`, `openid`, `fileid`, `createtime`) VALUES (NULL, '%s', '%s', NOW())",$openId,$fileId);
+         $querystr = sprintf("INSERT INTO `bjks`.`userhasfiles` ( `openid`, `fileid`, `createtime`) VALUES ('%s', '%s', NOW())",$openId,$fileId);
          $query = $this->db->query($querystr);
          return true;
      }
