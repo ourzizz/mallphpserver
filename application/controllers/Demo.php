@@ -7,9 +7,10 @@ class Demo extends CI_Controller {
         $this->load->model('file_model');
         $this->load->model('user_model');
         $this->load->model('eventtime_model');
+        $this->load->model('home_model');
         $this->load->helper('url_helper');
     }
-
+    //*首页的所有逻辑放在本段，有时间了研究下router，把控制器放出去一个文件还是太挤了
     public function get_file_list($typeid = "1") {
         //$typeid = urldecode($typeid);
         $data['files'] = $this->file_model->get_files_title($typeid);
@@ -25,16 +26,6 @@ class Demo extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function show_article($fileid=FALSE)
-    {
-        if ($fileid===FALSE) {
-            show_404();
-        }
-        $data['article'] = $this->file_model->get_article($fileid);
-        $this->load->view('templates/header',$data);
-        $this->load->view('article/view',$data);
-        $this->load->view('templates/footer');
-    }
 
 
     public function get_kstype() {
@@ -70,39 +61,27 @@ class Demo extends CI_Controller {
             );
     }
     public function get_zhuanji_list() 
-    {
+    {//拿专技考试的列表
         $data['zhuanjilist'] = $this->file_model->get_zhuanji_list();
         $this->json(
             $data
         );
     }
-    public function get_zhuanji_file_msg($typeid) 
-    {//获取某个类型考试的文件和msg
-        $data['msg'] = $this->file_model->get_zhuanji_msg($typeid);
-        $data['files'] = $this->file_model->get_zhuanji_files($typeid);
-            $this->json(
-                $data
-            );
-    }
-
-    public function show_guide_article($guideid=false)
-    {//guider文件显示
-        if ($guideid===false) {
-            show_404();
-        }
-        $data['article'] = $this->file_model->get_guide_article($guideid);
-        $this->load->view('templates/header',$data);
-        $this->load->view('article/view',$data);
-        $this->load->view('templates/footer');
-    }
-
-    public function get_phone_list()
-    {
-        $data['phonelist'] = $this->file_model->get_guide_list(2);
+    public function get_xianqu_list() 
+    {//拿县区的列表
+        $data['xianqulist'] = $this->home_model->get_county();
         $this->json(
             $data
         );
     }
+    public function get_filesby_ksid_countyid($ksid,$countyid)
+    {
+        $data['filelist'] = $this->home_model->get_filesby_ksid_countyid($ksid,$countyid);
+        $this->json(
+            $data
+        );
+    }
+
     public function get_zhuanji_files_by_ksid($ksid)
     {
         $data['filelist'] = $this->file_model->get_zhuanji_files($ksid);

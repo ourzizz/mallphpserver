@@ -7,10 +7,10 @@ $config = [
     'rootPath' => '',
 
     // 微信小程序 AppID
-    'appId' => 'wxfa21ea4bdaef03e9',
+    'appId' => 'wxa8510d55a9cbdc9c',
 
     // 微信小程序 AppSecret
-    'appSecret' => 'df971e457b0d0ec50edc9e7191599883',
+    'appSecret' => '3e99597a7bd5fd60582f3b7507ee2db1',
 
     // 使用腾讯云代理登录
     'useQcloudLogin' => true,
@@ -24,7 +24,7 @@ $config = [
         'host' => 'localhost',
         'port' => 3306,
         'user' => 'root',
-        'db'   => 'bjks',
+        'db'   => 'bjkstest',
         'pass' => '[]0-9',
         'char' => 'utf8'
     ],
