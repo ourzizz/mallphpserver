@@ -10,13 +10,43 @@ class Demo extends CI_Controller {
         $this->load->model('home_model');
         $this->load->helper('url_helper');
     }
+    //功能函数
+    private function sortByEvent($arry)
+    {//将事件冒泡排序
+        $i =0;
+        $res = array();
+        while($i < count($arry) ) {
+            if(!empty($arry[$i]["eventtime"])) {
+                array_push($res,$arry[$i]) ;
+            }
+            $i++;
+        }
+        $i =0;
+        while($i < count($arry) ) {
+            if(empty($arry[$i]["eventtime"])) {
+                array_push($res,$arry[$i]) ;
+            }
+            $i++;
+        }
+        return $res;
+    }
+    //功能函数
     //*首页的所有逻辑放在本段，有时间了研究下router，把控制器放出去一个文件还是太挤了
     public function get_file_list($typeid = "1") {
-        //$typeid = urldecode($typeid);
         $data['files'] = $this->file_model->get_files_title($typeid);
-            $this->json(
-                $data
-            );
+        $i = 0;
+        while(!empty($data['files'][$i]))
+        { //获取事件数组
+            $data["files"][$i]['eventtime'] = array();
+            $temp = $this->user_model->get_file_evnets($data['files'][$i]['fileid']);
+            foreach($temp as $v)
+            {
+                array_push($data['files'][$i]['eventtime'],array('event'=>$v['event'],'starttime'=>$v['startime'],'endtime'=>$v['endtime']));
+            }
+            $i=$i+1;
+        }
+        $data['files'] = $this->sortByEvent($data['files']);
+        $this->json( $data);
     }
 
     public function index() {
@@ -25,22 +55,19 @@ class Demo extends CI_Controller {
         $this->load->view('article/filelist',$data);
         $this->load->view('templates/footer');
     }
-
-
-
     public function get_kstype() {
         $data['type'] = $this->file_model->get_kstype();
-            $this->json(
-                $data
-            );
+        $this->json(
+            $data
+        );
     }
 
     public function get_headline() 
     {
         $data['type'] = $this->file_model->get_headline();
-            $this->json(
-                $data
-            );
+        $this->json(
+            $data
+        );
     }
     public function get_homepage_json() {
         //首页包含头条，4个考试大类，展现指导文件列表
@@ -48,17 +75,17 @@ class Demo extends CI_Controller {
         $data['headline'] = $this->file_model->get_headline();
         $data['guidelist'] = $this->file_model->get_guide_list();
         $data['newfiles'] = $this->file_model->get_new_files();
-            $this->json(
-                $data
-            );
+        $this->json(
+            $data
+        );
     }
     public function get_file_msg($typeid) 
     {//获取某个类型考试的文件和msg
         $data['msg'] = $this->file_model->get_msg($typeid);
         $data['files'] = $this->file_model->get_files_title($typeid);
-            $this->json(
-                $data
-            );
+        $this->json(
+            $data
+        );
     }
     public function get_zhuanji_list() 
     {//拿专技考试的列表
@@ -76,43 +103,63 @@ class Demo extends CI_Controller {
     }
     public function get_filesby_ksid_countyid($ksid,$countyid)
     {
-        $data['filelist'] = $this->home_model->get_filesby_ksid_countyid($ksid,$countyid);
-        $this->json(
-            $data
-        );
+        $data['files'] = $this->home_model->get_filesby_ksid_countyid($ksid,$countyid);
+        $i = 0;
+        while(!empty($data['files'][$i]))
+        {//获取事件
+            $data["files"][$i]['eventtime'] = array();
+            $temp = $this->user_model->get_file_evnets($data['files'][$i]['fileid']);
+            foreach($temp as $v)
+            {
+                array_push($data['files'][$i]['eventtime'],array('event'=>$v['event'],'starttime'=>$v['startime'],'endtime'=>$v['endtime']));
+            }
+            $i=$i+1;
+        }
+        $data['files'] = $this->sortByEvent($data['files']);
+        $this->json( $data);
     }
 
     public function get_zhuanji_files_by_ksid($ksid)
     {
-        $data['filelist'] = $this->file_model->get_zhuanji_files($ksid);
-        $this->json(
-            $data
-        );
+        $data['files'] = $this->file_model->get_zhuanji_files($ksid);
+        $i = 0;
+        while(!empty($data['files'][$i]))
+        {
+            $data["files"][$i]['eventtime'] = array();
+            $temp = $this->user_model->get_file_evnets($data['files'][$i]['fileid']);
+            foreach($temp as $v)
+            {
+                array_push($data['files'][$i]['eventtime'],array('event'=>$v['event'],'starttime'=>$v['startime'],'endtime'=>$v['endtime']));
+            }
+            $i=$i+1;
+        }
+        $this->json( $data);
     }
+
     //********************************下面接口为给小程序的filepage提供json数据
     public function get_user_info()
     {
         $user=$this->user_model->get_user_info();
-            $this->json(
-                $user
-            );
+        $this->json(
+            $user
+        );
 
     }
     public function get_article_json($fileid=FALSE)
     {//只给出文章的内容
         $data = $this->file_model->get_article($fileid);
-            $this->json(
-                $data
-            );
+        $this->json(
+            $data
+        );
     }
     public function get_filepage_json($fileid)
     {
         $data['article'] = $this->file_model->get_article($fileid);
         $data['eventtime'] = $this->file_model->get_eventtime($fileid);
         $data['notify'] = $this->file_model->get_notify($fileid);
-            $this->json(
-                $data
-            );
+        $this->json(
+            $data
+        );
     }
     public function get_if_userhasfile($openId,$fileId)
     {
@@ -180,7 +227,7 @@ class Demo extends CI_Controller {
                 array_push($res['happening'][$j]['filelist'],array('endtime'=>$happening[$i]["endtime"],'fileid'=>$happening[$i]['ksfileid'],'filetitle'=>$happening[$i]['filetitle']));
                 $i=$i+1;
             }
-                array_push($res['happening'][$j]['filelist'],array('endtime'=>$happening[$i]["endtime"],'fileid'=>$happening[$i]['ksfileid'],'filetitle'=>$happening[$i]['filetitle']));
+            array_push($res['happening'][$j]['filelist'],array('endtime'=>$happening[$i]["endtime"],'fileid'=>$happening[$i]['ksfileid'],'filetitle'=>$happening[$i]['filetitle']));
             $i=$i+1;
             $j=$j+1;
         }
@@ -195,7 +242,7 @@ class Demo extends CI_Controller {
                 array_push($res['impend'][$j]['filelist'],array('startime'=>$impend[$i]["startime"],'fileid'=>$impend[$i]['ksfileid'],'filetitle'=>$impend[$i]['filetitle']));
                 $i=$i+1;
             }
-                array_push($res['impend'][$j]['filelist'],array('startime'=>$impend[$i]["startime"],'fileid'=>$impend[$i]['ksfileid'],'filetitle'=>$impend[$i]['filetitle']));
+            array_push($res['impend'][$j]['filelist'],array('startime'=>$impend[$i]["startime"],'fileid'=>$impend[$i]['ksfileid'],'filetitle'=>$impend[$i]['filetitle']));
             $i=$i+1;
             $j=$j+1;
         }
