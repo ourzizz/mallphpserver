@@ -21,6 +21,12 @@
          $query = $this->db->query($querystr);
          return $query->result_array();
      }
+     public function get_ing_event()
+     {
+         $querystr = sprintf("SELECT * FROM eventtime where now()>startime and now()<endtime ORDER BY endtime");
+         $query = $this->db->query($querystr);
+         return $query->result_array();
+     }
  }
 
 
