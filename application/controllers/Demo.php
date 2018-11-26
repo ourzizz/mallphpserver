@@ -74,6 +74,7 @@ class Demo extends CI_Controller {
         $data['type'] = $this->file_model->get_kstype();
         $data['headline'] = $this->file_model->get_headline();
         $data['guidelist'] = $this->file_model->get_guide_list();
+        $data['events'] = $this->home_model->get_ing_event();
         $data['newfiles'] = $this->file_model->get_new_files();
         $this->json(
             $data
@@ -134,6 +135,41 @@ class Demo extends CI_Controller {
             $i=$i+1;
         }
         $this->json( $data);
+    }
+    public function get_new_event_files($typeid) {//将新文件和事件文件揉在一起,当首页二级目录没有选中的时候给出
+        $newfile = $this->eventtime_model->get_new_files_bytype($typeid);
+        $eventfile = $this->eventtime_model->get_happenning_event_files_bytype($typeid);
+        $data['files'] = array();
+        $i = 0;
+        $j = 0;
+        while(!empty($eventfile[$i])) { //将事件对应文件放入数组
+            $data['files'][$j]['fileid'] = $eventfile[$j]['fileid'];
+            $data['files'][$j]['pubtime'] = $eventfile[$j]['pubtime'];
+            $data['files'][$j]['filetitle'] = $eventfile[$j]['filetitle'];
+            $data['files'][$j]['readtime'] = $eventfile[$j]['readtime'];
+            $data['files'][$j]['eventtime'] = array();
+            while(!empty($eventfile[$i+1]) && $eventfile[$i]['fileid']== $eventfile[$i+1]['fileid'])
+            {
+            array_push ($data['files'][$j]['eventtime'],array('event'=>$eventfile[$i]["event"],'startime'=>$eventfile[$i]["startime"]));
+            $i=$i+1;
+            }
+            array_push ($data['files'][$j]['eventtime'],array('event'=>$eventfile[$i]["event"],'startime'=>$eventfile[$i]["startime"]));
+            $i=$i+1;
+            $j=$j+1;
+        }
+        foreach($newfile as $new) {
+            $i = 0;
+            foreach($data['files'] as $d) {
+                if($new['fileid'] == $d['fileid']) {//存在
+                    $i = 1;//存在i=1
+                    break;
+                }
+            }
+            if($i == 0) {
+                array_push($data['files'],$new);
+            }
+        }
+        $this->json($data);
     }
 
     //********************************下面接口为给小程序的filepage提供json数据
@@ -206,11 +242,12 @@ class Demo extends CI_Controller {
             }
             $i=$i+1;
         }
+        $res = $this->sortByEvent($res);
         $this->json($res);
     }
     //给正在进行页面提供数据
     public function get_event_files()
-    {
+    {//本函数功能是将文件按照事件分类，一个事件下面要包含所有他的相关文件，数组键为事件名
         $happening = $this->eventtime_model->get_happenning_event_files();
         $impend = $this->eventtime_model->get_impend_event_files();
         $res['happening'] = array();
