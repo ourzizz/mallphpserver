@@ -1,5 +1,5 @@
 sftp-config.json
+config.php
+databases.php
 ./application/logs/*.log
 ./application/business/*.json
-./config.php
-./application/config/databases.php

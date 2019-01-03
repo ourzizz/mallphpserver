@@ -2,7 +2,7 @@
 /**
  * Wafer php demo 配置文件
  */
-//这个文件不能上传的
+//这个文件不能上传的2
 $config = [
     'rootPath' => '',
 
