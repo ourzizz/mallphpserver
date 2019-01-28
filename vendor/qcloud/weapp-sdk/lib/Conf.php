@@ -43,7 +43,7 @@ class Conf {
     private static $Cos = [
         'region' => 'cn-south',
         'fileBucket' => 'qcloudtest',
-        'uploadFolder' => '',
+        'uploadFolder' => '/data/wwwroot/default/public/images/upload',
         'maxSize' => 5,
         'field' => 'file'
     ];

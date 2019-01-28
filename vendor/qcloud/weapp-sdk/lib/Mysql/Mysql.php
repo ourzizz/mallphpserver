@@ -46,13 +46,14 @@ class Mysql
             throw new Exception(Constants::E_CALL_FUNCTION_PARAM);
         }
 
-        $prepareData = self::prepare($data);
-        $prepareFieldsStr = implode(', ', array_keys($prepareData));
+        $prepareData = self::prepare($data);//* @example ['a' => 1] 会被转换为 [':a' => 1]
+        $prepareFieldsStr = implode(', ', array_keys($prepareData));//,分隔
         $fieldsStr = implode(', ', array_keys($data));
         $sql = "INSERT INTO `$tableName` ($fieldsStr) VALUES ($prepareFieldsStr)";
-
+        //$test = ['a'=>1,'b'=>2,'c'=>3];echo $sql => INSERT INTO `order` (a, b, c) VALUES (:a, :b, :c)
         // 执行 SQL 语句
         $query = self::raw($sql, $prepareData);
+        //$prepareData [:a] => 1 [:b] => 2 [:c] => 3
         return $query->rowCount();
     }
 

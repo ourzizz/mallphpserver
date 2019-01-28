@@ -9,7 +9,7 @@ use \QCloud_WeApp_SDK\Constants as Constants;
 use \QCloud_WeApp_SDK\Helper\Logger as Logger;
 use \QCloud_WeApp_SDK\Helper\Request as Request;
 
-class AuthAPI {
+class AuthAPI {//login->loginService::login->AuthApi.login
     /**
      * 用户登录接口
      * @param {string} $code        wx.login 颁发的 code
