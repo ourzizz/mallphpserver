@@ -118,6 +118,7 @@ class Mysql
      * @param string        $suffix    SQL 查询后缀，例如 order, limit 等其他操作
      * @return number 受影响的行数
      */
+        //update('user_order',$array,'')
     public static function update ($tableName, $updates, $conditions = '', $operator = 'and', $suffix = '') {
         if (   gettype($tableName)  !== 'string'
             || gettype($updates)    !== 'array'

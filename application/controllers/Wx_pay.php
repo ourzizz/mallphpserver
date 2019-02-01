@@ -1,6 +1,7 @@
 <?PHP
 use QCloud_WeApp_SDK\Mysql\Mysql as DB;
 use \QCloud_WeApp_SDK\Conf as Conf;
+use \QCloud_WeApp_SDK\WxPay\Pay as Pay;
 //前台给过来的数据json:{open_id,goodslist:[{goods_id,count,goods_info}...],tatal_fee}
 //G_order 生成order_id 当前时间+5位随机数 
 //insert_into ('order_id','time','pre_pay_id','pay_status','address','total_fee')
@@ -11,6 +12,10 @@ use \QCloud_WeApp_SDK\Conf as Conf;
 //失败1用户取消支付，等待卖家付款半小时 订单显示取消支付
 //订单取消
 class Wx_pay extends CI_Controller {
+    public function test(){
+        echo "in";
+        Pay::test_static();
+    }
     public function pay(){
         $orderid = 'O9PU65LTYEE8TVWQR_YCLRC1466K';
         //$appid =  Conf::getAppId();
@@ -66,8 +71,8 @@ class WeixinPay {
             'nonce_str' => $this->createNoncestr(), //随机字符串
             'body' => 'test', //商品描述
             //'body' => $this->body,
-            'out_trade_no' => '2015450806125348', //商户订单号
-            //'out_trade_no'=> $this->out_trade_no,
+            //'out_trade_no' => '2015450806125348', //商户订单号
+            'out_trade_no'=> $this->out_trade_no,
             'total_fee' => floatval(0.01 * 100), //总金额 单位 分
             //'total_fee' => $this->total_fee,
             //'spbill_create_ip' => $_SERVER['REMOTE_ADDR'], //终端IP
@@ -105,6 +110,7 @@ class WeixinPay {
         //返回结果
         if ($data) {
             curl_close($ch);
+            //print_r($data);
             return $data;
         } else {
             $error = curl_errno($ch);

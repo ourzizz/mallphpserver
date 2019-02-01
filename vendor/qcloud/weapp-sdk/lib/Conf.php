@@ -25,6 +25,8 @@ class Conf {
     
     // 微信小程序 AppSecret
     private static $AppSecret = '';
+    private static $MchId = '';
+    private static $Key = '';
     
     // 微信小程序 AppSecret
     private static $UseQcloudLogin = true;
