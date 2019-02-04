@@ -35,16 +35,30 @@ class Order extends CI_Controller {
             foreach($order_info['goods_list'] as $goods) {
                 $goods['order_id'] = $order_id;
                 DB::insert('goods_in_order',$goods);
+                //从购物车删除商品
+                DB::delete('shop_cart',['open_id'=>$openid,'goods_id'=>$goods['goods_id']]);
             }
+
             $body = "bookstore";
             $weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee);
-            $return=$weixinpay->pay();
+            $return = $weixinpay->pay();
             $return['order_id'] = $order_id;
             $this->json($return);
         }
     }
+    //public function order_storage($order_info) {
+    //}
+    public function pay_success($order_id){
+        $row = DB::select('user_order',['total_fee','address_id'],"order_id='$order_id'");
+        //print($row[0]['total_fee']);
+        //print_r ($row[0]);
+        $order_info['total_fee'] = $row[0]['total_fee'];
+        $address_id = $row[0]['address_id'];
+        $row = DB::select('user_address',['name','telphone','province','city','county','detail'],"address_id='$address_id'");
+        $order_info['address'] = $row[0];
+        $this->json($order_info);
+    }
 }
-
 
 class WeixinPay {
     protected $appid;

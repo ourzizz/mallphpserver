@@ -91,7 +91,9 @@ class Mysql
 
         // 执行 SQL 语句
         $query = self::raw($sql, $execValues);
-        $allResult = $query->fetchAll(PDO::FETCH_OBJ);
+        //$allResult = $query->fetchAll(PDO::FETCH_OBJ);
+        $allResult = $query->fetchAll(PDO::FETCH_ASSOC);
+        
         return $allResult === NULL ? [] : $allResult;
     }
 
