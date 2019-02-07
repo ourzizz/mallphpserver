@@ -15,43 +15,130 @@ class Order extends CI_Controller {
      */
     public function pay(){
         if(isset($_POST['order_info'])) {
+            $timestamp    = time();
             $order_info   = json_decode($_POST['order_info'],true);
-            $order_id     = time().Util::getNum(5);//时间戳加上5位随机码生成订单号
+            $order_id     = $timestamp.Util::getNum(5);//时间戳加上5位随机码生成订单号
             $appid        = Conf::getAppId();
             $key          = Conf::getKey();
             $mch_id       = Conf::getMchId();
             $openid       = $order_info['open_id'];
             $total_fee    = $order_info['total_fee'];
             $out_trade_no = $order_id;
-            
-            $order = [
-                'order_id'   => $order_id,
-                'open_id'    => $order_info['open_id'],
-                'address_id' => $order_info['address_id'],
-                'total_fee'  => $order_info['total_fee'],
-                'pick_time'  => time(),
-            ];
-            DB::insert('user_order',$order);
-            foreach($order_info['goods_list'] as $goods) {
-                $goods['order_id'] = $order_id;
-                DB::insert('goods_in_order',$goods);
-                //从购物车删除商品
-                DB::delete('shop_cart',['open_id'=>$openid,'goods_id'=>$goods['goods_id']]);
-            }
-
             $body = "bookstore";
             $weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee);
             $return = $weixinpay->pay();
             $return['order_id'] = $order_id;
+            $order_info['order_id'] = $order_id;
+            $order_info['timestamp'] = $timestamp;
+            $order_info = array_merge($order_info,$return);
+            $this->store_order($order_info);
             $this->json($return);
         }
     }
-    //public function order_storage($order_info) {
-    //}
+
+    /*
+     *取出订单详细信息
+     */
+    public function get_order_info($order_id){
+        $order = DB::select('user_order',['*'],"order_id='$order_id'")[0];
+        $address_id = $order['address_id'];
+        $address = DB::select('user_address',['*'],"address_id='$address_id'")[0];
+        $goods_list = DB::select('goods_in_order',['*'],"order_id='$order_id'");
+        foreach($goods_list as &$goods){
+            $goods_id = $goods['goods_id'];
+            $goods_info = DB::select('goods',['name','face_img','price'],"goods_id='$goods_id'");
+            $goods = array_merge($goods,$goods_info[0]);
+        }
+        $res = compact('order','address','goods_list');
+        return $res;
+    }
+
+    public function re_pay($order_id){
+        $this->json($this->get_order_info($order_id));
+    }
+
+    /*
+     *用户确认收货
+     *
+     */
+    public function user_sign_order($open_id,$order_id){
+        $condition = "open_id='$open_id' AND order_id='$order_id' ";
+        DB:: update('user_order',['logistics_status'=>'SIGNED'],$condition);
+    }
+
+    /*
+     *取出待签收订单的信息
+     */
+    public function get_wait_sign_order_list($open_id){
+        $sql = "pay_status='SUCCESS' AND logistics_status is null";
+        $row = DB::select('user_order',['order_id'],$sql);
+        $wait_pay_orders = [];
+        foreach($row as $order){
+            array_push($wait_pay_orders,$this->get_order_info($order['order_id']));
+        }
+        $this->json($wait_pay_orders);
+    }
+
+    /*
+     *取出已经完成订单的信息
+     */
+    public function get_finished_order_list($open_id){
+        $sql = "pay_status='SUCCESS' AND logistics_status = 'SIGNED'";
+        $row = DB::select('user_order',['order_id'],$sql);
+        $wait_pay_orders = [];
+        foreach($row as $order){
+            array_push($wait_pay_orders,$this->get_order_info($order['order_id']));
+        }
+        $this->json($wait_pay_orders);
+    }
+
+    /*
+     *取出待支付订单的信息
+     佳佳j
+     */
+    public function get_wait_pay_order($open_id){
+        //SELECT * from user_order where unix_timestamp(now()) - timeStamp <= 1800 and open_id=$open_id and pay_staus!='SUCCESS'
+        //update user_order set pay_status='close' where  unix_timestamp(now()) - timeStamp > 1800 and pay_status=null
+        $sql = "unix_timestamp(now()) - timeStamp <= 1800 and open_id='$open_id' and pay_status!='SUCCESS'";
+        $row = DB::select('user_order',['order_id'],$sql);
+        $wait_pay_orders = [];
+        foreach($row as $order){
+            array_push($wait_pay_orders,$this->get_order_info($order['order_id']));
+        }
+        $this->json($wait_pay_orders);
+    }
+
+    /*
+     *存储订单信息
+     */
+    public function store_order($order_info) {
+        $order = [
+            'order_id'   => $order_info['order_id'],
+            'open_id'    => $order_info['open_id'],
+            'address_id' => $order_info['address_id'],
+            'timestamp'  => $order_info['timestamp'],
+            'total_fee'  => $order_info['total_fee'],
+            'nonceStr'   => $order_info['nonceStr'],
+            'paySign'    => $order_info['paySign'],
+            'package'    => $order_info['package'],
+        ];
+        DB::insert('user_order',$order);
+        foreach($order_info['goods_list'] as $goods) {
+            $goods['order_id'] = $order['order_id'];
+            DB::insert('goods_in_order',$goods);
+            //从购物车删除商品
+            DB::delete('shop_cart',['open_id'=>$order['open_id'],'goods_id'=>$goods['goods_id']]);
+        }
+    }
+
+    public function delete_order($order_id){
+        DB::delete('goods_in_order',['order_id'=>$order_id]);
+        $row = DB::delete('user_order',['order_id'=>$order_id]);
+        echo $row;
+    }
+
     public function pay_success($order_id){
         $row = DB::select('user_order',['total_fee','address_id'],"order_id='$order_id'");
-        //print($row[0]['total_fee']);
-        //print_r ($row[0]);
         $order_info['total_fee'] = $row[0]['total_fee'];
         $address_id = $row[0]['address_id'];
         $row = DB::select('user_address',['name','telphone','province','city','county','detail'],"address_id='$address_id'");
@@ -108,7 +195,6 @@ class WeixinPay {
             'nonce_str' => $parameters['nonce_str'],
             'sign' => $parameters['sign']
         );
-        DB::update('user_order',$arr,"order_id='$this->out_trade_no'");
         //print_r($return);
         return $return;
     }
