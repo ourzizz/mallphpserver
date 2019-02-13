@@ -146,7 +146,6 @@ class Mysql
 
         // 拼接后缀
         $sql .= " $suffix";
-        echo $sql;
 
         // 执行 SQL 语句
         $query = self::raw($sql, array_merge($execUpdateValues, $execValues));

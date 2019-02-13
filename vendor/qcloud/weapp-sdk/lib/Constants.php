@@ -43,5 +43,5 @@ class Constants {
     const E_INIT_COS_SDK = 'E_INIT_COS_SDK';
 
     //订单签收有效期,24小时用户不签收自动转已签收
-    const ORDER_SIGN_PERIOD_OF_VALIDITY = 86400 
+    const ORDER_SIGN_PERIOD_OF_VALIDITY = 86400;
 }

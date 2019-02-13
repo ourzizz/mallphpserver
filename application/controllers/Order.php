@@ -70,8 +70,8 @@ class Order extends CI_Controller {
      *取出待签收订单的信息
      */
     public function get_wait_sign_order_list($open_id){
-        $sql = "pay_status='SUCCESS' AND logistics_status is null";
-        $row = DB::select('user_order',['order_id'],$sql);
+        $conditions = "pay_status='SUCCESS' AND logistics_status is null";
+        $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
         $wait_pay_orders = [];
         foreach($row as $order){
             array_push($wait_pay_orders,$this->get_order_info($order['order_id']));
@@ -83,8 +83,9 @@ class Order extends CI_Controller {
      *取出已经完成订单的信息
      */
     public function get_finished_order_list($open_id){
-        $sql = "pay_status='SUCCESS' AND logistics_status = 'SIGNED'";
-        $row = DB::select('user_order',['order_id'],$sql);
+        $conditions = "pay_status='SUCCESS' AND logistics_status = 'SIGNED'";
+        $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
+        //$row = DB::select('user_order',['order_id'],$conditions);
         $wait_pay_orders = [];
         foreach($row as $order){
             array_push($wait_pay_orders,$this->get_order_info($order['order_id']));
@@ -97,10 +98,8 @@ class Order extends CI_Controller {
      佳佳j
      */
     public function get_wait_pay_order($open_id){
-        //SELECT * from user_order where unix_timestamp(now()) - timeStamp <= 1800 and open_id=$open_id and pay_staus!='SUCCESS'
-        //update user_order set pay_status='close' where  unix_timestamp(now()) - timeStamp > 1800 and pay_status=null
-        $sql = "unix_timestamp(now()) - timeStamp <= 1800 and open_id='$open_id' and pay_status!='SUCCESS'";
-        $row = DB::select('user_order',['order_id'],$sql);
+        $conditions = "unix_timestamp(now()) - timeStamp <= 1800 and open_id='$open_id' and pay_status!='SUCCESS'";
+        $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
         $wait_pay_orders = [];
         foreach($row as $order){
             array_push($wait_pay_orders,$this->get_order_info($order['order_id']));
@@ -117,6 +116,7 @@ class Order extends CI_Controller {
             'open_id'    => $order_info['open_id'],
             'address_id' => $order_info['address_id'],
             'timestamp'  => $order_info['timestamp'],
+            'order_date' => date("Y-m-d",time()),
             'total_fee'  => $order_info['total_fee'],
             'nonceStr'   => $order_info['nonceStr'],
             'paySign'    => $order_info['paySign'],
@@ -131,6 +131,10 @@ class Order extends CI_Controller {
         }
     }
 
+    /*
+     * 删除订单
+     * 订单号唯一，所以只用给出order_id即可
+    * */
     public function delete_order($order_id){
         DB::delete('goods_in_order',['order_id'=>$order_id]);
         $row = DB::delete('user_order',['order_id'=>$order_id]);
