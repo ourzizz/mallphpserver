@@ -51,13 +51,13 @@ class Conf {
     ];
 
     // 当前使用 SDK 服务器的主机，该主机需要外网可访问
-    private static $ServerHost = '';
+    private static $ServerHost = '58.87.119.233';
 
     // 信道服务器服务地址
-    private static $TunnelServerUrl = '';
+    private static $TunnelServerUrl = 'https://tunnel.ws.qcloud.la';
 
     // 和信道服务器通信的签名密钥，该密钥需要保密
-    private static $TunnelSignatureKey = '';
+    private static $TunnelSignatureKey = 'sdfsdfsdfsdfjk';
 
     // 腾讯云 AppID
     private static $QcloudAppId = 123456789;

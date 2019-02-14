@@ -1,6 +1,8 @@
 <?PHP
-//1-26支付接口迟迟办不下来，真是打击积极性，不要紧我们跳过支付继续前进
-//今日必须完成生成订单接口
+/*
+ * bug mysql文件的select被改写，导致很多麻烦,改回去。为信道铺垫
+ * 涉及到select的方法调用的语句基本都要重新做
+* */
 use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
 use \QCloud_WeApp_SDK\Conf as Conf;
 use \QCloud_WeApp_SDK\Helper\Util as Util;
@@ -41,13 +43,13 @@ class Order extends CI_Controller {
      */
     public function get_order_info($order_id){
         $order = DB::select('user_order',['*'],"order_id='$order_id'")[0];
-        $address_id = $order['address_id'];
+        $address_id = $order->address_id;
         $address = DB::select('user_address',['*'],"address_id='$address_id'")[0];
         $goods_list = DB::select('goods_in_order',['*'],"order_id='$order_id'");
         foreach($goods_list as &$goods){
-            $goods_id = $goods['goods_id'];
+            $goods_id = $goods->goods_id;
             $goods_info = DB::select('goods',['name','face_img','price'],"goods_id='$goods_id'");
-            $goods = array_merge($goods,$goods_info[0]);
+            $goods = array_merge((array)($goods),(array)($goods_info[0]));
         }
         $res = compact('order','address','goods_list');
         return $res;
@@ -74,7 +76,7 @@ class Order extends CI_Controller {
         $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
         $wait_pay_orders = [];
         foreach($row as $order){
-            array_push($wait_pay_orders,$this->get_order_info($order['order_id']));
+            array_push($wait_pay_orders,$this->get_order_info($order->order_id));
         }
         $this->json($wait_pay_orders);
     }
@@ -88,7 +90,7 @@ class Order extends CI_Controller {
         //$row = DB::select('user_order',['order_id'],$conditions);
         $wait_pay_orders = [];
         foreach($row as $order){
-            array_push($wait_pay_orders,$this->get_order_info($order['order_id']));
+            array_push($wait_pay_orders,$this->get_order_info($order->order_id));
         }
         $this->json($wait_pay_orders);
     }
@@ -102,7 +104,7 @@ class Order extends CI_Controller {
         $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
         $wait_pay_orders = [];
         foreach($row as $order){
-            array_push($wait_pay_orders,$this->get_order_info($order['order_id']));
+            array_push($wait_pay_orders,$this->get_order_info($order->order_id));
         }
         $this->json($wait_pay_orders);
     }

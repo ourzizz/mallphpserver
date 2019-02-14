@@ -91,8 +91,8 @@ class Mysql
 
         // 执行 SQL 语句
         $query = self::raw($sql, $execValues);
-        //$allResult = $query->fetchAll(PDO::FETCH_OBJ);
-        $allResult = $query->fetchAll(PDO::FETCH_ASSOC);
+        $allResult = $query->fetchAll(PDO::FETCH_OBJ);//这是原生的代码
+        //$allResult = $query->fetchAll(PDO::FETCH_ASSOC);//支付环节需要修改,这下麻烦了忘了那几个地方使用了数组的返回方式
         
         return $allResult === NULL ? [] : $allResult;
     }

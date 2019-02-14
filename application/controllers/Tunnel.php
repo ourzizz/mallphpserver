@@ -13,7 +13,6 @@ class Tunnel extends CI_Controller {
             $result = LoginService::check();
             
             if ($result['loginState'] === Constants::S_AUTH) {
-                echo "not login";
                 $handler = new ChatTunnelHandler($result['userinfo']);
                 TunnelService::handle($handler, array('checkLogin' => TRUE));
             } else {
