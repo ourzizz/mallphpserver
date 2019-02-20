@@ -1,0 +1,36 @@
+{
+    "userMap": {
+        "c232991e-f650-418e-bed6-0a0e72e1df1d": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "c232991e-f650-418e-bed6-0a0e72e1df1d": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    },
+    "connectedTunnelIds": [
+        "c232991e-f650-418e-bed6-0a0e72e1df1d",
+        "08c0b6fd-a6e8-478b-adac-495e7ce498e9"
+    ]
+}

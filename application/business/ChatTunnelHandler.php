@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
 use \QCloud_WeApp_SDK\Tunnel\ITunnelHandler as ITunnelHandler;
 use \QCloud_WeApp_SDK\Tunnel\TunnelService as TunnelService;
 
@@ -27,6 +28,7 @@ class ChatTunnelHandler implements ITunnelHandler {
             // 保存 信道ID => 用户信息 的映射
             $data['userMap'][$tunnelId] = $this->userinfo;
 
+            DB::update('seller',['tunnelId'=>$tunnelId,'tunnelStatus'=>'on'],['open_id'=>$this->userinfo['openId']]);
             self::saveData($data);
 
             echo json_encode([
@@ -49,6 +51,7 @@ class ChatTunnelHandler implements ITunnelHandler {
 
         if (array_key_exists($tunnelId, $data['userMap'])) {
             array_push($data['connectedTunnelIds'], $tunnelId);
+            //保存连通的信道
             self::saveData($data);
 
             self::broadcast('people', array(
@@ -67,18 +70,23 @@ class ChatTunnelHandler implements ITunnelHandler {
      * 客户端推送消息到 WebSocket 信道服务器上后，会调用该方法，此时可以处理信道的消息。
      * 在本示例，我们处理 `speak` 类型的消息，该消息表示有用户发言。
      * 我们把这个发言的信息广播到所有在线的 WebSocket 信道上
+     * user->tunnel->server->broadcast
      */
     public function onMessage($tunnelId, $type, $content) {
         switch ($type) {
         case 'speak':
             $data = self::loadData();
-
             if (isset($data['userMap'][$tunnelId])) {
                 self::broadcast('speak', array(
                     'who' => $data['userMap'][$tunnelId],
                     'word' => $content['word'],
                 ));
             } else {
+                self::broadcast('speak', array(
+                    'who' => 'sss',
+                    'word' => 'error',
+                ));
+                debug('onmessage中不能在chat中获取该信道', $tunnelId);
                 self::closeTunnel($tunnelId);
             }
             break;
@@ -91,8 +99,9 @@ class ChatTunnelHandler implements ITunnelHandler {
      * 会调用该方法，此时可以进行清理及通知操作
      */
     public function onClose($tunnelId) {
+        debug('102关闭信道', $tunnelId);
         $data = self::loadData();
-
+        DB::update('seller',['tunnelStatus'=>'off'],['tunnelId'=>$tunnelId]);
         if (!array_key_exists($tunnelId, $data['userMap'])) {
             debug('[onClose] 无效的信道 ID =>', $tunnelId);
             self::closeTunnel($tunnelId);
@@ -100,13 +109,14 @@ class ChatTunnelHandler implements ITunnelHandler {
         }
 
         $leaveUser = $data['userMap'][$tunnelId];
-        unset($data['userMap'][$tunnelId]);
+        //unset($data['userMap'][$tunnelId]);
 
         $index = array_search($tunnelId, $data['connectedTunnelIds']);
-        if ($index !== FALSE) {
-            array_splice($data['connectedTunnelIds'], $index, 1);
-        }
+        //if ($index !== FALSE) {
+            //array_splice($data['connectedTunnelIds'], $index, 1);
+        //}
 
+        //去除已经关闭的信道
         self::saveData($data);
 
         // 聊天室没有人了（即无信道ID）不再需要广播消息
@@ -122,21 +132,33 @@ class ChatTunnelHandler implements ITunnelHandler {
      * 调用 TunnelService::broadcast() 进行广播
      */
     private static function broadcast($type, $content) {
+        //获取所有在线的tunnelId
         $data = self::loadData();
+
+        $rows = DB::select("seller",['tunnelId'],['tunnelStatus'=>'on']);
+        $connectedTunnelIds=array();
+        foreach($rows as $tid){
+            array_push($connectedTunnelIds,$tid->tunnelId);
+        }
+
+        debug('myids', $connectedTunnelIds);
+        debug('originids', $data['connectedTunnelIds']);
+        //$result = TunnelService::broadcast($connectedTunnelIds, $type, $content);
         $result = TunnelService::broadcast($data['connectedTunnelIds'], $type, $content);
 
         if ($result['code'] === 0 && !empty($result['data']['invalidTunnelIds'])) {
             $invalidTunnelIds = $result['data']['invalidTunnelIds'];
-            debug('检测到无效的信道 IDs =>', $invalidTunnelIds);
+            debug('broadcast检测到无效的信道 IDs =>', $invalidTunnelIds);
 
             // 从`userMap`和`connectedTunnelIds`将无效的信道记录移除
             foreach ($invalidTunnelIds as $tunnelId) {
-                unset($data['userMap'][$tunnelId]);
-
-                $index = array_search($tunnelId, $data['connectedTunnelIds']);
-                if ($index !== FALSE) {
-                    array_splice($data['connectedTunnelIds'], $index, 1);
-                }
+                debug('152关闭信道', $tunnelId);//第一次广播未错
+                //unset($data['userMap'][$tunnelId]);
+                //DB::update('seller',['tunnelStatus'=>'off'],['tunnelId'=>$tunnelId]);
+                //$index = array_search($tunnelId, $data['connectedTunnelIds']);
+                //if ($index !== FALSE) {
+                    //array_splice($data['connectedTunnelIds'], $index, 1);
+                //}
             }
 
             self::saveData($data);

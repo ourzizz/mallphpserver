@@ -42,9 +42,8 @@ class Order extends CI_Controller {
      *取出订单详细信息
      */
     public function get_order_info($order_id){
-        $order = DB::select('user_order',['*'],"order_id='$order_id'")[0];
-        $address_id = $order->address_id;
-        $address = DB::select('user_address',['*'],"address_id='$address_id'")[0];
+        $order = DB::row('user_order',['*'],"order_id='$order_id'");
+        $address = DB::row('user_address',['*'],"address_id='$order->address_id'");
         $goods_list = DB::select('goods_in_order',['*'],"order_id='$order_id'");
         foreach($goods_list as &$goods){
             $goods_id = $goods->goods_id;
@@ -87,12 +86,11 @@ class Order extends CI_Controller {
     public function get_finished_order_list($open_id){
         $conditions = "pay_status='SUCCESS' AND logistics_status = 'SIGNED'";
         $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
-        //$row = DB::select('user_order',['order_id'],$conditions);
-        $wait_pay_orders = [];
+        $orders = [];
         foreach($row as $order){
-            array_push($wait_pay_orders,$this->get_order_info($order->order_id));
+            array_push($orders,$this->get_order_info($order->order_id));
         }
-        $this->json($wait_pay_orders);
+        $this->json($orders);
     }
 
     /*
@@ -145,8 +143,8 @@ class Order extends CI_Controller {
 
     public function pay_success($order_id){
         $row = DB::select('user_order',['total_fee','address_id'],"order_id='$order_id'");
-        $order_info['total_fee'] = $row[0]['total_fee'];
-        $address_id = $row[0]['address_id'];
+        $order_info['total_fee'] = $row[0]->total_fee;
+        $address_id = $row[0]->address_id;
         $row = DB::select('user_address',['name','telphone','province','city','county','detail'],"address_id='$address_id'");
         $order_info['address'] = $row[0];
         $this->json($order_info);

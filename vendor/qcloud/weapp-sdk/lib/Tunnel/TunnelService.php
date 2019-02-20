@@ -13,10 +13,11 @@ class TunnelService {
         $options = array_merge(array('checkLogin' => FALSE), $options);
 
         switch ($_SERVER['REQUEST_METHOD']) {
+            //get小程序端的请求，分配信道即可
             case 'GET':
                 self::handleGet($handler, $options);
                 break;
-
+            //POST信道通知发post，根据message类型具体操作
             case 'POST':
                 self::handlePost($handler, $options);
                 break;
@@ -139,7 +140,8 @@ class TunnelService {
         $scheme = parse_url(Conf::getTunnelServerUrl(), PHP_URL_SCHEME);
         $hostname = Conf::getServerHost();
         $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        return "{$scheme}://{$hostname}{$path}";
+        //return "{$scheme}://{$hostname}{$path}";
+        return "http://58.87.119.233/bjks/index.php";
     }
 
     /**

@@ -52,6 +52,7 @@ class Conf {
 
     // 当前使用 SDK 服务器的主机，该主机需要外网可访问
     private static $ServerHost = '58.87.119.233';
+    //private static $ServerHost = 'www.alemao.club';
 
     // 信道服务器服务地址
     private static $TunnelServerUrl = 'https://tunnel.ws.qcloud.la';

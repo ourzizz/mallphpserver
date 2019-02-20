@@ -4,7 +4,8 @@
  * 设置时区
  */
 date_default_timezone_set('Asia/Shanghai');
-
+//debug
+define(‘ENVIRONMENT’, ‘development’);
 /**
  * CodeIgniter
  *
