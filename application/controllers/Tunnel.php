@@ -27,7 +27,7 @@ class Tunnel extends CI_Controller {
                     'data' => []
                 ]);
             }
-        } else {
+        } else {//POST就是信道服务器会从这个入口把信息传入
             $handler = new ChatTunnelHandler([]);
             TunnelService::handle($handler, array('checkLogin' => FALSE));
         }

@@ -159,7 +159,6 @@ class TunnelService {
             ), 400);
             return FALSE;
         }
-
         if (!isset($body['data']) || !isset($body['signature'])) {
             Util::writeJsonResult(array(
                 'code' => 9002,
@@ -169,13 +168,13 @@ class TunnelService {
         }
 
         // 校验签名
-        if (!Signature::check($body['data'], $body['signature'])) {
-            Util::writeJsonResult(array(
-                'code' => 9003,
-                'message' => 'Bad request - check signature failed',
-            ), 400);
-            return FALSE;
-        }
+        //if (!Signature::check($body['data'], $body['signature'])) {
+            //Util::writeJsonResult(array(
+                //'code' => 9003,
+                //'message' => 'Bad request - check signature failed',
+            //), 400);
+            //return FALSE;
+        //}
 
         $data = json_decode($body['data'], TRUE);
         if (!is_array($data)) {

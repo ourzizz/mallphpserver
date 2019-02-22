@@ -1,12 +1,13 @@
 <?php
 namespace QCloud_WeApp_SDK\WxPay;
+
 use \QCloud_WeApp_SDK\Conf as Conf;
-class Pay{
+class WxPay{
     public static function test_static(){
         echo "ok";
-        return "insta";
+        return "instatic";
     }
     public function test_or() {
-        echo "ording"
+        echo "ording";
     }
 }

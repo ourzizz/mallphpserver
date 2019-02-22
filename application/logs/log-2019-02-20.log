@@ -12258,3 +12258,1686 @@ INFO - 2019-02-20 10:37:20 --> Helper loaded: general_helper
 INFO - 2019-02-20 10:37:20 --> Controller Class Initialized
 INFO - 2019-02-20 10:37:20 --> Final output sent to browser
 DEBUG - 2019-02-20 10:37:20 --> Total execution time: 0.0012
+[2019-02-20 12:19:29][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "0a70ef38-8fe7-4139-8ed7-480639d01849"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "用户下单"
+    }
+}
+
+[2019-02-20 12:19:30][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"0a70ef38-8fe7-4139-8ed7-480639d01849\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"用户下单\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "a58e564bc35b703082d0185d468598c95e9d07ad"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "0a70ef38-8fe7-4139-8ed7-480639d01849"
+            ]
+        }
+    },
+    "[耗时]": "718ms"
+}
+
+[2019-02-20 12:19:33][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=6795cadd-cd1e-45de-9357-fbea816e6c79&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "7717c054a5cfcb3afdddbf1896d29f4560d22f40"
+    },
+    "[耗时]": "278ms"
+}
+
+[2019-02-20 12:19:33][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "6795cadd-cd1e-45de-9357-fbea816e6c79"
+}
+
+[2019-02-20 12:19:34][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "dfe346489b317ebb1fdaa137d1f6f32018dd9e7c"
+}
+
+[2019-02-20 12:19:34][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 12:19:34][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "6795cadd-cd1e-45de-9357-fbea816e6c79"
+}
+
+[2019-02-20 12:19:34][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 28,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-20 12:19:34][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":28,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "beddfe9959851449315ea69670f606d138cfc606"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a"
+            ]
+        }
+    },
+    "[耗时]": "276ms"
+}
+
+[2019-02-20 12:21:27][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"word\\\":\\\"大家好啊\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "43fefb87bf486ad3df2607debb3786642dfceb5b"
+}
+
+[2019-02-20 12:21:27][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 12:21:27][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "6795cadd-cd1e-45de-9357-fbea816e6c79",
+    "type": "speak",
+    "content": {
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-20 12:21:27][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-20 12:21:27][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"大家好啊\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "40a1604b256a40dfd09efb77b89c39f9162baf04"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "61170565-3d78-4548-a757-3fd58168b271"
+            ]
+        }
+    },
+    "[耗时]": "317ms"
+}
+
+[2019-02-20 12:28:29][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"word\\\":\\\"ujkjh\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "c4a57a5d96ec9fc95fa0ad12df3241c4898b4608"
+}
+
+[2019-02-20 12:28:29][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 12:28:29][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "6795cadd-cd1e-45de-9357-fbea816e6c79",
+    "type": "speak",
+    "content": {
+        "word": "ujkjh"
+    }
+}
+
+[2019-02-20 12:28:29][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "ujkjh"
+    }
+}
+
+[2019-02-20 12:28:30][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"ujkjh\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "c87ece30fa591c27c6804bbd2e2a468f699f818c"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e"
+            ]
+        }
+    },
+    "[耗时]": "300ms"
+}
+
+[2019-02-20 12:28:55][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "6795cadd-cd1e-45de-9357-fbea816e6c79"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "用户下单"
+    }
+}
+
+[2019-02-20 12:28:55][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"6795cadd-cd1e-45de-9357-fbea816e6c79\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"用户下单\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "3feb5925993fa945c2e757b5323f7a09233126d6"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": []
+        }
+    },
+    "[耗时]": "208ms"
+}
+
+[2019-02-20 14:00:44][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "a39def1b9f1ce4f69ab1a7acffc1127da3cd03a0"
+    },
+    "[耗时]": "1398ms"
+}
+
+[2019-02-20 14:00:44][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10"
+}
+
+[2019-02-20 14:00:45][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "0482897cd0fa4ce3802e73acbfa85a21e9e65653"
+}
+
+[2019-02-20 14:00:45][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 14:00:45][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10"
+}
+
+[2019-02-20 14:00:45][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79",
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 29,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-20 14:00:45][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":29,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "893fe34416c212bc992c8d414b04d5da3fce7f20"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a"
+            ]
+        }
+    },
+    "[耗时]": "335ms"
+}
+
+[2019-02-20 14:00:46][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"word\\\":\\\"jh\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "06050df1b7051df2a9ff12b0ff16a3c38f55266a"
+}
+
+[2019-02-20 14:00:46][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 14:00:46][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+    "type": "speak",
+    "content": {
+        "word": "jh"
+    }
+}
+
+[2019-02-20 14:00:46][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79",
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "jh"
+    }
+}
+
+[2019-02-20 14:00:46][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"jh\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "679a2032c5575e2364d508557391d5f1ceafd2a4"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194"
+            ]
+        }
+    },
+    "[耗时]": "274ms"
+}
+
+[2019-02-20 20:58:21][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "用户下单"
+    }
+}
+
+[2019-02-20 20:58:22][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"用户下单\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "7f94d58fdb95ee12375152582a4127daf88c15f2"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10"
+            ]
+        }
+    },
+    "[耗时]": "314ms"
+}
+
+[2019-02-20 21:47:02][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"8e93add1-1e93-48b9-809d-071e4cdb57aa\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=8e93add1-1e93-48b9-809d-071e4cdb57aa&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "026579f575c54cc287941865f8dd02d344520cc9"
+    },
+    "[耗时]": "283ms"
+}
+
+[2019-02-20 21:47:02][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "8e93add1-1e93-48b9-809d-071e4cdb57aa"
+}
+
+[2019-02-20 21:47:03][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"8e93add1-1e93-48b9-809d-071e4cdb57aa\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "8d4818f0501e81391e89bb4e3353ced7f8ce1c67"
+}
+
+[2019-02-20 21:47:03][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 21:47:03][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "8e93add1-1e93-48b9-809d-071e4cdb57aa"
+}
+
+[2019-02-20 21:47:03][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79",
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+        "8e93add1-1e93-48b9-809d-071e4cdb57aa"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 30,
+        "enter": {
+            "openId": "opexV4zhvLlfWOeMuUifxymsoCqA",
+            "nickName": "七星诺必达",
+            "gender": 0,
+            "language": "zh_CN",
+            "city": "",
+            "province": "",
+            "country": "",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/micazF5XVdsS7I2KNeZlbEquMGNVkXraO2T5t1hYB4JX5uicOXicBq022ic7hQyFKjBYNu0jfzmU1xia7WDicy4NWbgA\/132",
+            "watermark": {
+                "timestamp": 1550156566,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-20 21:47:03][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"8e93add1-1e93-48b9-809d-071e4cdb57aa\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":30,\\\"enter\\\":{\\\"openId\\\":\\\"opexV4zhvLlfWOeMuUifxymsoCqA\\\",\\\"nickName\\\":\\\"七星诺必达\\\",\\\"gender\\\":0,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"\\\",\\\"province\\\":\\\"\\\",\\\"country\\\":\\\"\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/micazF5XVdsS7I2KNeZlbEquMGNVkXraO2T5t1hYB4JX5uicOXicBq022ic7hQyFKjBYNu0jfzmU1xia7WDicy4NWbgA\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550156566,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "e28f848219b21d5c67800ff443893d2527bfc032"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "61170565-3d78-4548-a757-3fd58168b271"
+            ]
+        }
+    },
+    "[耗时]": "323ms"
+}
+
+[2019-02-20 22:21:46][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"35069c79-db7e-4240-886e-6aaff83d7d6a\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=35069c79-db7e-4240-886e-6aaff83d7d6a&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "dd751b578376a08d0a2bf93ba09fbbf0e7c10278"
+    },
+    "[耗时]": "300ms"
+}
+
+[2019-02-20 22:21:46][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "35069c79-db7e-4240-886e-6aaff83d7d6a"
+}
+
+[2019-02-20 22:21:46][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"35069c79-db7e-4240-886e-6aaff83d7d6a\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "9b57f73390088e4c84df7e1145b1b2d1dc754551"
+}
+
+[2019-02-20 22:21:46][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 22:21:46][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "35069c79-db7e-4240-886e-6aaff83d7d6a"
+}
+
+[2019-02-20 22:21:46][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79",
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+        "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+        "35069c79-db7e-4240-886e-6aaff83d7d6a"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 31,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-20 22:21:47][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"8e93add1-1e93-48b9-809d-071e4cdb57aa\",\"35069c79-db7e-4240-886e-6aaff83d7d6a\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":31,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "5259dfb1e703feb5bffb12ab15f4d9c1002b6a53"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "35069c79-db7e-4240-886e-6aaff83d7d6a",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194"
+            ]
+        }
+    },
+    "[耗时]": "358ms"
+}
+
+[2019-02-20 22:27:21][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"d3fbe779-668f-4cfb-af5c-a781d5bb66d6\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=d3fbe779-668f-4cfb-af5c-a781d5bb66d6&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "fe93c0590033bf51b23904a6c463342635feee9b"
+    },
+    "[耗时]": "305ms"
+}
+
+[2019-02-20 22:27:21][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "d3fbe779-668f-4cfb-af5c-a781d5bb66d6"
+}
+
+[2019-02-20 22:27:22][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"d3fbe779-668f-4cfb-af5c-a781d5bb66d6\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "1a48dd16865823befc957979274fd44f64c9991e"
+}
+
+[2019-02-20 22:27:22][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 22:27:22][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "d3fbe779-668f-4cfb-af5c-a781d5bb66d6"
+}
+
+[2019-02-20 22:27:22][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79",
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+        "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+        "35069c79-db7e-4240-886e-6aaff83d7d6a",
+        "d3fbe779-668f-4cfb-af5c-a781d5bb66d6"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 32,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-20 22:27:22][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"8e93add1-1e93-48b9-809d-071e4cdb57aa\",\"35069c79-db7e-4240-886e-6aaff83d7d6a\",\"d3fbe779-668f-4cfb-af5c-a781d5bb66d6\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":32,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "8f7278ffccef068e11ae3dd244fc4d89ca8eaf0d"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "35069c79-db7e-4240-886e-6aaff83d7d6a",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "d3fbe779-668f-4cfb-af5c-a781d5bb66d6",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "4a4342f5-3e39-4233-b21f-bda65021af03"
+            ]
+        }
+    },
+    "[耗时]": "554ms"
+}
+
+[2019-02-20 22:27:30][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"d3fbe779-668f-4cfb-af5c-a781d5bb66d6\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"word\\\":\\\"大家好啊\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "63328418711092f48a1916a8d949aed6956c04fc"
+}
+
+[2019-02-20 22:27:30][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 22:27:30][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "d3fbe779-668f-4cfb-af5c-a781d5bb66d6",
+    "type": "speak",
+    "content": {
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-20 22:27:30][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79",
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+        "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+        "35069c79-db7e-4240-886e-6aaff83d7d6a",
+        "d3fbe779-668f-4cfb-af5c-a781d5bb66d6"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-20 22:27:30][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"8e93add1-1e93-48b9-809d-071e4cdb57aa\",\"35069c79-db7e-4240-886e-6aaff83d7d6a\",\"d3fbe779-668f-4cfb-af5c-a781d5bb66d6\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"大家好啊\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "fd4584333d8851b63cf34aaaad9ff9af8843e680"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "d3fbe779-668f-4cfb-af5c-a781d5bb66d6",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "35069c79-db7e-4240-886e-6aaff83d7d6a",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489"
+            ]
+        }
+    },
+    "[耗时]": "287ms"
+}
+
+[2019-02-20 22:27:46][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "1a5b8c3364d8d6075f9fc4f2495f060a1e3f8aa6"
+    },
+    "[耗时]": "187ms"
+}
+
+[2019-02-20 22:27:46][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4"
+}
+
+[2019-02-20 22:27:46][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "0a664fc32b394245a0c9ad4111ac1c564a5feb28"
+}
+
+[2019-02-20 22:27:46][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 22:27:46][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4"
+}
+
+[2019-02-20 22:27:46][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79",
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+        "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+        "35069c79-db7e-4240-886e-6aaff83d7d6a",
+        "d3fbe779-668f-4cfb-af5c-a781d5bb66d6",
+        "c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 33,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-20 22:27:46][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"8e93add1-1e93-48b9-809d-071e4cdb57aa\",\"35069c79-db7e-4240-886e-6aaff83d7d6a\",\"d3fbe779-668f-4cfb-af5c-a781d5bb66d6\",\"c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":33,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "e105344525637a65596531456a1fc12c22434e4c"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "35069c79-db7e-4240-886e-6aaff83d7d6a",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "d3fbe779-668f-4cfb-af5c-a781d5bb66d6",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194"
+            ]
+        }
+    },
+    "[耗时]": "348ms"
+}
+
+[2019-02-20 22:29:20][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"word\\\":\\\"大家好啊\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "d234b7a5ea9ddd650846d7274ace2a0dfd46e23d"
+}
+
+[2019-02-20 22:29:20][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 22:29:20][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4",
+    "type": "speak",
+    "content": {
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-20 22:29:20][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79",
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+        "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+        "35069c79-db7e-4240-886e-6aaff83d7d6a",
+        "d3fbe779-668f-4cfb-af5c-a781d5bb66d6",
+        "c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-20 22:29:21][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"8e93add1-1e93-48b9-809d-071e4cdb57aa\",\"35069c79-db7e-4240-886e-6aaff83d7d6a\",\"d3fbe779-668f-4cfb-af5c-a781d5bb66d6\",\"c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"大家好啊\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "184be232625628dbeb96b6561cb3c1b679810b20"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194",
+                "35069c79-db7e-4240-886e-6aaff83d7d6a",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+                "d3fbe779-668f-4cfb-af5c-a781d5bb66d6",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36"
+            ]
+        }
+    },
+    "[耗时]": "368ms"
+}
+
+[2019-02-20 22:50:37][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"d21548f9-ceeb-44ad-9ef0-63e9d85bdad2\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=d21548f9-ceeb-44ad-9ef0-63e9d85bdad2&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "e5204882db6f1577de5639ca6edb5cdab82242dd"
+    },
+    "[耗时]": "437ms"
+}
+
+[2019-02-20 22:50:37][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "d21548f9-ceeb-44ad-9ef0-63e9d85bdad2"
+}
+
+[2019-02-20 22:50:38][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"d21548f9-ceeb-44ad-9ef0-63e9d85bdad2\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "8b40b3bceb069b023818f2f789c7262b40e434f5"
+}
+
+[2019-02-20 22:50:38][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-20 22:50:38][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "d21548f9-ceeb-44ad-9ef0-63e9d85bdad2"
+}
+
+[2019-02-20 22:50:38][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+        "4f7b81fa-694b-44df-afc4-0e0fde084194",
+        "beed2e9d-a1ad-4186-aae4-8a48a178970b",
+        "4a4342f5-3e39-4233-b21f-bda65021af03",
+        "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+        "06333113-41ba-403d-9fdd-c12bd7e11c79",
+        "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+        "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+        "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+        "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+        "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+        "b743f215-7576-4149-a1b3-6b5b8c649119",
+        "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+        "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+        "217d4496-ae79-416b-bde7-03d486d61d1e",
+        "50e50397-db69-4e9f-a119-99ec1a6032dd",
+        "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+        "61170565-3d78-4548-a757-3fd58168b271",
+        "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+        "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+        "447eb05a-7fb2-47a8-8690-70810caa2782",
+        "ff8a863d-a25c-4e27-a022-91281044f297",
+        "c5d3a1cf-501c-41d1-86c1-224817038d36",
+        "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+        "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+        "d5645a24-8e87-4f49-beaa-036c902dd097",
+        "0a70ef38-8fe7-4139-8ed7-480639d01849",
+        "6795cadd-cd1e-45de-9357-fbea816e6c79",
+        "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+        "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+        "35069c79-db7e-4240-886e-6aaff83d7d6a",
+        "d3fbe779-668f-4cfb-af5c-a781d5bb66d6",
+        "c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4",
+        "d21548f9-ceeb-44ad-9ef0-63e9d85bdad2"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 34,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1550332447,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-20 22:50:38][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7\",\"4f7b81fa-694b-44df-afc4-0e0fde084194\",\"beed2e9d-a1ad-4186-aae4-8a48a178970b\",\"4a4342f5-3e39-4233-b21f-bda65021af03\",\"3b18cc8b-1f94-44a8-9108-87caddfcb9bf\",\"06333113-41ba-403d-9fdd-c12bd7e11c79\",\"52112acb-2cd0-47a5-a25a-2ee9b3e69e55\",\"4b16f4f2-fe66-439c-8f2e-691689f4708e\",\"0b1ba156-6e62-4aae-9be4-c554002ba30a\",\"b2e21758-9c81-467a-ad72-061fb7d8d88d\",\"ed6ad6e2-57b0-4f66-bf61-13d55caf0372\",\"b743f215-7576-4149-a1b3-6b5b8c649119\",\"8ac765c2-4f9a-4c5f-81ab-f38d4a375489\",\"0bd04db0-c7b2-4468-9eb3-bb5681400b5f\",\"217d4496-ae79-416b-bde7-03d486d61d1e\",\"50e50397-db69-4e9f-a119-99ec1a6032dd\",\"1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a\",\"61170565-3d78-4548-a757-3fd58168b271\",\"6b6000e0-b3b7-47da-b7cb-7b0092936019\",\"6e57ae4e-d1cc-4186-a796-b8d9372e4691\",\"447eb05a-7fb2-47a8-8690-70810caa2782\",\"ff8a863d-a25c-4e27-a022-91281044f297\",\"c5d3a1cf-501c-41d1-86c1-224817038d36\",\"9725027f-1cff-41be-ad65-4120ea4aa0ee\",\"adf4f46b-c04d-4f94-8d32-ba38a98ced29\",\"d5645a24-8e87-4f49-beaa-036c902dd097\",\"0a70ef38-8fe7-4139-8ed7-480639d01849\",\"6795cadd-cd1e-45de-9357-fbea816e6c79\",\"0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10\",\"8e93add1-1e93-48b9-809d-071e4cdb57aa\",\"35069c79-db7e-4240-886e-6aaff83d7d6a\",\"d3fbe779-668f-4cfb-af5c-a781d5bb66d6\",\"c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4\",\"d21548f9-ceeb-44ad-9ef0-63e9d85bdad2\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":34,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1550332447,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "32596e659b0bf8b7c427fd3173a04af04a8c9318"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "b2e21758-9c81-467a-ad72-061fb7d8d88d",
+                "adf4f46b-c04d-4f94-8d32-ba38a98ced29",
+                "0f3cc6d3-3dc7-40ac-9db9-fcdf3f989d10",
+                "06333113-41ba-403d-9fdd-c12bd7e11c79",
+                "ed6ad6e2-57b0-4f66-bf61-13d55caf0372",
+                "6b6000e0-b3b7-47da-b7cb-7b0092936019",
+                "52112acb-2cd0-47a5-a25a-2ee9b3e69e55",
+                "4a4342f5-3e39-4233-b21f-bda65021af03",
+                "217d4496-ae79-416b-bde7-03d486d61d1e",
+                "8ac765c2-4f9a-4c5f-81ab-f38d4a375489",
+                "50e50397-db69-4e9f-a119-99ec1a6032dd",
+                "d5645a24-8e87-4f49-beaa-036c902dd097",
+                "6795cadd-cd1e-45de-9357-fbea816e6c79",
+                "447eb05a-7fb2-47a8-8690-70810caa2782",
+                "35069c79-db7e-4240-886e-6aaff83d7d6a",
+                "5f26c526-57fa-4ae3-a5d1-b6ac9f0221c7",
+                "61170565-3d78-4548-a757-3fd58168b271",
+                "ff8a863d-a25c-4e27-a022-91281044f297",
+                "c5d3a1cf-501c-41d1-86c1-224817038d36",
+                "8e93add1-1e93-48b9-809d-071e4cdb57aa",
+                "9725027f-1cff-41be-ad65-4120ea4aa0ee",
+                "b743f215-7576-4149-a1b3-6b5b8c649119",
+                "0bd04db0-c7b2-4468-9eb3-bb5681400b5f",
+                "1c4e2dbf-b7a8-4ed9-bf3a-1315067c4e3a",
+                "d3fbe779-668f-4cfb-af5c-a781d5bb66d6",
+                "0a70ef38-8fe7-4139-8ed7-480639d01849",
+                "c8534e01-fc4c-49d0-9b2d-03c1bdcaf9f4",
+                "0b1ba156-6e62-4aae-9be4-c554002ba30a",
+                "3b18cc8b-1f94-44a8-9108-87caddfcb9bf",
+                "4f7b81fa-694b-44df-afc4-0e0fde084194",
+                "4b16f4f2-fe66-439c-8f2e-691689f4708e",
+                "6e57ae4e-d1cc-4186-a796-b8d9372e4691",
+                "beed2e9d-a1ad-4186-aae4-8a48a178970b"
+            ]
+        }
+    },
+    "[耗时]": "354ms"
+}
+
