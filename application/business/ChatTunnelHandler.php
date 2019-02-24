@@ -74,6 +74,13 @@ class ChatTunnelHandler implements ITunnelHandler {
      */
     public function onMessage($tunnelId, $type, $content) {
         switch ($type) {
+        case 'order':
+            $data = self::loadData();
+            self::broadcast('order', array(
+                'who' => $data['userMap'][$tunnelId],
+                'order_id' => $content['order_id'],
+            ));
+            break;
         case 'speak':
             $data = self::loadData();
             if (isset($data['userMap'][$tunnelId])) {
@@ -82,10 +89,6 @@ class ChatTunnelHandler implements ITunnelHandler {
                     'word' => $content['word'],
                 ));
             } else {
-                self::broadcast('speak', array(
-                    'who' => 'sss',
-                    'word' => 'error',
-                ));
                 debug('onmessage中不能在chat中获取该信道', $tunnelId);
                 self::closeTunnel($tunnelId);
             }

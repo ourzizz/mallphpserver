@@ -2,10 +2,10 @@
 /*本接口为商家提供服务，商家接单、退款等功能均在此
  *
  * 数据库的seller_act
- * @wait_pick 待接单
- * @assemble  配单中
- * @delivery  投递中
- * @signed    客户签收
+ * @WAIT_PICK 待接单
+ * @ASSEMBLE  配单中
+ * @DELIVERY  投递中
+ * @SIGNED    客户签收
 * */
 use \QCloud_WeApp_SDK\Auth\LoginService as LoginService;
 use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
@@ -40,7 +40,7 @@ class Seller extends CI_Controller {
      */
     public function get_wait_pick_orders(){
         if($this->checkLogin()){
-            $rows = DB::select('user_order',['*'],"seller_act='wait_pick'");
+            $rows = DB::select('user_order',['*'],"seller_act='WAIT_PICK'");
             $orders = [];
             foreach($rows as $order){
                 array_push($orders,Order::get_order_info($order->order_id));
@@ -49,17 +49,34 @@ class Seller extends CI_Controller {
         }
     }
 
-    public function pick_orders($picker_id,$order_id){
-        if(self::checkLogin()){
-            $rows = DB::update('user_order',['picker_id'=>$picker_id,'seller_act'=>'assemble'],['order_id'=>$order_id],'and');
-        }
-    }
-
     /**
      *取出还没有发货的单子
      * @example 小程序前端给过来的order_info的json格式{'open_id':'xx','goods_list':[{'goods_id':1,'count':1}...],'total_fee':3300,'address_id':1}
      */
-    public function get_wait_dilevery_orders(){
+    public function get_delivery_orders(){
+        if($this->checkLogin()){
+            $rows = DB::select('user_order',['*'],"seller_act='DELIVERY'");
+            $orders = [];
+            foreach($rows as $order){
+                array_push($orders,Order::get_order_info($order->order_id));
+            }
+            $this->json($orders);
+        }
+    }
+
+    public function pick_orders(){
+        if(self::checkLogin()){
+            $picker_id =  $_POST['open_id'];
+            $order_id =  $_POST['order_id'];
+            $rows = DB::update('user_order',['picker_id'=>$picker_id,'seller_act'=>'ASSEMBLE'],['order_id'=>$order_id],'and');
+        }
+    }
+
+    public function assemble_finish(){
+        if(self::checkLogin()){
+            $order_id =  $_POST['order_id'];
+            $rows = DB::update('user_order',['seller_act'=>'DELIVERY'],['order_id'=>$order_id],'and');
+        }
     }
 
     public function dilevery_orders(){

@@ -5,11 +5,12 @@ use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
 use \QCloud_WeApp_SDK\Tunnel\ITunnelHandler as ITunnelHandler;
 use \QCloud_WeApp_SDK\Tunnel\TunnelService as TunnelService;
 
+require APPPATH.'business/Order.php';
 /**
  * 实现 WebSocket 信道处理器
  * 本示例配合客户端 Demo 实现一个简单的聊天室功能
  */
-class ChatTunnelHandler implements ITunnelHandler {
+class OrderTunnelHandler implements ITunnelHandler {
     private $userinfo = NULL;
 
     public function __construct ($userinfo) {
@@ -73,31 +74,24 @@ class ChatTunnelHandler implements ITunnelHandler {
      * user->tunnel->server->broadcast
      */
     public function onMessage($tunnelId, $type, $content) {
-        //$data=[tunnelId,username,telphone]
-        $data = self::loadData();
         switch ($type) {
-        case 'speak':
-            if (isset($data[$tunnelId])) {
-                self::broadcast('speak', array(
-                    'who' => $data['userMap'][$tunnelId],
-                    'word' => $content['word'],
-                ));
-            } else {
-                self::broadcast('speak', array(
-                    'who' => 'sss',
-                    'word' => 'error',
-                ));
-                debug('onmessage中不能在chat中获取该信道', $tunnelId);
-                self::closeTunnel($tunnelId);
-            }
+        case 'order':
+            $data = self::loadData();
+            $order_info = Order::get_order_info($content['order_id']);
+            self::broadcast('order', array(
+                'who' => $data['userMap'][$tunnelId],
+                'order_info' => $order_info,
+            ));
             break;
-        case 'wait_pick':
-            if (isset($data[$tunnelId])) {
-                self::broadcast('wait_pick', array(
+        case 'speak':
+            $data = self::loadData();
+            if (isset($data['userMap'][$tunnelId])) {
+                self::broadcast('speak', array(
                     'who' => $data['userMap'][$tunnelId],
                     'word' => $content['word'],
                 ));
             } else {
+                debug('onmessage中不能在chat中获取该信道', $tunnelId);
                 self::closeTunnel($tunnelId);
             }
             break;
@@ -143,16 +137,23 @@ class ChatTunnelHandler implements ITunnelHandler {
      */
     private static function broadcast($type, $content) {
         //获取所有在线的tunnelId
+        $data = self::loadData();
+
         $rows = DB::select("seller",['tunnelId'],['tunnelStatus'=>'on']);
         $connectedTunnelIds=array();
         foreach($rows as $tid){
             array_push($connectedTunnelIds,$tid->tunnelId);
         }
+
+        debug('myids', $connectedTunnelIds);
+        debug('originids', $data['connectedTunnelIds']);
+        //$result = TunnelService::broadcast($connectedTunnelIds, $type, $content);
         $result = TunnelService::broadcast($data['connectedTunnelIds'], $type, $content);
 
         if ($result['code'] === 0 && !empty($result['data']['invalidTunnelIds'])) {
             $invalidTunnelIds = $result['data']['invalidTunnelIds'];
             debug('broadcast检测到无效的信道 IDs =>', $invalidTunnelIds);
+
             // 从`userMap`和`connectedTunnelIds`将无效的信道记录移除
             foreach ($invalidTunnelIds as $tunnelId) {
                 debug('152关闭信道', $tunnelId);//第一次广播未错
@@ -200,8 +201,22 @@ class ChatTunnelHandler implements ITunnelHandler {
      * 保存 当前已连接的 WebSocket 信道ID列表 => connectedTunnelIds
      * 在实际的业务中，应该使用数据库进行存储跟踪，这里作为示例只是演示其作用
      */
-    private static function saveData($tunnelId,$status,) {
-        DB::update('seller',['tunnelId'=>$tunnelId,'tunnelStatus'=>'on'],['open_id'=>$this->userinfo['openId']]);
+    private static function saveData($data) {
+        $filepath = self::getDataFilePath();
+
+        if (version_compare(PHP_VERSION, '5.4.0') >= 0) {
+            $content = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        } else {
+            $content = json_encode($data);
+        }
+
+        file_put_contents($filepath, $content, LOCK_EX);
     }
 
+    /**
+     * 聊天室存取 JSON 数据对应的文件路径
+     */
+    private static function getDataFilePath() {
+        return (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'chat_data.json');
+    }
 }
