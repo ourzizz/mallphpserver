@@ -21,13 +21,22 @@ class Login extends CI_Controller {
             ]);
         }
     }
-    public function is_adm($open_id) {
-        $rows = DB::select('seller',['*'],['open_id'=>$open_id]);
-        if(count($rows) === 0){
-            echo false;
+
+    /*
+     *是否显示商家入口
+     *这个函数后期必须做调整，多做几道安防
+     *现在的目标是先跑起来
+     * */
+    public function is_adm($open_id){
+        //$open_id = $_POST['open_id'];
+        $row = DB::row('seller',['*'],['open_id' => $open_id]);
+        $is_adm = ['is_adm'=>'false'];
+        if(isset($row)){
+            $is_adm['is_adm'] = "true";
         }else{
-            echo true;
+            $is_adm['is_adm'] = "false";
         }
+        $this->json($is_adm);
     }
 }
 

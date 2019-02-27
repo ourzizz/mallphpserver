@@ -3,6 +3,10 @@
  * bug mysql文件的select被改写，导致很多麻烦,改回去。为信道铺垫
  * 涉及到select的方法调用的语句基本都要重新做
 * */
+use \QCloud_WeApp_SDK\Tunnel\ITunnelHandler as ITunnelHandler;
+use \QCloud_WeApp_SDK\Tunnel\TunnelService as TunnelService;
+use QCloud_WeApp_SDK\Constants as Constants;
+use QCloud_WeApp_SDK\Auth\LoginService as LoginService;
 use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
 use \QCloud_WeApp_SDK\Conf as Conf;
 use \QCloud_WeApp_SDK\Helper\Util as Util;
@@ -72,7 +76,7 @@ class Order extends CI_Controller {
      *取出待签收订单的信息
      */
     public function get_wait_sign_order_list($open_id){
-        $conditions = "pay_status='SUCCESS' AND logistics_status is null";
+        $conditions = "pay_status='SUCCESS' AND logistics_status is NULL AND refund_reason is NULL";
         $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
         $wait_pay_orders = [];
         foreach($row as $order){
@@ -106,6 +110,19 @@ class Order extends CI_Controller {
             array_push($wait_pay_orders,$this->get_order_info($order->order_id));
         }
         $this->json($wait_pay_orders);
+    }
+
+    /*
+     *取出用户自己申请退款订单的信息
+     */
+    public function get_refund_list($open_id) {
+        $conditions = "refund_reason IS NOT NULL AND open_id = '$open_id'";
+        $row = DB::select('user_order',['order_id'],$conditions);
+        $refund_list = [];
+        foreach($row as $order){
+            array_push($refund_list,$this->get_order_info($order->order_id));
+        }
+        $this->json($refund_list);
     }
 
     /*
@@ -143,12 +160,87 @@ class Order extends CI_Controller {
     }
 
     public function pay_success($order_id){
-        $row = DB::select('user_order',['total_fee','address_id'],"order_id='$order_id'");
-        $order_info['total_fee'] = $row[0]->total_fee;
-        $address_id = $row[0]->address_id;
-        $row = DB::select('user_address',['name','telphone','province','city','county','detail'],"address_id='$address_id'");
-        $order_info['address'] = $row[0];
-        $this->json($order_info);
+        $res = $this->get_order_info($order_id);
+        $this->json($res);
+    }
+
+    public function get_seller_telphone($order_id){
+        $seller_id = (DB::row('user_order',['picker_id'],['order_id'=>$order_id]))->picker_id;
+        $telphone =  DB::row('seller',['telphone'],['open_id'=>$seller_id]);
+        if(!isset($telphone)) {
+            $telphone =  DB::row('seller',['telphone'],['role'=>'root']);
+        }
+        $this->json($telphone);
+    }
+
+    public function request_refund(){
+        //if($this->checkLogin()){
+        $open_id = $_POST['open_id'];
+        $order_id = $_POST['order_id'];
+        $reason = $_POST['reason'];
+        if(isset($open_id) && isset($order_id) && isset($reason)){
+            $conditions = "open_id='$open_id' AND order_id='$order_id' ";
+            DB::update("user_order",['refund_reason'=>$reason,'refund_status'=>'W'],$conditions);
+            echo "true";
+            //$this->refund_broadcast($order_id);
+            $this->refund_broadcast('refund',['order_id'=>$order_id]);
+        }else{
+            echo "false";
+        }
+        //}
+    }
+
+
+    /**
+     *这个部分涉及到比较敏感的东西，订单和钱
+     *还是需要加入身份验证的方法，这个地方先预留接口
+     */
+    private function checkLogin(){
+            $result = LoginService::check();
+            if ($result['loginState'] === Constants::S_AUTH) {
+                return true;
+            } else {
+                $this->json([
+                    'code' => -1,
+                    'data' => []
+                ]);
+                return false;
+            }
+    }
+
+    public function refund_broadcast($order_id){
+        $rows = DB::select("seller",['tunnelId'],['tunnelStatus'=>'on']);
+        $connectedTunnelIds=array();
+        foreach($rows as $tid){
+            array_push($connectedTunnelIds,$tid->tunnelId);
+        }
+        $type = 'refund';
+        $content = ['order_id'=>$order_id];
+        $result = TunnelService::broadcast($connectedTunnelIds, $type, $content);
+    }
+
+    public function broadcast($type,$content){
+        //$order_id = '1550849044tpBOa';
+        $rows = DB::select("seller",['tunnelId'],['tunnelStatus'=>'on']);
+        $connectedTunnelIds=array();
+        foreach($rows as $tid){
+            array_push($connectedTunnelIds,$tid->tunnelId);
+        }
+        //$type = 'refund';
+        //$content = ['order_id'=>$order_id];
+        $result = TunnelService::broadcast($connectedTunnelIds, $type, $content);
+    }
+
+    public function test(){
+        $order_id = '1550849044tpBOa';
+        $rows = DB::select("seller",['tunnelId'],['tunnelStatus'=>'on']);
+        $connectedTunnelIds=array();
+        foreach($rows as $tid){
+            array_push($connectedTunnelIds,$tid->tunnelId);
+        }
+        $type = 'refund';
+        $content = ['order_id'=>$order_id];
+        $result = TunnelService::broadcast($connectedTunnelIds, $type, $content);
     }
 }
 

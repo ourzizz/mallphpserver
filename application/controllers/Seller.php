@@ -1,11 +1,29 @@
 <?php
 /*本接口为商家提供服务，商家接单、退款等功能均在此
  *
- * 数据库的seller_act
+ * 流程说明 用户下单   ->picker捡单配单中 ->快递流程  ->送达签收
+ * 商家操作:WAIT_PICK       ASSEMBLE        DELIVERY     SIGNED
  * @WAIT_PICK 待接单
  * @ASSEMBLE  配单中
  * @DELIVERY  投递中
+ * @CANCLE 投递中
  * @SIGNED    客户签收
+ *
+ * 流程说明 申请退款      
+ * 商家操作:refund_reason:'',refund_status:'W'  写入
+ *  ->广播各个角色                 ->快递流程拦截
+ *
+ *  前端快递获取送货列表的时候直接给出的是 DELIVERY 状态的全部单子
+ *  前端快递小哥页面根据refund_status判断,
+ *          1如果refund_status 不为空,页面给出警告不要送出
+ *          2没有问题就正常派单
+ *  小哥点击取消送单后台将商家act置为CANCLE,
+ *  设置为CANCLE的单子表示小哥已经取消送货，也不会再出现在送单队列中
+ *
+ * 一定要避免已送达 已退款 refund_status=F seller_act=signed
+ * 商家退款后 
+ * 将seller_act 置为CANCLE
+ * 退款refund_status W等待退款，F完成退款，R拒绝退款
 * */
 use \QCloud_WeApp_SDK\Auth\LoginService as LoginService;
 use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
@@ -13,10 +31,11 @@ use \QCloud_WeApp_SDK\Conf as Conf;
 use \QCloud_WeApp_SDK\Helper\Util as Util;
 use QCloud_WeApp_SDK\Constants as Constants;
 use \QCloud_WeApp_SDK\WxPay  as Pay;
-
+use \QCloud_WeApp_SDK\Tunnel\TunnelService as TunnelService;
 require APPPATH.'business/Order.php';
-class Seller extends CI_Controller {
+//require APPPATH.'business/WeiXinRefund.php';
 
+class Seller extends CI_Controller { 
     /**
      *这个部分涉及到比较敏感的东西，订单和钱
      *还是需要加入身份验证的方法，这个地方先预留接口
@@ -40,7 +59,25 @@ class Seller extends CI_Controller {
      */
     public function get_wait_pick_orders(){
         if($this->checkLogin()){
-            $rows = DB::select('user_order',['*'],"seller_act='WAIT_PICK'");
+            $conditions = "seller_act='WAIT_PICK' AND refund_reason is NULL";
+            $rows = DB::select('user_order',['*'],$conditions);
+            $orders = [];
+            foreach($rows as $order){
+                array_push($orders,Order::get_order_info($order->order_id));
+            }
+            $this->json($orders);
+        }
+    }
+
+
+    /**
+     *取出还没有发货的单子
+     * @example 小程序前端给过来的order_info的json格式{'open_id':'xx','goods_list':[{'goods_id':1,'count':1}...],'total_fee':3300,'address_id':1}
+     */
+    public function get_wait_refund_orders(){
+        if($this->checkLogin()){
+            $conditions = "refund_reason IS NOT NULL AND refund_status='W' ";
+            $rows = DB::select('user_order',['*'],$conditions);
             $orders = [];
             foreach($rows as $order){
                 array_push($orders,Order::get_order_info($order->order_id));
@@ -55,12 +92,31 @@ class Seller extends CI_Controller {
      */
     public function get_delivery_orders(){
         if($this->checkLogin()){
-            $rows = DB::select('user_order',['*'],"seller_act='DELIVERY'");
+            $conditions = "seller_act='DELIVERY'";
+            $rows = DB::select('user_order',['*'],$conditions);
             $orders = [];
             foreach($rows as $order){
                 array_push($orders,Order::get_order_info($order->order_id));
             }
             $this->json($orders);
+        }
+    }
+
+    /*
+     *快递小哥点击取消送货，老板可以放心了
+     * */
+    public function cancle_delivery($order_id){
+        if($this->checkLogin()){
+            $rows = DB::update('user_order',['seller_act'=>'CANCLE'],['order_id'=>$order_id]);
+        }
+    }
+
+    /*
+     *快递小哥点击已送到,必须广播，避免此时退款，造成财物两空的局面
+     * */
+    public function user_signed($order_id){
+        if($this->checkLogin()){
+            $rows = DB::update('user_order',['seller_act'=>'SIGNED'],['order_id'=>$order_id]);
         }
     }
 
@@ -83,15 +139,11 @@ class Seller extends CI_Controller {
     }
 
     /**
-     *生成新订单需要对信道进行广播
-     */
-    public function order_broadcast(){
-    }
-
-    /**
      *同意退款
      */
-    public function agree_refund(){
-    }
-
+    //public function agree_refund($order_id){
+        //if(self::checkLogin()){
+            //$refund = new WeixinRefund()
+        //}
+    //}
 }
