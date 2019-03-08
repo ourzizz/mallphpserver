@@ -43,6 +43,10 @@ class OrderTunnelHandler implements ITunnelHandler {
      * 此时通知所有其它在线的用户当前总人数以及刚加入的用户是谁
      */
     public function onConnect($tunnelId) {
+            self::broadcast('people', array(
+                'total' => 1,
+                'enter' => 'chenhai',
+            ));
     }
 
     /**
@@ -52,6 +56,7 @@ class OrderTunnelHandler implements ITunnelHandler {
      * 我们把这个发言的信息广播到所有在线的 WebSocket 信道上
      * user->tunnel->server->broadcast
      */
+
     public function onMessage($tunnelId, $type, $content) {
         switch ($type) {
         case 'order'://从订单支付回调口，进入到这个流程
@@ -84,7 +89,7 @@ class OrderTunnelHandler implements ITunnelHandler {
      * 会调用该方法，此时可以进行清理及通知操作
      */
     public function onClose($tunnelId) {
-        DB::update('seller',['tunnelStatus'=>'off'],['tunnelId'=>$tunnelId]);
+        //DB::update('seller',['tunnelStatus'=>'off'],['tunnelId'=>$tunnelId]);
         //if (count($data['connectedTunnelIds']) > 0) {
             //self::broadcast('people', array(
                 //'total' => count($data['connectedTunnelIds']),

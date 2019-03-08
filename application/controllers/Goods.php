@@ -1,5 +1,6 @@
 <?PHP
 //本文件为前端提供商品的信息
+use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Goods extends CI_Controller {
     public function __construct() {

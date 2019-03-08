@@ -1,0 +1,162 @@
+[2019-03-06 10:58:26][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"c51354b0-5c4e-4478-a701-a934bd806d58\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=c51354b0-5c4e-4478-a701-a934bd806d58&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "4e992a46e04b5968f9d57c77c779cf91208d77e9"
+    },
+    "[耗时]": "445ms"
+}
+
+[2019-03-06 10:58:26][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "c51354b0-5c4e-4478-a701-a934bd806d58"
+}
+
+[2019-03-06 10:58:26][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"c51354b0-5c4e-4478-a701-a934bd806d58\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "185e7b444462b84489a73af0e760c350653270ca"
+}
+
+[2019-03-06 10:58:26][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-03-06 10:58:26][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "c51354b0-5c4e-4478-a701-a934bd806d58"
+}
+
+[2019-03-06 10:58:26][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "c51354b0-5c4e-4478-a701-a934bd806d58",
+        "30a34abe-61ff-4032-99d0-ee2bf902220e"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 1,
+        "enter": "chenhai"
+    }
+}
+
+[2019-03-06 10:58:26][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"c51354b0-5c4e-4478-a701-a934bd806d58\",\"30a34abe-61ff-4032-99d0-ee2bf902220e\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":1,\\\"enter\\\":\\\"chenhai\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "3bcc7088976e5dea202851e3dd87ef027eb45e99"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "30a34abe-61ff-4032-99d0-ee2bf902220e"
+            ]
+        }
+    },
+    "[耗时]": "213ms"
+}
+
+[2019-03-06 10:58:42][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"c51354b0-5c4e-4478-a701-a934bd806d58\",\"type\":\"close\"}",
+    "dataEncode": "json",
+    "signature": "aaf59ceced9113b58c98794adb5205059fb1894b"
+}
+
+[2019-03-06 10:58:42][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-03-06 10:58:42][DEBUG] ITunnelHandler [onClose] => {
+    "tunnelId": "c51354b0-5c4e-4478-a701-a934bd806d58"
+}
+
+[2019-03-06 14:08:19][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"92696063-b168-4a5d-b406-25b1abb8dc6e\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=92696063-b168-4a5d-b406-25b1abb8dc6e&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "a804d8fcf0d77f13f10bf0c50cc206ed62ad73ad"
+    },
+    "[耗时]": "279ms"
+}
+
+[2019-03-06 14:08:19][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "92696063-b168-4a5d-b406-25b1abb8dc6e"
+}
+
+[2019-03-06 14:08:20][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"92696063-b168-4a5d-b406-25b1abb8dc6e\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "62b0f1ef5a93fc9f82d5b65198dc50e350d07eff"
+}
+
+[2019-03-06 14:08:20][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-03-06 14:08:20][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "92696063-b168-4a5d-b406-25b1abb8dc6e"
+}
+
+[2019-03-06 14:08:20][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "c51354b0-5c4e-4478-a701-a934bd806d58",
+        "92696063-b168-4a5d-b406-25b1abb8dc6e"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 1,
+        "enter": "chenhai"
+    }
+}
+
+[2019-03-06 14:08:20][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"c51354b0-5c4e-4478-a701-a934bd806d58\",\"92696063-b168-4a5d-b406-25b1abb8dc6e\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":1,\\\"enter\\\":\\\"chenhai\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "b19239464239f936ac329808a0a0dc8ecd74e5b2"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "c51354b0-5c4e-4478-a701-a934bd806d58"
+            ]
+        }
+    },
+    "[耗时]": "189ms"
+}
+
+[2019-03-06 14:08:24][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"92696063-b168-4a5d-b406-25b1abb8dc6e\",\"type\":\"close\"}",
+    "dataEncode": "json",
+    "signature": "722d061ec1748e18a7787c42630e85ee9aedd627"
+}
+
+[2019-03-06 14:08:24][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-03-06 14:08:24][DEBUG] ITunnelHandler [onClose] => {
+    "tunnelId": "92696063-b168-4a5d-b406-25b1abb8dc6e"
+}
+

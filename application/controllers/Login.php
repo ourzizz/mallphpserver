@@ -31,12 +31,12 @@ class Login extends CI_Controller {
         //$open_id = $_POST['open_id'];
         $row = DB::row('seller',['*'],['open_id' => $open_id]);
         $is_adm = ['is_adm'=>'false'];
-        if(isset($row)){
-            $is_adm['is_adm'] = "true";
+        if(isset($row->role)){
+            $row->is_adm = "true";
         }else{
-            $is_adm['is_adm'] = "false";
+            $row = ['is_adm'=>'false'];
         }
-        $this->json($is_adm);
+        $this->json($row);
     }
 }
 

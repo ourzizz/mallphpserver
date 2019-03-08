@@ -24,10 +24,13 @@ class Conf {
     private static $AppId = '';
     
     // 微信小程序 AppSecret
+    // 坑:自己的配置项，放到sdk里面，首先要在sdk的conf.php中以下面方式声明
+    //    首字母需要大写，然后在项目根目录中写入对应的选项的值才行
     private static $AppSecret = '';
     private static $MchId = '';
     private static $Key = '';
-    
+    private static $CertPath = '';
+    private static $KeyPath = '';
     // 微信小程序 AppSecret
     private static $UseQcloudLogin = true;
     
@@ -80,7 +83,6 @@ class Conf {
 
     public static function __callStatic($name, $arguemnts) {
         $class = get_class();
-
         if (strpos($name, 'get') === 0) {
             $key = preg_replace('/^get/', '', $name);
 

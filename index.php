@@ -5,7 +5,7 @@
  */
 date_default_timezone_set('Asia/Shanghai');
 //debug
-define(‘ENVIRONMENT’, ‘development’);
+//define(‘ENVIRONMENT’, ‘development’);
 /**
  * CodeIgniter
  *
