@@ -1,0 +1,2277 @@
+[2019-02-27 23:32:54][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"166aebee-dfeb-45d7-ae24-566e4f2bfc39\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1549117997flkQN\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "71cf20b4dd37263cadbe566bada3a814fc9efd9d"
+}
+
+[2019-02-27 23:32:54][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:32:54][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "166aebee-dfeb-45d7-ae24-566e4f2bfc39",
+    "type": "order",
+    "content": {
+        "order_id": "1549117997flkQN"
+    }
+}
+
+[2019-02-27 23:32:54][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "7a622381-6851-4d4c-a4b5-96a8090a1b1d",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "order",
+    "messageContent": {
+        "who": "system",
+        "order_info": {
+            "order": {
+                "order_id": "1549117997flkQN",
+                "open_id": "opexV4zhvLlfWOeMuUifxymsoCqA",
+                "address_id": "33",
+                "timeStamp": "1549117997",
+                "order_date": "",
+                "pay_status": "SUCCESS",
+                "logistics_status": null,
+                "seller_act": "SIGNED",
+                "total_fee": "0.1",
+                "user_words": "",
+                "nonceStr": "pq4x05ajfxkccwxi3hojkqt9cdhuwjjp",
+                "paySign": "3A792336B48610E84DD3FC695660A50C",
+                "package": "",
+                "picker_id": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+                "postman_id": "",
+                "refund_reason": null,
+                "refund_status": null
+            },
+            "address": {
+                "address_id": "33",
+                "open_id": "opexV4zhvLlfWOeMuUifxymsoCqA",
+                "province": "贵州省",
+                "city": "毕节市",
+                "county": "七星关区",
+                "detail": "s打发士大夫",
+                "name": "刘强东",
+                "telphone": "13309878909",
+                "default_address": "0"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1549117997flkQN",
+                    "goods_id": "2",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "中公教育2019国家公务员考试用书 历年真题精解试卷 行测 行政职业能力测验 ",
+                    "face_img": "https:\/\/img14.360buyimg.com\/n1\/jfs\/t1\/7867\/10\/6852\/365246\/5be245aeE471248ab\/7c1a99630e064de3.jpg",
+                    "price": "24"
+                },
+                {
+                    "order_id": "1549117997flkQN",
+                    "goods_id": "5",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "中公2019贵州公务员考试用书申论行测教材历年全真模拟公共基础8本贵州省公务员考试用书真题",
+                    "face_img": "https:\/\/img13.360buyimg.com\/n5\/jfs\/t25300\/278\/254091626\/568679\/6142e616\/5b6a7866Nb498a212.png",
+                    "price": "142"
+                }
+            ]
+        }
+    }
+}
+
+[2019-02-27 23:32:54][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"7a622381-6851-4d4c-a4b5-96a8090a1b1d\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"who\\\":\\\"system\\\",\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"open_id\\\":\\\"opexV4zhvLlfWOeMuUifxymsoCqA\\\",\\\"address_id\\\":\\\"33\\\",\\\"timeStamp\\\":\\\"1549117997\\\",\\\"order_date\\\":\\\"\\\",\\\"pay_status\\\":\\\"SUCCESS\\\",\\\"logistics_status\\\":null,\\\"seller_act\\\":\\\"SIGNED\\\",\\\"total_fee\\\":\\\"0.1\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"pq4x05ajfxkccwxi3hojkqt9cdhuwjjp\\\",\\\"paySign\\\":\\\"3A792336B48610E84DD3FC695660A50C\\\",\\\"package\\\":\\\"\\\",\\\"picker_id\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":null,\\\"refund_status\\\":null},\\\"address\\\":{\\\"address_id\\\":\\\"33\\\",\\\"open_id\\\":\\\"opexV4zhvLlfWOeMuUifxymsoCqA\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"毕节市\\\",\\\"county\\\":\\\"七星关区\\\",\\\"detail\\\":\\\"s打发士大夫\\\",\\\"name\\\":\\\"刘强东\\\",\\\"telphone\\\":\\\"13309878909\\\",\\\"default_address\\\":\\\"0\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"goods_id\\\":\\\"2\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"中公教育2019国家公务员考试用书 历年真题精解试卷 行测 行政职业能力测验 \\\",\\\"face_img\\\":\\\"https:\/\/img14.360buyimg.com\/n1\/jfs\/t1\/7867\/10\/6852\/365246\/5be245aeE471248ab\/7c1a99630e064de3.jpg\\\",\\\"price\\\":\\\"24\\\"},{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"goods_id\\\":\\\"5\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"中公2019贵州公务员考试用书申论行测教材历年全真模拟公共基础8本贵州省公务员考试用书真题\\\",\\\"face_img\\\":\\\"https:\/\/img13.360buyimg.com\/n5\/jfs\/t25300\/278\/254091626\/568679\/6142e616\/5b6a7866Nb498a212.png\\\",\\\"price\\\":\\\"142\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "f25f744c5f59d5e03cf8248109628a57ec39349e"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "585025a8-e7ed-4283-9c5d-a173834662c9",
+                "7a622381-6851-4d4c-a4b5-96a8090a1b1d"
+            ]
+        }
+    },
+    "[耗时]": "326ms"
+}
+
+[2019-02-27 23:36:45][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "7a622381-6851-4d4c-a4b5-96a8090a1b1d",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "refund",
+    "messageContent": {
+        "order_id": "refund"
+    }
+}
+
+[2019-02-27 23:36:45][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"7a622381-6851-4d4c-a4b5-96a8090a1b1d\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"refund\\\",\\\"content\\\":{\\\"order_id\\\":\\\"refund\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "3ec11f640789350c04fabcc80b39e35490ccac58"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "7a622381-6851-4d4c-a4b5-96a8090a1b1d",
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "277ms"
+}
+
+[2019-02-27 23:38:03][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"fb8eb482-5ea5-4ca8-86bd-6170c0e59271\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=fb8eb482-5ea5-4ca8-86bd-6170c0e59271&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "9e8c7be92bf3f885ffbebca480745593b92f0db8"
+    },
+    "[耗时]": "288ms"
+}
+
+[2019-02-27 23:38:03][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "fb8eb482-5ea5-4ca8-86bd-6170c0e59271"
+}
+
+[2019-02-27 23:38:03][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"fb8eb482-5ea5-4ca8-86bd-6170c0e59271\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "c8bc78c8d9d010f8bd81ae8ea8b3b481657f43db"
+}
+
+[2019-02-27 23:38:03][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:38:03][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "fb8eb482-5ea5-4ca8-86bd-6170c0e59271"
+}
+
+[2019-02-27 23:38:03][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "166aebee-dfeb-45d7-ae24-566e4f2bfc39",
+        "0ac69c93-4f6b-434b-9e59-11c2aff3a2bd",
+        "5e21d573-3a09-4ab1-bc8e-dc985628059b",
+        "9291ef43-c5c6-445e-9165-67d0930ce877",
+        "cd16c9ab-1c1e-4149-a505-2ecd9ef40b5d",
+        "190b30ae-5133-4d85-8d3c-98ee11673ce8",
+        "66bde357-e0e2-47c0-8cc0-37eb036cf008",
+        "fb6986bf-81c7-4853-9a10-6b8e7fb9533d",
+        "bb455b7f-a54d-4471-8da9-b8c286d687f8",
+        "5264ecc8-a518-41cf-a020-751b45b3c214",
+        "c3f2a2e8-e2eb-485f-b4b2-007c3474eab9",
+        "902f342d-c5dc-4d4b-ae2f-7d62594e4778",
+        "571b8378-20ac-4e50-a524-6aca1e8ce8b6",
+        "cdcb9a4f-60d5-410a-a667-b8040e651485",
+        "7703013e-cc71-4515-8912-888325b9fb89",
+        "d121dea0-d367-438c-92e4-51ba1cfc4b37",
+        "7edf45b1-4d39-4a29-b373-9b5b2800647f",
+        "374dac3b-7c2b-4564-ab76-692430e73ad4",
+        "faece84a-c402-4d49-b618-04ec3d43cac7",
+        "cd590950-cf5d-4b72-8185-60fd83443862",
+        "4fec81f0-5df3-4988-85f1-e25fbf242c2a",
+        "725dfc7b-f8f7-4fc7-8880-102d55028375",
+        "eabdf50f-76db-4547-a721-f0d28d46590e",
+        "438a5c0f-1398-4ef7-b620-09f1e88eb760",
+        "0acdbe05-3030-46b4-9ef0-d47a2a567a51",
+        "fb61695f-14f9-4a4d-92fb-b776bc8d835a",
+        "8a4d4400-3127-40ab-8dc2-9f70b70866f9",
+        "b4f69bef-ef0e-4afc-abab-36e16cd0ddad",
+        "6a76f88e-3929-47f3-a7bc-4c0d0d79ac62",
+        "07eba68a-f0df-405b-8396-601fb56b1d62",
+        "82cca2c3-a856-425e-9213-c0d667583166",
+        "139182c2-610a-40c9-9e72-169890fd6bd2",
+        "03f5a84d-47ef-4e82-8394-f05ec39b022f",
+        "28ab6c78-72dc-4a46-aec8-3da0c44a7133",
+        "309226e0-42a4-4467-ab7d-96a458900980",
+        "288233d7-4a86-4ce1-9914-f2113ceaa98b",
+        "54b7b7bc-e43e-4002-abce-ab5d8298beb7",
+        "3f01b0a9-1212-4f1b-90d6-6fd7d21fc824",
+        "5e9f3404-57aa-4706-bfe4-6582cbdec593",
+        "b3fa255a-00f3-464d-8d5c-702d8536de17",
+        "37652cb2-f36f-4b0e-a0d9-e23ca99a5c5b",
+        "baac246c-ee78-4078-a60f-04d7e2eee2ec",
+        "b30b87da-f296-454a-a2d9-fcae9ed5b439",
+        "24d3f783-81b0-4e1a-83ec-1bd461c197c8",
+        "f14556b4-dada-43d7-ac7a-2914c439db3a",
+        "1b8ba017-5127-4a88-8e75-4cdf4003e128",
+        "6bb3491d-9af9-4792-9924-4ac5c6402be4",
+        "701b9165-0632-4384-980c-99b2d6e89ab8",
+        "17118c64-84b7-4735-9c33-b6a250ec34ab",
+        "4a1b43a5-6aac-4fc6-9bec-6b23b0dca303",
+        "fc01cc98-59d4-4c69-a5b2-f7f8707709de",
+        "007c5bf6-64e1-41aa-9785-1e831c9277eb",
+        "b8c391b7-02e0-4dfb-ab85-a2477b76b0ce",
+        "4c721273-6b64-4b6e-a26e-db7169a14e8e",
+        "e244276a-0172-491c-8778-82a7a501af63",
+        "e69200d7-7420-4a3e-9728-5e448fc0dbf6",
+        "394cecf2-b75c-44d3-9e15-3b339051d78b",
+        "a76878de-1e63-4856-83df-e856a9f94c4f",
+        "102b10a5-f7b2-4a5b-a306-83225003b891",
+        "227e4105-9aae-4534-b5b1-594167460e7d",
+        "50888705-bd8f-4ec2-987c-67864227e118",
+        "75fcd303-b812-4099-ab97-9afedaad1384",
+        "4a3d83d5-7297-4d6a-b0a9-585317c525b7",
+        "d177a7c8-97fe-41d0-b169-fff08b304a50",
+        "688890b6-8ca0-4363-85ca-8f2fe0db684d",
+        "980adf44-fed2-4f46-b744-62f1f579bb6b",
+        "8167cd98-b5dd-4719-864a-92364644be8d",
+        "dece1969-a56d-4878-9b0a-a2f90f37b3b5",
+        "a526b9c5-901a-4029-9ea8-0057e2d92e3e",
+        "e2d00b93-0c39-4240-804c-26a9ddd0cddb",
+        "45ac925c-37ab-4335-b521-62eacda0da7b",
+        "64471cb5-d5bc-4286-b739-87439ecce1a8",
+        "a2447cf8-a031-44ba-834c-228e9708a4e0",
+        "070da597-41f2-4ab9-a62f-bd0a1a3ac38d",
+        "1bbbb2d1-b143-421b-b6db-ceefce862b83",
+        "056f1910-1410-4b5a-9fcb-94cdb0f4e6f6",
+        "b3ef9e09-9212-4e98-845a-561fb41aacd1",
+        "aac4598b-7845-435c-ba70-b150f28196e7",
+        "57e9371c-ceac-4952-b02e-cd348126e09d",
+        "27f060ce-c0ba-4ab0-93c6-945ac9338db5",
+        "5bdab4db-bce5-415c-bcac-b5aa33035b99",
+        "4c4e8fcb-5693-49e2-9133-f5e2c88a0fcc",
+        "2c1404c2-120f-4e68-acda-ce9c6dd31b55",
+        "df36cede-8ecf-4498-a3b0-e1bc41f518eb",
+        "e88f7474-acf4-48d6-9152-b3ac836040bc",
+        "0dfa4457-7d24-4be5-a7ee-aa235fe906b6",
+        "bb6c23b1-ed0f-4daf-8416-979ab53a5614",
+        "d6a0fa83-6293-471d-b92f-c87ae4227ac0",
+        "5a6e9c60-2fcb-473b-8330-f65908c6c8a0",
+        "f47f8117-4d81-4c14-a502-746ae46ebc3f",
+        "c1502198-9ae5-4e9e-b076-3ed95c335e7e",
+        "c79098d5-49be-4411-b3db-d78d4b3aff81",
+        "de03a951-cf3b-4819-b7e1-84f09561880f",
+        "09bc54a0-5a4b-49c6-bdbc-bef819033a66",
+        "5d820e9c-32f0-48ef-9cc3-693cd7109967",
+        "3c5dd1e3-cf67-45e6-82e3-c826741c9672",
+        "e39064dc-77b0-4771-9374-f86d2bdaf8a6",
+        "ff8899cb-e7dd-40a2-bca0-2795f9c43506",
+        "761bf624-75ff-4af9-b082-8326ccc2f609",
+        "0127afa3-adc4-48a6-9cd3-423923223141",
+        "363d31e4-7628-4bcd-9817-f603d79ddf25",
+        "24f71f01-39d9-4625-b575-a300ed3d60f3",
+        "2f95924b-6ee7-40b5-99a5-87508f2b7dfe",
+        "0add1a96-9b18-4dab-b75c-146cf956bb4d",
+        "2df12f32-03bc-40a3-8b46-cb2307e7aa4b",
+        "67365645-8c57-4c27-bb0b-e5e7d25eec3a",
+        "eabc342f-1484-4bd1-9310-5ef6d1c18792",
+        "2a779c17-c086-4d37-8756-a928b45c2753",
+        "5bd042d3-5b7e-49db-afc7-1deba8688b36",
+        "e4ed5bb7-1461-4861-8c57-c81074cf27be",
+        "1b9fc63b-6191-4aee-b28e-94929de00c6a",
+        "857ceaba-da92-4068-87e9-cf1e597ba942",
+        "fa0e7754-aa98-4322-b4e7-401c842ead26",
+        "fdbe7f73-0d97-4e13-bc0c-39bffb20f038",
+        "f5141c67-f526-4c48-8ca4-d0509da20f64",
+        "4708d4c9-5b55-4a3a-a2c4-ffb9fbfdeafe",
+        "e2a1d186-2847-4288-b737-6d04b0e94b02",
+        "87c751a3-99aa-4a6f-8137-64905cd38023",
+        "300705a6-ae23-4644-aebc-300d09877437",
+        "098ba413-42d3-4ee0-9674-8df570e2367a",
+        "537af80a-8ec4-41bd-9d2c-5ddf919e8785",
+        "c0e9c3b1-cfdc-4ab2-a6f2-f09d6f86bc72",
+        "73fa969c-d917-4f5f-b13b-62034f1af39f",
+        "3830152a-4691-4b6c-bfcb-666bfd4be658",
+        "a8e45b62-1599-41bf-a2be-fcdcddb9683c",
+        "0d6c9d8c-98dd-4763-9f45-67cffd7fc100",
+        "ddaf8685-a3f5-434e-8f5b-b4909e0623d4",
+        "aaa6be44-3e63-41d3-8b81-2a2ebcc3ef3d",
+        "bcd418a5-7b3d-4c5f-a6da-db3d066600b4",
+        "4afd9e2d-6853-465a-b05a-280a6a82bbbe",
+        "bf3f43d3-3cd5-4d5f-9dbf-2c3d9129af14",
+        "5424e163-f495-4e9b-b2d5-f0d94319d2fe",
+        "dcf5637f-14c9-457f-9a7d-26f99ded8b11",
+        "27ccca73-f658-4cb8-9dc6-e019fe886137",
+        "cd9579bc-9371-4d16-a3a8-2a71d1afb2ed",
+        "42bac315-905c-4394-99ec-f067e8c577fc",
+        "b4626c4b-b47f-44e2-8b06-cd0f9e7537f7",
+        "e61f80dc-ce71-4288-9af6-6c8830d40e37",
+        "784c2f2f-2fc0-4f2c-8b97-97927510a65d",
+        "8e310b0b-81dd-4199-b8bc-3723e22706ba",
+        "ccacc591-6583-4fb1-9f43-95ef418b7fe0",
+        "93085502-0591-4dda-a32f-d7d94529e245",
+        "c2e97314-2b79-4976-a263-d54cf6ee1138",
+        "0ae75992-4f57-4d26-a093-eef01c163c2a",
+        "5e4597ff-30bb-4c05-80be-ec7b3ecc877e",
+        "dd7ea122-a797-42cc-9154-c38a13fffc03",
+        "14cbdfcc-01da-4803-b957-20fd51a7eda6",
+        "6535bd37-6845-4c1d-8358-e9ec7c27f8d2",
+        "47fd741b-0810-4b72-94a1-a27a1eab1686",
+        "4ccc025a-eae0-41fb-8a2c-aa4bde71676b",
+        "da2176bf-bb1f-45c1-90f1-060ef6345c9a",
+        "bec91941-664b-41f6-965a-49f973a401b6",
+        "d5492ea6-b78c-4010-991e-ae4a770914f2",
+        "a76f9f8b-01fb-40d7-ad20-07dc0b5f1561",
+        "548171e3-9ee2-4024-9b85-1c7cfa8b0683",
+        "e4fce07a-ee6a-4a94-b37d-268542b0ccee",
+        "8f353652-1b5e-4bd0-aa41-8533be4678fd",
+        "09192212-b6dd-4a0a-b541-c13c580860d7",
+        "2135a84b-37c4-4e9b-8351-cd8eb387ee6a",
+        "d383dceb-1983-475a-a166-97c3c07d3832",
+        "07ca7c1d-6977-43d4-b421-05d0f272317a",
+        "72d53e66-037d-40f9-83b4-ae12d85b2a85",
+        "32d7261d-69cc-4782-a0f2-8ba281219a76",
+        "f40300af-8ecd-4114-95bf-98307318f191",
+        "d95bb318-2fe8-45a1-b903-8489e2ab4fdb",
+        "a3019d02-58c3-4b41-a572-5c675ac6acda",
+        "8f9a2f07-a2aa-4c2e-912b-10ce6d148bb3",
+        "0f3d2ab4-0fb4-42b6-adf6-3cdf4f25466d",
+        "88135262-8ec5-4633-b61c-a3f562ca93b6",
+        "45cca769-788f-4a38-9d1a-b80375ffcab7",
+        "7e9270de-871d-42fc-9779-9723f6d0466d",
+        "2c00f7d6-a082-4f35-9984-13b886131a9d",
+        "9904f71f-c607-4e0b-a437-8c4d74a195c5",
+        "4c9d2b2c-24d1-43e1-8e2a-6cfc44c62f64",
+        "ce60e57a-eb89-4736-b5d3-56203ac2d39b",
+        "f7ec35c0-b4ed-47fd-941a-c3652929f525",
+        "3cf3bd1a-8b53-4f9d-9adb-2879cee6e62c",
+        "d62d8b07-d314-4d72-8dc3-80f204b39c6f",
+        "8a119360-76c9-4d30-8ac3-4ddedd66a040",
+        "b86e4a6e-a940-4d06-83a1-96099c82b888",
+        "51f5a80c-f837-4b59-8efb-fe067f7525cc",
+        "1eb66d86-e8af-4245-8e00-d9132e621b2f",
+        "b400c3f5-ef77-4344-8b4e-8c006f0a1dba",
+        "b3184a44-2eac-4d38-b631-c2a244483aae",
+        "49507203-e98a-4541-8739-963be8c181e9",
+        "985421bc-9b6d-440e-af13-47ee52d11e1d",
+        "b1acb68d-4db7-4f56-b02f-665602b414b7",
+        "4adda760-849d-4266-bd91-485b1cb4c235",
+        "8a54a2f9-2cc1-4df8-8377-4e1d3d2a6662",
+        "fbf7275d-b7bc-449a-9246-53ae08f10086",
+        "d99126a9-ea32-49aa-a4f4-7fd710ce0787",
+        "d32cac8c-4ace-41cb-abd2-6c47a7999d04",
+        "deca3952-279e-4699-8add-83b0d869a8a8",
+        "61a4f2cf-c1ee-4ad4-8c8c-907570d2ddf5",
+        "fc4a6699-7a3e-4645-bf24-498df69ab9ee",
+        "6a2c6e14-9895-4d9f-b17a-9bd5f6c8fbd8",
+        "3e6cf703-3fe2-4443-9cad-a5137e34288f",
+        "f5a9d5d5-7c95-4af7-914c-f1800b9b79a1",
+        "c1f36635-d15e-48e6-b846-25efe2771a27",
+        "df78e1f8-258c-4746-b7fa-96f0b61097f6",
+        "46559ea5-d6eb-475e-807f-83b571a63b10",
+        "a640cba9-6e5d-4f9a-9dfe-e5f61e59116a",
+        "d0944445-c9cc-40bb-bb2b-9bc3aa16fbbd",
+        "0b296875-b78d-474e-899c-155a163f05a8",
+        "57da681b-315e-4a87-aa30-6e8693afe96f",
+        "29457944-f251-4378-ab77-70276dbad12b",
+        "71a1dc76-139e-4ff4-943c-e1d780ab3d12",
+        "b5cda604-d5ce-4f41-a9fe-3f3bf66fd07e",
+        "ce4458f1-c1e7-4648-9497-70215e67c7d2",
+        "6963af82-55c0-43b1-b468-c37fc7395340",
+        "6ca0a572-f0c1-4b6a-b298-2c052a2a1eb7",
+        "0ecee394-0a7c-4321-a04a-1dba6da54561",
+        "0f24d9d1-4b1b-497a-b7aa-952c10bca3ee",
+        "c9b3253e-7f93-4bba-88be-e53794b4c1a5",
+        "c2b2207b-9f29-421e-9084-b1ff97afec81",
+        "60dda92e-3a0e-488b-8d79-f3ee31dbaac4",
+        "7b6f38d1-2087-4107-82fd-c1f618c489cc",
+        "f595df28-ca2d-4621-9e27-0aa56082976f",
+        "6efdfa98-5538-4688-8d1e-fd5419e96ac6",
+        "9261e724-17a2-40fd-ac14-ee01e036be2b",
+        "b4bc8e01-913e-41ae-968d-b7bb0646c138",
+        "8e28d7ca-75ed-426c-b558-2a19f4bad972",
+        "fabf467d-001a-43fc-b469-2e6761856c88",
+        "8ce88b33-2536-46c6-a8a7-fc51342bf096",
+        "1fed4805-2cbd-4ab7-9cc6-2592d4cccf37",
+        "66442a45-93b3-4754-8fe0-17b62348b1a3",
+        "4e3b0ad3-3c68-440f-9d8d-bdf6665bc242",
+        "c5dec2e3-75a3-4827-a7a3-39f049dfbb4e",
+        "2e5656a5-3de3-4b1e-a06b-e47085ee26fa",
+        "39b5a2d3-f22e-4b6b-91d5-1ca0e8ffecc5",
+        "90b82dcc-8205-4219-bf94-205ce20043be",
+        "1260b73a-8f06-46c8-ae41-6c763678a2b1",
+        "0529b541-cbbc-4f40-931c-2b4959e8f206",
+        "1fc9d5de-92a4-4939-a55a-38fda6811a68",
+        "3ad8b49a-a232-4362-8747-70e9f272f75a",
+        "17c6842a-a93b-4ddb-95c3-079385f319d1",
+        "d37754bd-45f0-4f47-bfa0-8b55060ffc1c",
+        "6c9fdb9d-b888-4f9e-b2f7-411997892fda",
+        "ddb56340-e5a0-47c1-a5f6-0f1c7562ff02",
+        "c3fee8db-fac2-4d37-a417-a6baea578d28",
+        "9d1e8474-0e44-4d5a-8de5-96cf54f75b92",
+        "b0712a56-c08a-4d21-91bf-1bfb1dbd4fec",
+        "c9f040b6-72e3-4133-ab24-66a4e1e98193",
+        "3538fbdd-b5d6-484e-829a-798d59666726",
+        "7c86ce74-d62d-4030-a1b6-f493c1daeb6c",
+        "783f2f4f-7c73-4fb2-b63a-24469ee404ae",
+        "8d9f6b04-8506-4258-8b63-786e93921910",
+        "3e0fc35d-76a9-4b62-9117-f59b39e39def",
+        "d0d6c198-70c2-47c2-ac07-bbe49b3a1b3e",
+        "39cc4270-2081-4649-a7f3-9fb5b33bd4bf",
+        "a6f7dee2-7cd8-42b6-a4e6-1339e4b6bc82",
+        "25d316ef-518f-4d05-b0e5-4671c1fb51cc",
+        "834e3d43-191f-43f9-a8aa-e4b5dacfe496",
+        "563a7950-c176-4591-a7d8-528025416301",
+        "c955b891-1a00-4ac4-b08c-7a77932e1d3f",
+        "5f73b424-566f-492c-8378-4d8244a245bc",
+        "35f56a8f-e12f-4d5f-bfdd-21b9b7fb6569",
+        "b8c97f36-10a6-4314-8d9d-0686f2760d82",
+        "b90e825c-e445-4166-ba8e-d0549bb62b58",
+        "c4d2b7f2-7720-480a-bd31-75f7a879205f",
+        "b6ba5d5e-9875-42bf-8246-750c6a3998c3",
+        "f6492228-7f95-40c7-904d-9b9c6ec809ae",
+        "f5e0dd65-91ad-4baf-8568-90fc683f955d",
+        "16557246-8220-4607-9762-820ffa16e921",
+        "d783232c-9b4a-4bb7-be4a-c731a3948987",
+        "a79f5aed-c8b4-4b9c-b5fd-13c9eaabf2cc",
+        "39635a5a-c542-40d9-8dff-15e44147f753",
+        "6d0c80a5-08d4-4576-822c-c25155dfb38f",
+        "ac31f263-2417-4150-8a6e-45dfd605f2a7",
+        "968cdc33-856d-49ff-83ef-b1d63dd026e7",
+        "3e1ac836-c1a7-46cd-b040-1f852a71fdf7",
+        "d2fe653e-96e8-4cf2-8cd4-48a6187aed18",
+        "1e691510-422e-48e9-b792-663d6a61029d",
+        "c88c381d-5fb0-4763-b0e7-cdb2b43d9765",
+        "ff92d7ca-4ebb-4e63-9394-c2b73f590d32",
+        "fce75273-bc3a-4f14-af1d-6ee33dcd762c",
+        "3667f7e6-06f0-4fb4-a3eb-8dbd2686ec3c",
+        "0cf34dd8-af6e-44c4-8a43-abb76a5c0778",
+        "89adb432-7306-454e-8448-5a89e5f2ff75",
+        "29195462-b042-40d9-b936-193cfbeb3817",
+        "9e04c6c4-b83c-40b4-850b-399dc500e7a1",
+        "dc270819-b867-4cdf-a05d-e77fb204f69e",
+        "0bfb4a31-3585-4b8e-9b21-a77a5a64e640",
+        "b83b18a4-e007-4387-b6fb-1fe65bc1aa2d",
+        "6165de06-110d-40cd-ac29-bafdc8bf688f",
+        "b24aa888-34d5-4cb5-bb78-3f8d0a9f5581",
+        "2b6c6ed5-5ce5-4ade-8a91-0ec27bd40bfc",
+        "b6bf17db-8d21-495d-9540-796681ec3cb6",
+        "b28e154c-94eb-44ce-b8b6-327396f016c6",
+        "05cf9b50-4daf-4b84-8e3b-48d2c9b645f0",
+        "f13663fb-61ff-4629-9f24-8b72ffeccb48",
+        "9dfcca95-2f9b-47b6-9c45-fde55cf91006",
+        "3c0203db-4720-4c0a-a13b-c47cd39c3d7c",
+        "4e81ead7-2e30-4acd-9a61-7b5650c67f90",
+        "e937e159-d06c-4372-93c7-87e94cc808b3",
+        "effba9f4-0cd3-4936-b191-5009beeef5cd",
+        "585025a8-e7ed-4283-9c5d-a173834662c9",
+        "ec26f7a4-db1f-48aa-90af-6fd0578bc661",
+        "62325250-c53d-4e87-89ef-211259bcd3d2",
+        "5bc87b81-0775-4618-8880-d27cc21127ed",
+        "c19cff0a-5ff7-4f5a-81b1-5b24eac98210",
+        "bfc48b8e-052a-4d7c-92ae-ca33bda15166",
+        "442ded8c-ed1b-4143-ad86-3a1916142f73",
+        "494581bd-0a61-4e58-85c7-f88b03bb39f4",
+        "75aace50-ed8d-45e2-88e1-05cc0c86a7ab",
+        "9bf64f65-8d0d-4ac6-9f1d-9432f5c8b138",
+        "9de4034c-ca47-4f85-8005-1e7931039f12",
+        "e7017a09-a354-4bdd-80be-52d418bd6cc9",
+        "fb53b43b-6c82-431d-9625-0f8789127859",
+        "4775fd53-c3a1-4cfe-9641-10c236f1f8df",
+        "847bccf9-e94c-40f2-bec9-6a8821e46788",
+        "756ac584-8c4e-4fa8-9781-847ba1a1a3e8",
+        "1e701873-c580-4066-ac1d-321fa92891af",
+        "313dff66-cbd4-4e7a-9155-ef01a97c6f35",
+        "b8a37e68-85ac-488f-a444-6876df8bae12",
+        "d9f599b4-f972-4e39-a62a-847fed885c60",
+        "cd8bd14f-825e-4710-8042-f8beeb5cda8e",
+        "d7f0599e-5ca0-4298-af7b-4845d13f9b7e",
+        "fbe394df-5d8a-441f-ab75-5d522ca77441",
+        "cbad3ae5-d460-41b2-b818-17c7f4099ae6",
+        "3fc66bdd-4698-4f38-8795-a261009b68d7",
+        "a72546ac-d9a1-4007-895c-1c2071c49b0b",
+        "0830a468-80ae-4926-b765-54e02b874a79",
+        "19a3d10b-bc7b-4145-81ce-404db570ba5c",
+        "e200017d-07b3-4d68-ad37-7f0c46c7556b",
+        "15949518-8819-49fc-811c-2176a9f2d9cb",
+        "91ac39cf-739f-4a74-a3f8-f8573382fd20",
+        "011ab29b-34a5-4b54-a5f5-e2e738e3fad0",
+        "f6323824-b020-4832-b9e0-179ef3a4b19c",
+        "bfc2bf9f-f072-4d6b-9a50-697a8309ba83",
+        "c9b28eb4-eefd-4c88-907d-4547c2a7ffdd",
+        "caed9867-7172-4d8e-8d7e-26a59fdff430",
+        "db2c4a14-1650-4139-a86d-68eea4400ce4",
+        "44817e15-51a7-4bc9-af0f-3c4260336c7b",
+        "4eca0644-4118-43d1-818b-59da9d9313a0",
+        "9fb261bf-cd6a-4bac-ba32-36d20683d48e",
+        "d5caecac-8138-43b4-b3a7-a91d7d979cd1",
+        "6aa6c339-ed31-4bc6-aa7d-439b7f4534c5",
+        "720f749f-1a7f-4c5c-bef0-52fd9a618216",
+        "e70599d8-57db-4f7d-9a51-86ddeed4f1ba",
+        "dc643271-6f06-4253-801a-1911baf16749",
+        "dc5ebc46-4323-48b6-ab94-6a5996a5a046",
+        "a656c73a-545e-4435-8c4d-39dd19f16a98",
+        "9506745d-72ac-44cd-a22e-572467fe08a3",
+        "947a3c65-25e6-4418-93e9-d60d0d636691",
+        "7a26fed9-1d43-4d07-a547-bf4c831e0ced",
+        "a6bafff4-fd7e-46b0-999a-2f1bd5781a3d",
+        "7af718f0-d7e7-4cdb-9bbb-3aac102ce14e",
+        "92a6e3aa-f915-42b1-9a34-3576eb44b351",
+        "cda788d3-474c-45b7-99e4-d395ac800086",
+        "ba83d757-238d-42d8-a094-db82d9b06bb2",
+        "2c7542a7-f045-4eac-aeec-b180071d4b48",
+        "4af2d4a1-40f2-4ed0-bde3-d7e97eeda7b4",
+        "b7f63365-81da-4fd5-915d-f99d4d52e466",
+        "87d19322-bd54-434c-93dc-6a344ad1988f",
+        "0f301502-53d8-4249-9997-2e1d7ee20067",
+        "81468275-7cb5-4b0b-b5df-a89474f1bcf9",
+        "c935c0e2-a186-4ec8-93f5-d11d72936440",
+        "ce17a348-bf21-4fc8-b6c7-45ddce9fa7cc",
+        "fb8eb482-5ea5-4ca8-86bd-6170c0e59271"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 360,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1551229212,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-27 23:38:04][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"166aebee-dfeb-45d7-ae24-566e4f2bfc39\",\"0ac69c93-4f6b-434b-9e59-11c2aff3a2bd\",\"5e21d573-3a09-4ab1-bc8e-dc985628059b\",\"9291ef43-c5c6-445e-9165-67d0930ce877\",\"cd16c9ab-1c1e-4149-a505-2ecd9ef40b5d\",\"190b30ae-5133-4d85-8d3c-98ee11673ce8\",\"66bde357-e0e2-47c0-8cc0-37eb036cf008\",\"fb6986bf-81c7-4853-9a10-6b8e7fb9533d\",\"bb455b7f-a54d-4471-8da9-b8c286d687f8\",\"5264ecc8-a518-41cf-a020-751b45b3c214\",\"c3f2a2e8-e2eb-485f-b4b2-007c3474eab9\",\"902f342d-c5dc-4d4b-ae2f-7d62594e4778\",\"571b8378-20ac-4e50-a524-6aca1e8ce8b6\",\"cdcb9a4f-60d5-410a-a667-b8040e651485\",\"7703013e-cc71-4515-8912-888325b9fb89\",\"d121dea0-d367-438c-92e4-51ba1cfc4b37\",\"7edf45b1-4d39-4a29-b373-9b5b2800647f\",\"374dac3b-7c2b-4564-ab76-692430e73ad4\",\"faece84a-c402-4d49-b618-04ec3d43cac7\",\"cd590950-cf5d-4b72-8185-60fd83443862\",\"4fec81f0-5df3-4988-85f1-e25fbf242c2a\",\"725dfc7b-f8f7-4fc7-8880-102d55028375\",\"eabdf50f-76db-4547-a721-f0d28d46590e\",\"438a5c0f-1398-4ef7-b620-09f1e88eb760\",\"0acdbe05-3030-46b4-9ef0-d47a2a567a51\",\"fb61695f-14f9-4a4d-92fb-b776bc8d835a\",\"8a4d4400-3127-40ab-8dc2-9f70b70866f9\",\"b4f69bef-ef0e-4afc-abab-36e16cd0ddad\",\"6a76f88e-3929-47f3-a7bc-4c0d0d79ac62\",\"07eba68a-f0df-405b-8396-601fb56b1d62\",\"82cca2c3-a856-425e-9213-c0d667583166\",\"139182c2-610a-40c9-9e72-169890fd6bd2\",\"03f5a84d-47ef-4e82-8394-f05ec39b022f\",\"28ab6c78-72dc-4a46-aec8-3da0c44a7133\",\"309226e0-42a4-4467-ab7d-96a458900980\",\"288233d7-4a86-4ce1-9914-f2113ceaa98b\",\"54b7b7bc-e43e-4002-abce-ab5d8298beb7\",\"3f01b0a9-1212-4f1b-90d6-6fd7d21fc824\",\"5e9f3404-57aa-4706-bfe4-6582cbdec593\",\"b3fa255a-00f3-464d-8d5c-702d8536de17\",\"37652cb2-f36f-4b0e-a0d9-e23ca99a5c5b\",\"baac246c-ee78-4078-a60f-04d7e2eee2ec\",\"b30b87da-f296-454a-a2d9-fcae9ed5b439\",\"24d3f783-81b0-4e1a-83ec-1bd461c197c8\",\"f14556b4-dada-43d7-ac7a-2914c439db3a\",\"1b8ba017-5127-4a88-8e75-4cdf4003e128\",\"6bb3491d-9af9-4792-9924-4ac5c6402be4\",\"701b9165-0632-4384-980c-99b2d6e89ab8\",\"17118c64-84b7-4735-9c33-b6a250ec34ab\",\"4a1b43a5-6aac-4fc6-9bec-6b23b0dca303\",\"fc01cc98-59d4-4c69-a5b2-f7f8707709de\",\"007c5bf6-64e1-41aa-9785-1e831c9277eb\",\"b8c391b7-02e0-4dfb-ab85-a2477b76b0ce\",\"4c721273-6b64-4b6e-a26e-db7169a14e8e\",\"e244276a-0172-491c-8778-82a7a501af63\",\"e69200d7-7420-4a3e-9728-5e448fc0dbf6\",\"394cecf2-b75c-44d3-9e15-3b339051d78b\",\"a76878de-1e63-4856-83df-e856a9f94c4f\",\"102b10a5-f7b2-4a5b-a306-83225003b891\",\"227e4105-9aae-4534-b5b1-594167460e7d\",\"50888705-bd8f-4ec2-987c-67864227e118\",\"75fcd303-b812-4099-ab97-9afedaad1384\",\"4a3d83d5-7297-4d6a-b0a9-585317c525b7\",\"d177a7c8-97fe-41d0-b169-fff08b304a50\",\"688890b6-8ca0-4363-85ca-8f2fe0db684d\",\"980adf44-fed2-4f46-b744-62f1f579bb6b\",\"8167cd98-b5dd-4719-864a-92364644be8d\",\"dece1969-a56d-4878-9b0a-a2f90f37b3b5\",\"a526b9c5-901a-4029-9ea8-0057e2d92e3e\",\"e2d00b93-0c39-4240-804c-26a9ddd0cddb\",\"45ac925c-37ab-4335-b521-62eacda0da7b\",\"64471cb5-d5bc-4286-b739-87439ecce1a8\",\"a2447cf8-a031-44ba-834c-228e9708a4e0\",\"070da597-41f2-4ab9-a62f-bd0a1a3ac38d\",\"1bbbb2d1-b143-421b-b6db-ceefce862b83\",\"056f1910-1410-4b5a-9fcb-94cdb0f4e6f6\",\"b3ef9e09-9212-4e98-845a-561fb41aacd1\",\"aac4598b-7845-435c-ba70-b150f28196e7\",\"57e9371c-ceac-4952-b02e-cd348126e09d\",\"27f060ce-c0ba-4ab0-93c6-945ac9338db5\",\"5bdab4db-bce5-415c-bcac-b5aa33035b99\",\"4c4e8fcb-5693-49e2-9133-f5e2c88a0fcc\",\"2c1404c2-120f-4e68-acda-ce9c6dd31b55\",\"df36cede-8ecf-4498-a3b0-e1bc41f518eb\",\"e88f7474-acf4-48d6-9152-b3ac836040bc\",\"0dfa4457-7d24-4be5-a7ee-aa235fe906b6\",\"bb6c23b1-ed0f-4daf-8416-979ab53a5614\",\"d6a0fa83-6293-471d-b92f-c87ae4227ac0\",\"5a6e9c60-2fcb-473b-8330-f65908c6c8a0\",\"f47f8117-4d81-4c14-a502-746ae46ebc3f\",\"c1502198-9ae5-4e9e-b076-3ed95c335e7e\",\"c79098d5-49be-4411-b3db-d78d4b3aff81\",\"de03a951-cf3b-4819-b7e1-84f09561880f\",\"09bc54a0-5a4b-49c6-bdbc-bef819033a66\",\"5d820e9c-32f0-48ef-9cc3-693cd7109967\",\"3c5dd1e3-cf67-45e6-82e3-c826741c9672\",\"e39064dc-77b0-4771-9374-f86d2bdaf8a6\",\"ff8899cb-e7dd-40a2-bca0-2795f9c43506\",\"761bf624-75ff-4af9-b082-8326ccc2f609\",\"0127afa3-adc4-48a6-9cd3-423923223141\",\"363d31e4-7628-4bcd-9817-f603d79ddf25\",\"24f71f01-39d9-4625-b575-a300ed3d60f3\",\"2f95924b-6ee7-40b5-99a5-87508f2b7dfe\",\"0add1a96-9b18-4dab-b75c-146cf956bb4d\",\"2df12f32-03bc-40a3-8b46-cb2307e7aa4b\",\"67365645-8c57-4c27-bb0b-e5e7d25eec3a\",\"eabc342f-1484-4bd1-9310-5ef6d1c18792\",\"2a779c17-c086-4d37-8756-a928b45c2753\",\"5bd042d3-5b7e-49db-afc7-1deba8688b36\",\"e4ed5bb7-1461-4861-8c57-c81074cf27be\",\"1b9fc63b-6191-4aee-b28e-94929de00c6a\",\"857ceaba-da92-4068-87e9-cf1e597ba942\",\"fa0e7754-aa98-4322-b4e7-401c842ead26\",\"fdbe7f73-0d97-4e13-bc0c-39bffb20f038\",\"f5141c67-f526-4c48-8ca4-d0509da20f64\",\"4708d4c9-5b55-4a3a-a2c4-ffb9fbfdeafe\",\"e2a1d186-2847-4288-b737-6d04b0e94b02\",\"87c751a3-99aa-4a6f-8137-64905cd38023\",\"300705a6-ae23-4644-aebc-300d09877437\",\"098ba413-42d3-4ee0-9674-8df570e2367a\",\"537af80a-8ec4-41bd-9d2c-5ddf919e8785\",\"c0e9c3b1-cfdc-4ab2-a6f2-f09d6f86bc72\",\"73fa969c-d917-4f5f-b13b-62034f1af39f\",\"3830152a-4691-4b6c-bfcb-666bfd4be658\",\"a8e45b62-1599-41bf-a2be-fcdcddb9683c\",\"0d6c9d8c-98dd-4763-9f45-67cffd7fc100\",\"ddaf8685-a3f5-434e-8f5b-b4909e0623d4\",\"aaa6be44-3e63-41d3-8b81-2a2ebcc3ef3d\",\"bcd418a5-7b3d-4c5f-a6da-db3d066600b4\",\"4afd9e2d-6853-465a-b05a-280a6a82bbbe\",\"bf3f43d3-3cd5-4d5f-9dbf-2c3d9129af14\",\"5424e163-f495-4e9b-b2d5-f0d94319d2fe\",\"dcf5637f-14c9-457f-9a7d-26f99ded8b11\",\"27ccca73-f658-4cb8-9dc6-e019fe886137\",\"cd9579bc-9371-4d16-a3a8-2a71d1afb2ed\",\"42bac315-905c-4394-99ec-f067e8c577fc\",\"b4626c4b-b47f-44e2-8b06-cd0f9e7537f7\",\"e61f80dc-ce71-4288-9af6-6c8830d40e37\",\"784c2f2f-2fc0-4f2c-8b97-97927510a65d\",\"8e310b0b-81dd-4199-b8bc-3723e22706ba\",\"ccacc591-6583-4fb1-9f43-95ef418b7fe0\",\"93085502-0591-4dda-a32f-d7d94529e245\",\"c2e97314-2b79-4976-a263-d54cf6ee1138\",\"0ae75992-4f57-4d26-a093-eef01c163c2a\",\"5e4597ff-30bb-4c05-80be-ec7b3ecc877e\",\"dd7ea122-a797-42cc-9154-c38a13fffc03\",\"14cbdfcc-01da-4803-b957-20fd51a7eda6\",\"6535bd37-6845-4c1d-8358-e9ec7c27f8d2\",\"47fd741b-0810-4b72-94a1-a27a1eab1686\",\"4ccc025a-eae0-41fb-8a2c-aa4bde71676b\",\"da2176bf-bb1f-45c1-90f1-060ef6345c9a\",\"bec91941-664b-41f6-965a-49f973a401b6\",\"d5492ea6-b78c-4010-991e-ae4a770914f2\",\"a76f9f8b-01fb-40d7-ad20-07dc0b5f1561\",\"548171e3-9ee2-4024-9b85-1c7cfa8b0683\",\"e4fce07a-ee6a-4a94-b37d-268542b0ccee\",\"8f353652-1b5e-4bd0-aa41-8533be4678fd\",\"09192212-b6dd-4a0a-b541-c13c580860d7\",\"2135a84b-37c4-4e9b-8351-cd8eb387ee6a\",\"d383dceb-1983-475a-a166-97c3c07d3832\",\"07ca7c1d-6977-43d4-b421-05d0f272317a\",\"72d53e66-037d-40f9-83b4-ae12d85b2a85\",\"32d7261d-69cc-4782-a0f2-8ba281219a76\",\"f40300af-8ecd-4114-95bf-98307318f191\",\"d95bb318-2fe8-45a1-b903-8489e2ab4fdb\",\"a3019d02-58c3-4b41-a572-5c675ac6acda\",\"8f9a2f07-a2aa-4c2e-912b-10ce6d148bb3\",\"0f3d2ab4-0fb4-42b6-adf6-3cdf4f25466d\",\"88135262-8ec5-4633-b61c-a3f562ca93b6\",\"45cca769-788f-4a38-9d1a-b80375ffcab7\",\"7e9270de-871d-42fc-9779-9723f6d0466d\",\"2c00f7d6-a082-4f35-9984-13b886131a9d\",\"9904f71f-c607-4e0b-a437-8c4d74a195c5\",\"4c9d2b2c-24d1-43e1-8e2a-6cfc44c62f64\",\"ce60e57a-eb89-4736-b5d3-56203ac2d39b\",\"f7ec35c0-b4ed-47fd-941a-c3652929f525\",\"3cf3bd1a-8b53-4f9d-9adb-2879cee6e62c\",\"d62d8b07-d314-4d72-8dc3-80f204b39c6f\",\"8a119360-76c9-4d30-8ac3-4ddedd66a040\",\"b86e4a6e-a940-4d06-83a1-96099c82b888\",\"51f5a80c-f837-4b59-8efb-fe067f7525cc\",\"1eb66d86-e8af-4245-8e00-d9132e621b2f\",\"b400c3f5-ef77-4344-8b4e-8c006f0a1dba\",\"b3184a44-2eac-4d38-b631-c2a244483aae\",\"49507203-e98a-4541-8739-963be8c181e9\",\"985421bc-9b6d-440e-af13-47ee52d11e1d\",\"b1acb68d-4db7-4f56-b02f-665602b414b7\",\"4adda760-849d-4266-bd91-485b1cb4c235\",\"8a54a2f9-2cc1-4df8-8377-4e1d3d2a6662\",\"fbf7275d-b7bc-449a-9246-53ae08f10086\",\"d99126a9-ea32-49aa-a4f4-7fd710ce0787\",\"d32cac8c-4ace-41cb-abd2-6c47a7999d04\",\"deca3952-279e-4699-8add-83b0d869a8a8\",\"61a4f2cf-c1ee-4ad4-8c8c-907570d2ddf5\",\"fc4a6699-7a3e-4645-bf24-498df69ab9ee\",\"6a2c6e14-9895-4d9f-b17a-9bd5f6c8fbd8\",\"3e6cf703-3fe2-4443-9cad-a5137e34288f\",\"f5a9d5d5-7c95-4af7-914c-f1800b9b79a1\",\"c1f36635-d15e-48e6-b846-25efe2771a27\",\"df78e1f8-258c-4746-b7fa-96f0b61097f6\",\"46559ea5-d6eb-475e-807f-83b571a63b10\",\"a640cba9-6e5d-4f9a-9dfe-e5f61e59116a\",\"d0944445-c9cc-40bb-bb2b-9bc3aa16fbbd\",\"0b296875-b78d-474e-899c-155a163f05a8\",\"57da681b-315e-4a87-aa30-6e8693afe96f\",\"29457944-f251-4378-ab77-70276dbad12b\",\"71a1dc76-139e-4ff4-943c-e1d780ab3d12\",\"b5cda604-d5ce-4f41-a9fe-3f3bf66fd07e\",\"ce4458f1-c1e7-4648-9497-70215e67c7d2\",\"6963af82-55c0-43b1-b468-c37fc7395340\",\"6ca0a572-f0c1-4b6a-b298-2c052a2a1eb7\",\"0ecee394-0a7c-4321-a04a-1dba6da54561\",\"0f24d9d1-4b1b-497a-b7aa-952c10bca3ee\",\"c9b3253e-7f93-4bba-88be-e53794b4c1a5\",\"c2b2207b-9f29-421e-9084-b1ff97afec81\",\"60dda92e-3a0e-488b-8d79-f3ee31dbaac4\",\"7b6f38d1-2087-4107-82fd-c1f618c489cc\",\"f595df28-ca2d-4621-9e27-0aa56082976f\",\"6efdfa98-5538-4688-8d1e-fd5419e96ac6\",\"9261e724-17a2-40fd-ac14-ee01e036be2b\",\"b4bc8e01-913e-41ae-968d-b7bb0646c138\",\"8e28d7ca-75ed-426c-b558-2a19f4bad972\",\"fabf467d-001a-43fc-b469-2e6761856c88\",\"8ce88b33-2536-46c6-a8a7-fc51342bf096\",\"1fed4805-2cbd-4ab7-9cc6-2592d4cccf37\",\"66442a45-93b3-4754-8fe0-17b62348b1a3\",\"4e3b0ad3-3c68-440f-9d8d-bdf6665bc242\",\"c5dec2e3-75a3-4827-a7a3-39f049dfbb4e\",\"2e5656a5-3de3-4b1e-a06b-e47085ee26fa\",\"39b5a2d3-f22e-4b6b-91d5-1ca0e8ffecc5\",\"90b82dcc-8205-4219-bf94-205ce20043be\",\"1260b73a-8f06-46c8-ae41-6c763678a2b1\",\"0529b541-cbbc-4f40-931c-2b4959e8f206\",\"1fc9d5de-92a4-4939-a55a-38fda6811a68\",\"3ad8b49a-a232-4362-8747-70e9f272f75a\",\"17c6842a-a93b-4ddb-95c3-079385f319d1\",\"d37754bd-45f0-4f47-bfa0-8b55060ffc1c\",\"6c9fdb9d-b888-4f9e-b2f7-411997892fda\",\"ddb56340-e5a0-47c1-a5f6-0f1c7562ff02\",\"c3fee8db-fac2-4d37-a417-a6baea578d28\",\"9d1e8474-0e44-4d5a-8de5-96cf54f75b92\",\"b0712a56-c08a-4d21-91bf-1bfb1dbd4fec\",\"c9f040b6-72e3-4133-ab24-66a4e1e98193\",\"3538fbdd-b5d6-484e-829a-798d59666726\",\"7c86ce74-d62d-4030-a1b6-f493c1daeb6c\",\"783f2f4f-7c73-4fb2-b63a-24469ee404ae\",\"8d9f6b04-8506-4258-8b63-786e93921910\",\"3e0fc35d-76a9-4b62-9117-f59b39e39def\",\"d0d6c198-70c2-47c2-ac07-bbe49b3a1b3e\",\"39cc4270-2081-4649-a7f3-9fb5b33bd4bf\",\"a6f7dee2-7cd8-42b6-a4e6-1339e4b6bc82\",\"25d316ef-518f-4d05-b0e5-4671c1fb51cc\",\"834e3d43-191f-43f9-a8aa-e4b5dacfe496\",\"563a7950-c176-4591-a7d8-528025416301\",\"c955b891-1a00-4ac4-b08c-7a77932e1d3f\",\"5f73b424-566f-492c-8378-4d8244a245bc\",\"35f56a8f-e12f-4d5f-bfdd-21b9b7fb6569\",\"b8c97f36-10a6-4314-8d9d-0686f2760d82\",\"b90e825c-e445-4166-ba8e-d0549bb62b58\",\"c4d2b7f2-7720-480a-bd31-75f7a879205f\",\"b6ba5d5e-9875-42bf-8246-750c6a3998c3\",\"f6492228-7f95-40c7-904d-9b9c6ec809ae\",\"f5e0dd65-91ad-4baf-8568-90fc683f955d\",\"16557246-8220-4607-9762-820ffa16e921\",\"d783232c-9b4a-4bb7-be4a-c731a3948987\",\"a79f5aed-c8b4-4b9c-b5fd-13c9eaabf2cc\",\"39635a5a-c542-40d9-8dff-15e44147f753\",\"6d0c80a5-08d4-4576-822c-c25155dfb38f\",\"ac31f263-2417-4150-8a6e-45dfd605f2a7\",\"968cdc33-856d-49ff-83ef-b1d63dd026e7\",\"3e1ac836-c1a7-46cd-b040-1f852a71fdf7\",\"d2fe653e-96e8-4cf2-8cd4-48a6187aed18\",\"1e691510-422e-48e9-b792-663d6a61029d\",\"c88c381d-5fb0-4763-b0e7-cdb2b43d9765\",\"ff92d7ca-4ebb-4e63-9394-c2b73f590d32\",\"fce75273-bc3a-4f14-af1d-6ee33dcd762c\",\"3667f7e6-06f0-4fb4-a3eb-8dbd2686ec3c\",\"0cf34dd8-af6e-44c4-8a43-abb76a5c0778\",\"89adb432-7306-454e-8448-5a89e5f2ff75\",\"29195462-b042-40d9-b936-193cfbeb3817\",\"9e04c6c4-b83c-40b4-850b-399dc500e7a1\",\"dc270819-b867-4cdf-a05d-e77fb204f69e\",\"0bfb4a31-3585-4b8e-9b21-a77a5a64e640\",\"b83b18a4-e007-4387-b6fb-1fe65bc1aa2d\",\"6165de06-110d-40cd-ac29-bafdc8bf688f\",\"b24aa888-34d5-4cb5-bb78-3f8d0a9f5581\",\"2b6c6ed5-5ce5-4ade-8a91-0ec27bd40bfc\",\"b6bf17db-8d21-495d-9540-796681ec3cb6\",\"b28e154c-94eb-44ce-b8b6-327396f016c6\",\"05cf9b50-4daf-4b84-8e3b-48d2c9b645f0\",\"f13663fb-61ff-4629-9f24-8b72ffeccb48\",\"9dfcca95-2f9b-47b6-9c45-fde55cf91006\",\"3c0203db-4720-4c0a-a13b-c47cd39c3d7c\",\"4e81ead7-2e30-4acd-9a61-7b5650c67f90\",\"e937e159-d06c-4372-93c7-87e94cc808b3\",\"effba9f4-0cd3-4936-b191-5009beeef5cd\",\"585025a8-e7ed-4283-9c5d-a173834662c9\",\"ec26f7a4-db1f-48aa-90af-6fd0578bc661\",\"62325250-c53d-4e87-89ef-211259bcd3d2\",\"5bc87b81-0775-4618-8880-d27cc21127ed\",\"c19cff0a-5ff7-4f5a-81b1-5b24eac98210\",\"bfc48b8e-052a-4d7c-92ae-ca33bda15166\",\"442ded8c-ed1b-4143-ad86-3a1916142f73\",\"494581bd-0a61-4e58-85c7-f88b03bb39f4\",\"75aace50-ed8d-45e2-88e1-05cc0c86a7ab\",\"9bf64f65-8d0d-4ac6-9f1d-9432f5c8b138\",\"9de4034c-ca47-4f85-8005-1e7931039f12\",\"e7017a09-a354-4bdd-80be-52d418bd6cc9\",\"fb53b43b-6c82-431d-9625-0f8789127859\",\"4775fd53-c3a1-4cfe-9641-10c236f1f8df\",\"847bccf9-e94c-40f2-bec9-6a8821e46788\",\"756ac584-8c4e-4fa8-9781-847ba1a1a3e8\",\"1e701873-c580-4066-ac1d-321fa92891af\",\"313dff66-cbd4-4e7a-9155-ef01a97c6f35\",\"b8a37e68-85ac-488f-a444-6876df8bae12\",\"d9f599b4-f972-4e39-a62a-847fed885c60\",\"cd8bd14f-825e-4710-8042-f8beeb5cda8e\",\"d7f0599e-5ca0-4298-af7b-4845d13f9b7e\",\"fbe394df-5d8a-441f-ab75-5d522ca77441\",\"cbad3ae5-d460-41b2-b818-17c7f4099ae6\",\"3fc66bdd-4698-4f38-8795-a261009b68d7\",\"a72546ac-d9a1-4007-895c-1c2071c49b0b\",\"0830a468-80ae-4926-b765-54e02b874a79\",\"19a3d10b-bc7b-4145-81ce-404db570ba5c\",\"e200017d-07b3-4d68-ad37-7f0c46c7556b\",\"15949518-8819-49fc-811c-2176a9f2d9cb\",\"91ac39cf-739f-4a74-a3f8-f8573382fd20\",\"011ab29b-34a5-4b54-a5f5-e2e738e3fad0\",\"f6323824-b020-4832-b9e0-179ef3a4b19c\",\"bfc2bf9f-f072-4d6b-9a50-697a8309ba83\",\"c9b28eb4-eefd-4c88-907d-4547c2a7ffdd\",\"caed9867-7172-4d8e-8d7e-26a59fdff430\",\"db2c4a14-1650-4139-a86d-68eea4400ce4\",\"44817e15-51a7-4bc9-af0f-3c4260336c7b\",\"4eca0644-4118-43d1-818b-59da9d9313a0\",\"9fb261bf-cd6a-4bac-ba32-36d20683d48e\",\"d5caecac-8138-43b4-b3a7-a91d7d979cd1\",\"6aa6c339-ed31-4bc6-aa7d-439b7f4534c5\",\"720f749f-1a7f-4c5c-bef0-52fd9a618216\",\"e70599d8-57db-4f7d-9a51-86ddeed4f1ba\",\"dc643271-6f06-4253-801a-1911baf16749\",\"dc5ebc46-4323-48b6-ab94-6a5996a5a046\",\"a656c73a-545e-4435-8c4d-39dd19f16a98\",\"9506745d-72ac-44cd-a22e-572467fe08a3\",\"947a3c65-25e6-4418-93e9-d60d0d636691\",\"7a26fed9-1d43-4d07-a547-bf4c831e0ced\",\"a6bafff4-fd7e-46b0-999a-2f1bd5781a3d\",\"7af718f0-d7e7-4cdb-9bbb-3aac102ce14e\",\"92a6e3aa-f915-42b1-9a34-3576eb44b351\",\"cda788d3-474c-45b7-99e4-d395ac800086\",\"ba83d757-238d-42d8-a094-db82d9b06bb2\",\"2c7542a7-f045-4eac-aeec-b180071d4b48\",\"4af2d4a1-40f2-4ed0-bde3-d7e97eeda7b4\",\"b7f63365-81da-4fd5-915d-f99d4d52e466\",\"87d19322-bd54-434c-93dc-6a344ad1988f\",\"0f301502-53d8-4249-9997-2e1d7ee20067\",\"81468275-7cb5-4b0b-b5df-a89474f1bcf9\",\"c935c0e2-a186-4ec8-93f5-d11d72936440\",\"ce17a348-bf21-4fc8-b6c7-45ddce9fa7cc\",\"fb8eb482-5ea5-4ca8-86bd-6170c0e59271\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":360,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1551229212,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "cdc960ad04d7b3be60ece855c817bc55bcb6f1d5"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "75fcd303-b812-4099-ab97-9afedaad1384",
+                "cd16c9ab-1c1e-4149-a505-2ecd9ef40b5d",
+                "e244276a-0172-491c-8778-82a7a501af63",
+                "0ac69c93-4f6b-434b-9e59-11c2aff3a2bd",
+                "fb6986bf-81c7-4853-9a10-6b8e7fb9533d",
+                "28ab6c78-72dc-4a46-aec8-3da0c44a7133",
+                "cd590950-cf5d-4b72-8185-60fd83443862",
+                "eabdf50f-76db-4547-a721-f0d28d46590e",
+                "cdcb9a4f-60d5-410a-a667-b8040e651485",
+                "007c5bf6-64e1-41aa-9785-1e831c9277eb",
+                "82cca2c3-a856-425e-9213-c0d667583166",
+                "b30b87da-f296-454a-a2d9-fcae9ed5b439",
+                "54b7b7bc-e43e-4002-abce-ab5d8298beb7",
+                "17118c64-84b7-4735-9c33-b6a250ec34ab",
+                "1b8ba017-5127-4a88-8e75-4cdf4003e128",
+                "fb61695f-14f9-4a4d-92fb-b776bc8d835a",
+                "b3fa255a-00f3-464d-8d5c-702d8536de17",
+                "7edf45b1-4d39-4a29-b373-9b5b2800647f",
+                "a76878de-1e63-4856-83df-e856a9f94c4f",
+                "c3f2a2e8-e2eb-485f-b4b2-007c3474eab9",
+                "fc01cc98-59d4-4c69-a5b2-f7f8707709de",
+                "394cecf2-b75c-44d3-9e15-3b339051d78b",
+                "9291ef43-c5c6-445e-9165-67d0930ce877",
+                "f14556b4-dada-43d7-ac7a-2914c439db3a",
+                "725dfc7b-f8f7-4fc7-8880-102d55028375",
+                "288233d7-4a86-4ce1-9914-f2113ceaa98b",
+                "d121dea0-d367-438c-92e4-51ba1cfc4b37",
+                "5264ecc8-a518-41cf-a020-751b45b3c214",
+                "07eba68a-f0df-405b-8396-601fb56b1d62",
+                "139182c2-610a-40c9-9e72-169890fd6bd2",
+                "c0e9c3b1-cfdc-4ab2-a6f2-f09d6f86bc72",
+                "66bde357-e0e2-47c0-8cc0-37eb036cf008",
+                "5e21d573-3a09-4ab1-bc8e-dc985628059b",
+                "09bc54a0-5a4b-49c6-bdbc-bef819033a66",
+                "faece84a-c402-4d49-b618-04ec3d43cac7",
+                "166aebee-dfeb-45d7-ae24-566e4f2bfc39",
+                "4c721273-6b64-4b6e-a26e-db7169a14e8e",
+                "6a76f88e-3929-47f3-a7bc-4c0d0d79ac62",
+                "baac246c-ee78-4078-a60f-04d7e2eee2ec",
+                "701b9165-0632-4384-980c-99b2d6e89ab8",
+                "03f5a84d-47ef-4e82-8394-f05ec39b022f",
+                "5e9f3404-57aa-4706-bfe4-6582cbdec593",
+                "857ceaba-da92-4068-87e9-cf1e597ba942",
+                "4c4e8fcb-5693-49e2-9133-f5e2c88a0fcc",
+                "7703013e-cc71-4515-8912-888325b9fb89",
+                "309226e0-42a4-4467-ab7d-96a458900980",
+                "6bb3491d-9af9-4792-9924-4ac5c6402be4",
+                "0acdbe05-3030-46b4-9ef0-d47a2a567a51",
+                "b4f69bef-ef0e-4afc-abab-36e16cd0ddad",
+                "bb455b7f-a54d-4471-8da9-b8c286d687f8",
+                "190b30ae-5133-4d85-8d3c-98ee11673ce8",
+                "571b8378-20ac-4e50-a524-6aca1e8ce8b6",
+                "a2447cf8-a031-44ba-834c-228e9708a4e0",
+                "374dac3b-7c2b-4564-ab76-692430e73ad4",
+                "4fec81f0-5df3-4988-85f1-e25fbf242c2a",
+                "f5141c67-f526-4c48-8ca4-d0509da20f64",
+                "4a1b43a5-6aac-4fc6-9bec-6b23b0dca303",
+                "c1502198-9ae5-4e9e-b076-3ed95c335e7e",
+                "2f95924b-6ee7-40b5-99a5-87508f2b7dfe",
+                "d177a7c8-97fe-41d0-b169-fff08b304a50",
+                "056f1910-1410-4b5a-9fcb-94cdb0f4e6f6",
+                "902f342d-c5dc-4d4b-ae2f-7d62594e4778",
+                "50888705-bd8f-4ec2-987c-67864227e118",
+                "5bd042d3-5b7e-49db-afc7-1deba8688b36",
+                "37652cb2-f36f-4b0e-a0d9-e23ca99a5c5b",
+                "57e9371c-ceac-4952-b02e-cd348126e09d",
+                "102b10a5-f7b2-4a5b-a306-83225003b891",
+                "8167cd98-b5dd-4719-864a-92364644be8d",
+                "e2d00b93-0c39-4240-804c-26a9ddd0cddb",
+                "8a4d4400-3127-40ab-8dc2-9f70b70866f9",
+                "24d3f783-81b0-4e1a-83ec-1bd461c197c8",
+                "93085502-0591-4dda-a32f-d7d94529e245",
+                "b3ef9e09-9212-4e98-845a-561fb41aacd1",
+                "5d820e9c-32f0-48ef-9cc3-693cd7109967",
+                "bb6c23b1-ed0f-4daf-8416-979ab53a5614",
+                "b8c391b7-02e0-4dfb-ab85-a2477b76b0ce",
+                "e69200d7-7420-4a3e-9728-5e448fc0dbf6",
+                "438a5c0f-1398-4ef7-b620-09f1e88eb760",
+                "1b9fc63b-6191-4aee-b28e-94929de00c6a",
+                "1bbbb2d1-b143-421b-b6db-ceefce862b83",
+                "a76f9f8b-01fb-40d7-ad20-07dc0b5f1561",
+                "87c751a3-99aa-4a6f-8137-64905cd38023",
+                "2df12f32-03bc-40a3-8b46-cb2307e7aa4b",
+                "0127afa3-adc4-48a6-9cd3-423923223141",
+                "67365645-8c57-4c27-bb0b-e5e7d25eec3a",
+                "1eb66d86-e8af-4245-8e00-d9132e621b2f",
+                "3f01b0a9-1212-4f1b-90d6-6fd7d21fc824",
+                "e2a1d186-2847-4288-b737-6d04b0e94b02",
+                "d6a0fa83-6293-471d-b92f-c87ae4227ac0",
+                "4a3d83d5-7297-4d6a-b0a9-585317c525b7",
+                "e39064dc-77b0-4771-9374-f86d2bdaf8a6",
+                "3c5dd1e3-cf67-45e6-82e3-c826741c9672",
+                "980adf44-fed2-4f46-b744-62f1f579bb6b",
+                "a526b9c5-901a-4029-9ea8-0057e2d92e3e",
+                "5bdab4db-bce5-415c-bcac-b5aa33035b99",
+                "c79098d5-49be-4411-b3db-d78d4b3aff81",
+                "688890b6-8ca0-4363-85ca-8f2fe0db684d",
+                "2c00f7d6-a082-4f35-9984-13b886131a9d",
+                "227e4105-9aae-4534-b5b1-594167460e7d",
+                "e88f7474-acf4-48d6-9152-b3ac836040bc",
+                "f47f8117-4d81-4c14-a502-746ae46ebc3f",
+                "de03a951-cf3b-4819-b7e1-84f09561880f",
+                "2a779c17-c086-4d37-8756-a928b45c2753",
+                "aac4598b-7845-435c-ba70-b150f28196e7",
+                "fdbe7f73-0d97-4e13-bc0c-39bffb20f038",
+                "a640cba9-6e5d-4f9a-9dfe-e5f61e59116a",
+                "b4626c4b-b47f-44e2-8b06-cd0f9e7537f7",
+                "548171e3-9ee2-4024-9b85-1c7cfa8b0683",
+                "fa0e7754-aa98-4322-b4e7-401c842ead26",
+                "0dfa4457-7d24-4be5-a7ee-aa235fe906b6",
+                "d62d8b07-d314-4d72-8dc3-80f204b39c6f",
+                "eabc342f-1484-4bd1-9310-5ef6d1c18792",
+                "df36cede-8ecf-4498-a3b0-e1bc41f518eb",
+                "42bac315-905c-4394-99ec-f067e8c577fc",
+                "45ac925c-37ab-4335-b521-62eacda0da7b",
+                "dece1969-a56d-4878-9b0a-a2f90f37b3b5",
+                "24f71f01-39d9-4625-b575-a300ed3d60f3",
+                "3830152a-4691-4b6c-bfcb-666bfd4be658",
+                "537af80a-8ec4-41bd-9d2c-5ddf919e8785",
+                "64471cb5-d5bc-4286-b739-87439ecce1a8",
+                "ce60e57a-eb89-4736-b5d3-56203ac2d39b",
+                "761bf624-75ff-4af9-b082-8326ccc2f609",
+                "e4ed5bb7-1461-4861-8c57-c81074cf27be",
+                "32d7261d-69cc-4782-a0f2-8ba281219a76",
+                "2c1404c2-120f-4e68-acda-ce9c6dd31b55",
+                "ddaf8685-a3f5-434e-8f5b-b4909e0623d4",
+                "dcf5637f-14c9-457f-9a7d-26f99ded8b11",
+                "784c2f2f-2fc0-4f2c-8b97-97927510a65d",
+                "da2176bf-bb1f-45c1-90f1-060ef6345c9a",
+                "070da597-41f2-4ab9-a62f-bd0a1a3ac38d",
+                "88135262-8ec5-4633-b61c-a3f562ca93b6",
+                "27f060ce-c0ba-4ab0-93c6-945ac9338db5",
+                "363d31e4-7628-4bcd-9817-f603d79ddf25",
+                "300705a6-ae23-4644-aebc-300d09877437",
+                "4afd9e2d-6853-465a-b05a-280a6a82bbbe",
+                "0add1a96-9b18-4dab-b75c-146cf956bb4d",
+                "5a6e9c60-2fcb-473b-8330-f65908c6c8a0",
+                "f6492228-7f95-40c7-904d-9b9c6ec809ae",
+                "3e6cf703-3fe2-4443-9cad-a5137e34288f",
+                "c2b2207b-9f29-421e-9084-b1ff97afec81",
+                "9904f71f-c607-4e0b-a437-8c4d74a195c5",
+                "dd7ea122-a797-42cc-9154-c38a13fffc03",
+                "6c9fdb9d-b888-4f9e-b2f7-411997892fda",
+                "6a2c6e14-9895-4d9f-b17a-9bd5f6c8fbd8",
+                "b3184a44-2eac-4d38-b631-c2a244483aae",
+                "51f5a80c-f837-4b59-8efb-fe067f7525cc",
+                "d383dceb-1983-475a-a166-97c3c07d3832",
+                "d95bb318-2fe8-45a1-b903-8489e2ab4fdb",
+                "3cf3bd1a-8b53-4f9d-9adb-2879cee6e62c",
+                "7e9270de-871d-42fc-9779-9723f6d0466d",
+                "e4fce07a-ee6a-4a94-b37d-268542b0ccee",
+                "14cbdfcc-01da-4803-b957-20fd51a7eda6",
+                "c9b3253e-7f93-4bba-88be-e53794b4c1a5",
+                "a3019d02-58c3-4b41-a572-5c675ac6acda",
+                "6535bd37-6845-4c1d-8358-e9ec7c27f8d2",
+                "cd9579bc-9371-4d16-a3a8-2a71d1afb2ed",
+                "b0712a56-c08a-4d21-91bf-1bfb1dbd4fec",
+                "0d6c9d8c-98dd-4763-9f45-67cffd7fc100",
+                "bec91941-664b-41f6-965a-49f973a401b6",
+                "4708d4c9-5b55-4a3a-a2c4-ffb9fbfdeafe",
+                "4ccc025a-eae0-41fb-8a2c-aa4bde71676b",
+                "8f353652-1b5e-4bd0-aa41-8533be4678fd",
+                "ff8899cb-e7dd-40a2-bca0-2795f9c43506",
+                "1260b73a-8f06-46c8-ae41-6c763678a2b1",
+                "73fa969c-d917-4f5f-b13b-62034f1af39f",
+                "a8e45b62-1599-41bf-a2be-fcdcddb9683c",
+                "bcd418a5-7b3d-4c5f-a6da-db3d066600b4",
+                "5e4597ff-30bb-4c05-80be-ec7b3ecc877e",
+                "ccacc591-6583-4fb1-9f43-95ef418b7fe0",
+                "098ba413-42d3-4ee0-9674-8df570e2367a",
+                "4c9d2b2c-24d1-43e1-8e2a-6cfc44c62f64",
+                "d5492ea6-b78c-4010-991e-ae4a770914f2",
+                "a72546ac-d9a1-4007-895c-1c2071c49b0b",
+                "ec26f7a4-db1f-48aa-90af-6fd0578bc661",
+                "5f73b424-566f-492c-8378-4d8244a245bc",
+                "3538fbdd-b5d6-484e-829a-798d59666726",
+                "9d1e8474-0e44-4d5a-8de5-96cf54f75b92",
+                "9261e724-17a2-40fd-ac14-ee01e036be2b",
+                "c88c381d-5fb0-4763-b0e7-cdb2b43d9765",
+                "b5cda604-d5ce-4f41-a9fe-3f3bf66fd07e",
+                "8f9a2f07-a2aa-4c2e-912b-10ce6d148bb3",
+                "0f3d2ab4-0fb4-42b6-adf6-3cdf4f25466d",
+                "fabf467d-001a-43fc-b469-2e6761856c88",
+                "e61f80dc-ce71-4288-9af6-6c8830d40e37",
+                "bf3f43d3-3cd5-4d5f-9dbf-2c3d9129af14",
+                "6ca0a572-f0c1-4b6a-b298-2c052a2a1eb7",
+                "2e5656a5-3de3-4b1e-a06b-e47085ee26fa",
+                "b1acb68d-4db7-4f56-b02f-665602b414b7",
+                "72d53e66-037d-40f9-83b4-ae12d85b2a85",
+                "deca3952-279e-4699-8add-83b0d869a8a8",
+                "0ae75992-4f57-4d26-a093-eef01c163c2a",
+                "fbf7275d-b7bc-449a-9246-53ae08f10086",
+                "5424e163-f495-4e9b-b2d5-f0d94319d2fe",
+                "aaa6be44-3e63-41d3-8b81-2a2ebcc3ef3d",
+                "2135a84b-37c4-4e9b-8351-cd8eb387ee6a",
+                "3ad8b49a-a232-4362-8747-70e9f272f75a",
+                "c2e97314-2b79-4976-a263-d54cf6ee1138",
+                "45cca769-788f-4a38-9d1a-b80375ffcab7",
+                "c1f36635-d15e-48e6-b846-25efe2771a27",
+                "47fd741b-0810-4b72-94a1-a27a1eab1686",
+                "27ccca73-f658-4cb8-9dc6-e019fe886137",
+                "c935c0e2-a186-4ec8-93f5-d11d72936440",
+                "d9f599b4-f972-4e39-a62a-847fed885c60",
+                "494581bd-0a61-4e58-85c7-f88b03bb39f4",
+                "c19cff0a-5ff7-4f5a-81b1-5b24eac98210",
+                "29195462-b042-40d9-b936-193cfbeb3817",
+                "44817e15-51a7-4bc9-af0f-3c4260336c7b",
+                "6d0c80a5-08d4-4576-822c-c25155dfb38f",
+                "4e3b0ad3-3c68-440f-9d8d-bdf6665bc242",
+                "c5dec2e3-75a3-4827-a7a3-39f049dfbb4e",
+                "8d9f6b04-8506-4258-8b63-786e93921910",
+                "7b6f38d1-2087-4107-82fd-c1f618c489cc",
+                "66442a45-93b3-4754-8fe0-17b62348b1a3",
+                "8a119360-76c9-4d30-8ac3-4ddedd66a040",
+                "71a1dc76-139e-4ff4-943c-e1d780ab3d12",
+                "8e310b0b-81dd-4199-b8bc-3723e22706ba",
+                "90b82dcc-8205-4219-bf94-205ce20043be",
+                "60dda92e-3a0e-488b-8d79-f3ee31dbaac4",
+                "985421bc-9b6d-440e-af13-47ee52d11e1d",
+                "fc4a6699-7a3e-4645-bf24-498df69ab9ee",
+                "1fed4805-2cbd-4ab7-9cc6-2592d4cccf37",
+                "d37754bd-45f0-4f47-bfa0-8b55060ffc1c",
+                "07ca7c1d-6977-43d4-b421-05d0f272317a",
+                "f40300af-8ecd-4114-95bf-98307318f191",
+                "29457944-f251-4378-ab77-70276dbad12b",
+                "35f56a8f-e12f-4d5f-bfdd-21b9b7fb6569",
+                "6963af82-55c0-43b1-b468-c37fc7395340",
+                "0ecee394-0a7c-4321-a04a-1dba6da54561",
+                "ff92d7ca-4ebb-4e63-9394-c2b73f590d32",
+                "bfc48b8e-052a-4d7c-92ae-ca33bda15166",
+                "0529b541-cbbc-4f40-931c-2b4959e8f206",
+                "f7ec35c0-b4ed-47fd-941a-c3652929f525",
+                "b86e4a6e-a940-4d06-83a1-96099c82b888",
+                "9dfcca95-2f9b-47b6-9c45-fde55cf91006",
+                "1fc9d5de-92a4-4939-a55a-38fda6811a68",
+                "46559ea5-d6eb-475e-807f-83b571a63b10",
+                "57da681b-315e-4a87-aa30-6e8693afe96f",
+                "8a54a2f9-2cc1-4df8-8377-4e1d3d2a6662",
+                "09192212-b6dd-4a0a-b541-c13c580860d7",
+                "b400c3f5-ef77-4344-8b4e-8c006f0a1dba",
+                "49507203-e98a-4541-8739-963be8c181e9",
+                "0f24d9d1-4b1b-497a-b7aa-952c10bca3ee",
+                "011ab29b-34a5-4b54-a5f5-e2e738e3fad0",
+                "2b6c6ed5-5ce5-4ade-8a91-0ec27bd40bfc",
+                "b6bf17db-8d21-495d-9540-796681ec3cb6",
+                "9de4034c-ca47-4f85-8005-1e7931039f12",
+                "3667f7e6-06f0-4fb4-a3eb-8dbd2686ec3c",
+                "b24aa888-34d5-4cb5-bb78-3f8d0a9f5581",
+                "ddb56340-e5a0-47c1-a5f6-0f1c7562ff02",
+                "39635a5a-c542-40d9-8dff-15e44147f753",
+                "df78e1f8-258c-4746-b7fa-96f0b61097f6",
+                "c955b891-1a00-4ac4-b08c-7a77932e1d3f",
+                "6165de06-110d-40cd-ac29-bafdc8bf688f",
+                "b4bc8e01-913e-41ae-968d-b7bb0646c138",
+                "b28e154c-94eb-44ce-b8b6-327396f016c6",
+                "834e3d43-191f-43f9-a8aa-e4b5dacfe496",
+                "3e1ac836-c1a7-46cd-b040-1f852a71fdf7",
+                "0bfb4a31-3585-4b8e-9b21-a77a5a64e640",
+                "d0944445-c9cc-40bb-bb2b-9bc3aa16fbbd",
+                "61a4f2cf-c1ee-4ad4-8c8c-907570d2ddf5",
+                "39cc4270-2081-4649-a7f3-9fb5b33bd4bf",
+                "4adda760-849d-4266-bd91-485b1cb4c235",
+                "f5a9d5d5-7c95-4af7-914c-f1800b9b79a1",
+                "0b296875-b78d-474e-899c-155a163f05a8",
+                "8e28d7ca-75ed-426c-b558-2a19f4bad972",
+                "d99126a9-ea32-49aa-a4f4-7fd710ce0787",
+                "d32cac8c-4ace-41cb-abd2-6c47a7999d04",
+                "39b5a2d3-f22e-4b6b-91d5-1ca0e8ffecc5",
+                "ce4458f1-c1e7-4648-9497-70215e67c7d2",
+                "b90e825c-e445-4166-ba8e-d0549bb62b58",
+                "e937e159-d06c-4372-93c7-87e94cc808b3",
+                "6efdfa98-5538-4688-8d1e-fd5419e96ac6",
+                "7af718f0-d7e7-4cdb-9bbb-3aac102ce14e",
+                "d5caecac-8138-43b4-b3a7-a91d7d979cd1",
+                "a656c73a-545e-4435-8c4d-39dd19f16a98",
+                "4e81ead7-2e30-4acd-9a61-7b5650c67f90",
+                "fce75273-bc3a-4f14-af1d-6ee33dcd762c",
+                "f13663fb-61ff-4629-9f24-8b72ffeccb48",
+                "2c7542a7-f045-4eac-aeec-b180071d4b48",
+                "783f2f4f-7c73-4fb2-b63a-24469ee404ae",
+                "b6ba5d5e-9875-42bf-8246-750c6a3998c3",
+                "585025a8-e7ed-4283-9c5d-a173834662c9",
+                "968cdc33-856d-49ff-83ef-b1d63dd026e7",
+                "c9f040b6-72e3-4133-ab24-66a4e1e98193",
+                "a79f5aed-c8b4-4b9c-b5fd-13c9eaabf2cc",
+                "cd8bd14f-825e-4710-8042-f8beeb5cda8e",
+                "8ce88b33-2536-46c6-a8a7-fc51342bf096",
+                "17c6842a-a93b-4ddb-95c3-079385f319d1",
+                "3c0203db-4720-4c0a-a13b-c47cd39c3d7c",
+                "4eca0644-4118-43d1-818b-59da9d9313a0",
+                "d0d6c198-70c2-47c2-ac07-bbe49b3a1b3e",
+                "d783232c-9b4a-4bb7-be4a-c731a3948987",
+                "d2fe653e-96e8-4cf2-8cd4-48a6187aed18",
+                "c3fee8db-fac2-4d37-a417-a6baea578d28",
+                "1e691510-422e-48e9-b792-663d6a61029d",
+                "7c86ce74-d62d-4030-a1b6-f493c1daeb6c",
+                "f595df28-ca2d-4621-9e27-0aa56082976f",
+                "9e04c6c4-b83c-40b4-850b-399dc500e7a1",
+                "947a3c65-25e6-4418-93e9-d60d0d636691",
+                "92a6e3aa-f915-42b1-9a34-3576eb44b351",
+                "91ac39cf-739f-4a74-a3f8-f8573382fd20",
+                "62325250-c53d-4e87-89ef-211259bcd3d2",
+                "b8a37e68-85ac-488f-a444-6876df8bae12",
+                "f5e0dd65-91ad-4baf-8568-90fc683f955d",
+                "7a26fed9-1d43-4d07-a547-bf4c831e0ced",
+                "563a7950-c176-4591-a7d8-528025416301",
+                "a6bafff4-fd7e-46b0-999a-2f1bd5781a3d",
+                "3e0fc35d-76a9-4b62-9117-f59b39e39def",
+                "c9b28eb4-eefd-4c88-907d-4547c2a7ffdd",
+                "25d316ef-518f-4d05-b0e5-4671c1fb51cc",
+                "4775fd53-c3a1-4cfe-9641-10c236f1f8df",
+                "b8c97f36-10a6-4314-8d9d-0686f2760d82",
+                "ac31f263-2417-4150-8a6e-45dfd605f2a7",
+                "c4d2b7f2-7720-480a-bd31-75f7a879205f",
+                "05cf9b50-4daf-4b84-8e3b-48d2c9b645f0",
+                "16557246-8220-4607-9762-820ffa16e921",
+                "87d19322-bd54-434c-93dc-6a344ad1988f",
+                "89adb432-7306-454e-8448-5a89e5f2ff75",
+                "fbe394df-5d8a-441f-ab75-5d522ca77441",
+                "dc270819-b867-4cdf-a05d-e77fb204f69e",
+                "a6f7dee2-7cd8-42b6-a4e6-1339e4b6bc82",
+                "9fb261bf-cd6a-4bac-ba32-36d20683d48e",
+                "442ded8c-ed1b-4143-ad86-3a1916142f73",
+                "ba83d757-238d-42d8-a094-db82d9b06bb2",
+                "b7f63365-81da-4fd5-915d-f99d4d52e466",
+                "81468275-7cb5-4b0b-b5df-a89474f1bcf9",
+                "9bf64f65-8d0d-4ac6-9f1d-9432f5c8b138",
+                "bfc2bf9f-f072-4d6b-9a50-697a8309ba83",
+                "4af2d4a1-40f2-4ed0-bde3-d7e97eeda7b4",
+                "caed9867-7172-4d8e-8d7e-26a59fdff430",
+                "e200017d-07b3-4d68-ad37-7f0c46c7556b",
+                "3fc66bdd-4698-4f38-8795-a261009b68d7",
+                "15949518-8819-49fc-811c-2176a9f2d9cb",
+                "effba9f4-0cd3-4936-b191-5009beeef5cd",
+                "db2c4a14-1650-4139-a86d-68eea4400ce4",
+                "ce17a348-bf21-4fc8-b6c7-45ddce9fa7cc",
+                "75aace50-ed8d-45e2-88e1-05cc0c86a7ab",
+                "fb53b43b-6c82-431d-9625-0f8789127859",
+                "b83b18a4-e007-4387-b6fb-1fe65bc1aa2d",
+                "5bc87b81-0775-4618-8880-d27cc21127ed",
+                "313dff66-cbd4-4e7a-9155-ef01a97c6f35",
+                "0cf34dd8-af6e-44c4-8a43-abb76a5c0778",
+                "e7017a09-a354-4bdd-80be-52d418bd6cc9",
+                "0830a468-80ae-4926-b765-54e02b874a79",
+                "d7f0599e-5ca0-4298-af7b-4845d13f9b7e",
+                "720f749f-1a7f-4c5c-bef0-52fd9a618216",
+                "756ac584-8c4e-4fa8-9781-847ba1a1a3e8",
+                "cbad3ae5-d460-41b2-b818-17c7f4099ae6",
+                "cda788d3-474c-45b7-99e4-d395ac800086",
+                "e70599d8-57db-4f7d-9a51-86ddeed4f1ba",
+                "dc5ebc46-4323-48b6-ab94-6a5996a5a046",
+                "847bccf9-e94c-40f2-bec9-6a8821e46788",
+                "f6323824-b020-4832-b9e0-179ef3a4b19c",
+                "0f301502-53d8-4249-9997-2e1d7ee20067",
+                "19a3d10b-bc7b-4145-81ce-404db570ba5c",
+                "9506745d-72ac-44cd-a22e-572467fe08a3",
+                "1e701873-c580-4066-ac1d-321fa92891af",
+                "6aa6c339-ed31-4bc6-aa7d-439b7f4534c5"
+            ]
+        }
+    },
+    "[耗时]": "504ms"
+}
+
+[2019-02-27 23:38:19][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "fb8eb482-5ea5-4ca8-86bd-6170c0e59271",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "refund",
+    "messageContent": {
+        "order_id": "refund"
+    }
+}
+
+[2019-02-27 23:38:20][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"fb8eb482-5ea5-4ca8-86bd-6170c0e59271\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"refund\\\",\\\"content\\\":{\\\"order_id\\\":\\\"refund\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "6dc4c67de8bb8431112d30f57ab7cb472f58a864"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "277ms"
+}
+
+[2019-02-27 23:39:08][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "fb8eb482-5ea5-4ca8-86bd-6170c0e59271",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "refund",
+    "messageContent": {
+        "order_id": "refund"
+    }
+}
+
+[2019-02-27 23:39:08][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"fb8eb482-5ea5-4ca8-86bd-6170c0e59271\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"refund\\\",\\\"content\\\":{\\\"order_id\\\":\\\"refund\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "6dc4c67de8bb8431112d30f57ab7cb472f58a864"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "fb8eb482-5ea5-4ca8-86bd-6170c0e59271",
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "300ms"
+}
+
+[2019-02-27 23:39:47][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"166aebee-dfeb-45d7-ae24-566e4f2bfc39\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1549117997flkQN\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "71cf20b4dd37263cadbe566bada3a814fc9efd9d"
+}
+
+[2019-02-27 23:39:47][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:39:47][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "166aebee-dfeb-45d7-ae24-566e4f2bfc39",
+    "type": "order",
+    "content": {
+        "order_id": "1549117997flkQN"
+    }
+}
+
+[2019-02-27 23:39:47][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "fb8eb482-5ea5-4ca8-86bd-6170c0e59271",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "order",
+    "messageContent": {
+        "who": "system",
+        "order_info": {
+            "order": {
+                "order_id": "1549117997flkQN",
+                "open_id": "opexV4zhvLlfWOeMuUifxymsoCqA",
+                "address_id": "33",
+                "timeStamp": "1549117997",
+                "order_date": "",
+                "pay_status": "SUCCESS",
+                "logistics_status": null,
+                "seller_act": "SIGNED",
+                "total_fee": "0.1",
+                "user_words": "",
+                "nonceStr": "pq4x05ajfxkccwxi3hojkqt9cdhuwjjp",
+                "paySign": "3A792336B48610E84DD3FC695660A50C",
+                "package": "",
+                "picker_id": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+                "postman_id": "",
+                "refund_reason": null,
+                "refund_status": null
+            },
+            "address": {
+                "address_id": "33",
+                "open_id": "opexV4zhvLlfWOeMuUifxymsoCqA",
+                "province": "贵州省",
+                "city": "毕节市",
+                "county": "七星关区",
+                "detail": "s打发士大夫",
+                "name": "刘强东",
+                "telphone": "13309878909",
+                "default_address": "0"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1549117997flkQN",
+                    "goods_id": "2",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "中公教育2019国家公务员考试用书 历年真题精解试卷 行测 行政职业能力测验 ",
+                    "face_img": "https:\/\/img14.360buyimg.com\/n1\/jfs\/t1\/7867\/10\/6852\/365246\/5be245aeE471248ab\/7c1a99630e064de3.jpg",
+                    "price": "24"
+                },
+                {
+                    "order_id": "1549117997flkQN",
+                    "goods_id": "5",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "中公2019贵州公务员考试用书申论行测教材历年全真模拟公共基础8本贵州省公务员考试用书真题",
+                    "face_img": "https:\/\/img13.360buyimg.com\/n5\/jfs\/t25300\/278\/254091626\/568679\/6142e616\/5b6a7866Nb498a212.png",
+                    "price": "142"
+                }
+            ]
+        }
+    }
+}
+
+[2019-02-27 23:39:47][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"fb8eb482-5ea5-4ca8-86bd-6170c0e59271\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"who\\\":\\\"system\\\",\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"open_id\\\":\\\"opexV4zhvLlfWOeMuUifxymsoCqA\\\",\\\"address_id\\\":\\\"33\\\",\\\"timeStamp\\\":\\\"1549117997\\\",\\\"order_date\\\":\\\"\\\",\\\"pay_status\\\":\\\"SUCCESS\\\",\\\"logistics_status\\\":null,\\\"seller_act\\\":\\\"SIGNED\\\",\\\"total_fee\\\":\\\"0.1\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"pq4x05ajfxkccwxi3hojkqt9cdhuwjjp\\\",\\\"paySign\\\":\\\"3A792336B48610E84DD3FC695660A50C\\\",\\\"package\\\":\\\"\\\",\\\"picker_id\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":null,\\\"refund_status\\\":null},\\\"address\\\":{\\\"address_id\\\":\\\"33\\\",\\\"open_id\\\":\\\"opexV4zhvLlfWOeMuUifxymsoCqA\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"毕节市\\\",\\\"county\\\":\\\"七星关区\\\",\\\"detail\\\":\\\"s打发士大夫\\\",\\\"name\\\":\\\"刘强东\\\",\\\"telphone\\\":\\\"13309878909\\\",\\\"default_address\\\":\\\"0\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"goods_id\\\":\\\"2\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"中公教育2019国家公务员考试用书 历年真题精解试卷 行测 行政职业能力测验 \\\",\\\"face_img\\\":\\\"https:\/\/img14.360buyimg.com\/n1\/jfs\/t1\/7867\/10\/6852\/365246\/5be245aeE471248ab\/7c1a99630e064de3.jpg\\\",\\\"price\\\":\\\"24\\\"},{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"goods_id\\\":\\\"5\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"中公2019贵州公务员考试用书申论行测教材历年全真模拟公共基础8本贵州省公务员考试用书真题\\\",\\\"face_img\\\":\\\"https:\/\/img13.360buyimg.com\/n5\/jfs\/t25300\/278\/254091626\/568679\/6142e616\/5b6a7866Nb498a212.png\\\",\\\"price\\\":\\\"142\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "af01887ce5449b00c06cc23f38382e801ef8c3a7"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "355ms"
+}
+
+[2019-02-27 23:47:34][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"166aebee-dfeb-45d7-ae24-566e4f2bfc39\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1549117997flkQN\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "71cf20b4dd37263cadbe566bada3a814fc9efd9d"
+}
+
+[2019-02-27 23:47:34][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:47:34][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "166aebee-dfeb-45d7-ae24-566e4f2bfc39",
+    "type": "order",
+    "content": {
+        "order_id": "1549117997flkQN"
+    }
+}
+
+[2019-02-27 23:47:34][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "fb8eb482-5ea5-4ca8-86bd-6170c0e59271",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "order",
+    "messageContent": {
+        "who": "system",
+        "order_info": {
+            "order": {
+                "order_id": "1549117997flkQN",
+                "open_id": "opexV4zhvLlfWOeMuUifxymsoCqA",
+                "address_id": "33",
+                "timeStamp": "1549117997",
+                "order_date": "",
+                "pay_status": "SUCCESS",
+                "logistics_status": null,
+                "seller_act": "SIGNED",
+                "total_fee": "0.1",
+                "user_words": "",
+                "nonceStr": "pq4x05ajfxkccwxi3hojkqt9cdhuwjjp",
+                "paySign": "3A792336B48610E84DD3FC695660A50C",
+                "package": "",
+                "picker_id": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+                "postman_id": "",
+                "refund_reason": null,
+                "refund_status": null
+            },
+            "address": {
+                "address_id": "33",
+                "open_id": "opexV4zhvLlfWOeMuUifxymsoCqA",
+                "province": "贵州省",
+                "city": "毕节市",
+                "county": "七星关区",
+                "detail": "s打发士大夫",
+                "name": "刘强东",
+                "telphone": "13309878909",
+                "default_address": "0"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1549117997flkQN",
+                    "goods_id": "2",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "中公教育2019国家公务员考试用书 历年真题精解试卷 行测 行政职业能力测验 ",
+                    "face_img": "https:\/\/img14.360buyimg.com\/n1\/jfs\/t1\/7867\/10\/6852\/365246\/5be245aeE471248ab\/7c1a99630e064de3.jpg",
+                    "price": "24"
+                },
+                {
+                    "order_id": "1549117997flkQN",
+                    "goods_id": "5",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "中公2019贵州公务员考试用书申论行测教材历年全真模拟公共基础8本贵州省公务员考试用书真题",
+                    "face_img": "https:\/\/img13.360buyimg.com\/n5\/jfs\/t25300\/278\/254091626\/568679\/6142e616\/5b6a7866Nb498a212.png",
+                    "price": "142"
+                }
+            ]
+        }
+    }
+}
+
+[2019-02-27 23:47:35][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"fb8eb482-5ea5-4ca8-86bd-6170c0e59271\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"who\\\":\\\"system\\\",\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"open_id\\\":\\\"opexV4zhvLlfWOeMuUifxymsoCqA\\\",\\\"address_id\\\":\\\"33\\\",\\\"timeStamp\\\":\\\"1549117997\\\",\\\"order_date\\\":\\\"\\\",\\\"pay_status\\\":\\\"SUCCESS\\\",\\\"logistics_status\\\":null,\\\"seller_act\\\":\\\"SIGNED\\\",\\\"total_fee\\\":\\\"0.1\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"pq4x05ajfxkccwxi3hojkqt9cdhuwjjp\\\",\\\"paySign\\\":\\\"3A792336B48610E84DD3FC695660A50C\\\",\\\"package\\\":\\\"\\\",\\\"picker_id\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":null,\\\"refund_status\\\":null},\\\"address\\\":{\\\"address_id\\\":\\\"33\\\",\\\"open_id\\\":\\\"opexV4zhvLlfWOeMuUifxymsoCqA\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"毕节市\\\",\\\"county\\\":\\\"七星关区\\\",\\\"detail\\\":\\\"s打发士大夫\\\",\\\"name\\\":\\\"刘强东\\\",\\\"telphone\\\":\\\"13309878909\\\",\\\"default_address\\\":\\\"0\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"goods_id\\\":\\\"2\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"中公教育2019国家公务员考试用书 历年真题精解试卷 行测 行政职业能力测验 \\\",\\\"face_img\\\":\\\"https:\/\/img14.360buyimg.com\/n1\/jfs\/t1\/7867\/10\/6852\/365246\/5be245aeE471248ab\/7c1a99630e064de3.jpg\\\",\\\"price\\\":\\\"24\\\"},{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"goods_id\\\":\\\"5\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"中公2019贵州公务员考试用书申论行测教材历年全真模拟公共基础8本贵州省公务员考试用书真题\\\",\\\"face_img\\\":\\\"https:\/\/img13.360buyimg.com\/n5\/jfs\/t25300\/278\/254091626\/568679\/6142e616\/5b6a7866Nb498a212.png\\\",\\\"price\\\":\\\"142\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "af01887ce5449b00c06cc23f38382e801ef8c3a7"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "341ms"
+}
+
+[2019-02-27 23:47:56][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"131c6e4f-78b1-43a5-8a14-77aaf64b34ce\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=131c6e4f-78b1-43a5-8a14-77aaf64b34ce&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "61532e2ed68c1f20e7aed60f2b5bba97c0878c7a"
+    },
+    "[耗时]": "177ms"
+}
+
+[2019-02-27 23:47:56][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "131c6e4f-78b1-43a5-8a14-77aaf64b34ce"
+}
+
+[2019-02-27 23:47:57][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"131c6e4f-78b1-43a5-8a14-77aaf64b34ce\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "44562f0239d8ec00588b106e3e60aec318f899be"
+}
+
+[2019-02-27 23:47:57][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:47:57][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "131c6e4f-78b1-43a5-8a14-77aaf64b34ce"
+}
+
+[2019-02-27 23:47:57][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "131c6e4f-78b1-43a5-8a14-77aaf64b34ce",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 361,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1551229212,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-27 23:47:57][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"131c6e4f-78b1-43a5-8a14-77aaf64b34ce\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":361,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1551229212,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "2c3d84975a389bf62b51bb6dda26c1e25504013b"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "267ms"
+}
+
+[2019-02-27 23:47:58][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"131c6e4f-78b1-43a5-8a14-77aaf64b34ce\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"word\\\":\\\"大家好啊\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "a08f1298e2b589b1c0ff8ec89c53e3185ea0752e"
+}
+
+[2019-02-27 23:47:58][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:47:58][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "131c6e4f-78b1-43a5-8a14-77aaf64b34ce",
+    "type": "speak",
+    "content": {
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-27 23:47:58][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "131c6e4f-78b1-43a5-8a14-77aaf64b34ce",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1551229212,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-27 23:47:59][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"131c6e4f-78b1-43a5-8a14-77aaf64b34ce\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1551229212,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"大家好啊\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "383e70321cf10cfe094051d06facd84b226cba87"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "292ms"
+}
+
+[2019-02-27 23:48:02][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"131c6e4f-78b1-43a5-8a14-77aaf64b34ce\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"word\\\":\\\"jkujk\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "03367fc55825e14e37fcf5d1198660d24037bf24"
+}
+
+[2019-02-27 23:48:02][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:48:02][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "131c6e4f-78b1-43a5-8a14-77aaf64b34ce",
+    "type": "speak",
+    "content": {
+        "word": "jkujk"
+    }
+}
+
+[2019-02-27 23:48:02][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "131c6e4f-78b1-43a5-8a14-77aaf64b34ce",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1551229212,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "jkujk"
+    }
+}
+
+[2019-02-27 23:48:02][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"131c6e4f-78b1-43a5-8a14-77aaf64b34ce\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1551229212,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"jkujk\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "031bc17a8bef91b5927d47ec1cdac9fc3dbae3fd"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "235ms"
+}
+
+[2019-02-27 23:48:54][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"2495baf5-ee5f-40d8-87da-c73ab721f842\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=2495baf5-ee5f-40d8-87da-c73ab721f842&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "59bbc8b4453134c4a5f89d02a9e054cacbae2a71"
+    },
+    "[耗时]": "179ms"
+}
+
+[2019-02-27 23:48:54][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "2495baf5-ee5f-40d8-87da-c73ab721f842"
+}
+
+[2019-02-27 23:48:54][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"2495baf5-ee5f-40d8-87da-c73ab721f842\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "d4b04a1086862cbe6be086dbf26f0e0f6a384fff"
+}
+
+[2019-02-27 23:48:54][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:48:54][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "2495baf5-ee5f-40d8-87da-c73ab721f842"
+}
+
+[2019-02-27 23:48:54][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "2495baf5-ee5f-40d8-87da-c73ab721f842",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 362,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1551229212,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-27 23:48:54][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"2495baf5-ee5f-40d8-87da-c73ab721f842\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":362,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1551229212,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "7c760cfac75cb8243c64c74691fef0169adce1de"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "2495baf5-ee5f-40d8-87da-c73ab721f842",
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "234ms"
+}
+
+[2019-02-27 23:48:58][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"1f4b498e-c853-450d-a75f-01d32275de86\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=1f4b498e-c853-450d-a75f-01d32275de86&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "05d427ad19c53cbbd4ce26e7a50dd957f3f73c35"
+    },
+    "[耗时]": "168ms"
+}
+
+[2019-02-27 23:48:58][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "1f4b498e-c853-450d-a75f-01d32275de86"
+}
+
+[2019-02-27 23:48:59][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"1f4b498e-c853-450d-a75f-01d32275de86\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "04975e93fb14324a9edd080c0f63dca8936fc854"
+}
+
+[2019-02-27 23:48:59][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:48:59][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "1f4b498e-c853-450d-a75f-01d32275de86"
+}
+
+[2019-02-27 23:48:59][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "1f4b498e-c853-450d-a75f-01d32275de86",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 363,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1551229212,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-27 23:48:59][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"1f4b498e-c853-450d-a75f-01d32275de86\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":363,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1551229212,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "05b6a2d813bfcad522c8bab14f6ef3269bd73b67"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "1f4b498e-c853-450d-a75f-01d32275de86",
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "286ms"
+}
+
+[2019-02-27 23:49:01][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"1f4b498e-c853-450d-a75f-01d32275de86\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"word\\\":\\\"大家好啊\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "bcfdebf266dabf70664653e501ee10603cfb5439"
+}
+
+[2019-02-27 23:49:01][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:49:01][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "1f4b498e-c853-450d-a75f-01d32275de86",
+    "type": "speak",
+    "content": {
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-27 23:49:01][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "1f4b498e-c853-450d-a75f-01d32275de86",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "speak",
+    "messageContent": {
+        "who": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1551229212,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        },
+        "word": "大家好啊"
+    }
+}
+
+[2019-02-27 23:49:01][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"1f4b498e-c853-450d-a75f-01d32275de86\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"speak\\\",\\\"content\\\":{\\\"who\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1551229212,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}},\\\"word\\\":\\\"大家好啊\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "e4ff68aab341adf0b28eba071027187eb5be7e9a"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "188ms"
+}
+
+[2019-02-27 23:49:20][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"40646ab8-a355-448d-9145-a0b0ab824e85\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=40646ab8-a355-448d-9145-a0b0ab824e85&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "809818c0fd5a99a4f1edd58715e54a7e8412ff1a"
+    },
+    "[耗时]": "266ms"
+}
+
+[2019-02-27 23:49:20][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "40646ab8-a355-448d-9145-a0b0ab824e85"
+}
+
+[2019-02-27 23:49:20][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"40646ab8-a355-448d-9145-a0b0ab824e85\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "af6f303e3d83f6dfd8a04dd583f8c0411e60336f"
+}
+
+[2019-02-27 23:49:20][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:49:20][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "40646ab8-a355-448d-9145-a0b0ab824e85"
+}
+
+[2019-02-27 23:49:20][DEBUG] TunnelService [closeTunnel] => {
+    "tunnelId": "40646ab8-a355-448d-9145-a0b0ab824e85"
+}
+
+[2019-02-27 23:49:20][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"40646ab8-a355-448d-9145-a0b0ab824e85\"],\"type\":\"close\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "58bd6d08581a2a4e61f1cb3bbf27badd2f12948a"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": []
+        }
+    },
+    "[耗时]": "186ms"
+}
+
+[2019-02-27 23:49:36][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"c98c8df3-4a4f-47f4-ad09-720d9b675559\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=c98c8df3-4a4f-47f4-ad09-720d9b675559&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "18f2215caa360e09a7c6fb66baa6d66f58f25295"
+    },
+    "[耗时]": "172ms"
+}
+
+[2019-02-27 23:49:36][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "c98c8df3-4a4f-47f4-ad09-720d9b675559"
+}
+
+[2019-02-27 23:49:37][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"c98c8df3-4a4f-47f4-ad09-720d9b675559\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "833e65697069335c5a6f100efe6cd76bfcce4d2b"
+}
+
+[2019-02-27 23:49:37][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:49:37][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "c98c8df3-4a4f-47f4-ad09-720d9b675559"
+}
+
+[2019-02-27 23:49:37][DEBUG] TunnelService [closeTunnel] => {
+    "tunnelId": "c98c8df3-4a4f-47f4-ad09-720d9b675559"
+}
+
+[2019-02-27 23:49:37][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"c98c8df3-4a4f-47f4-ad09-720d9b675559\"],\"type\":\"close\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "ac1bea12e9700b58173d634caba44483b6db03b3"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": []
+        }
+    },
+    "[耗时]": "181ms"
+}
+
+[2019-02-27 23:50:55][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"2ae8dfb0-69bd-48b5-82f0-dbb7a692defa\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=2ae8dfb0-69bd-48b5-82f0-dbb7a692defa&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "dccfbe6b276eabe135a56c5b66baee8fc1321898"
+    },
+    "[耗时]": "270ms"
+}
+
+[2019-02-27 23:50:55][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "2ae8dfb0-69bd-48b5-82f0-dbb7a692defa"
+}
+
+[2019-02-27 23:50:56][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"2ae8dfb0-69bd-48b5-82f0-dbb7a692defa\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "9648f8bfbd1f8236bdddfd972f44fc03a072e150"
+}
+
+[2019-02-27 23:50:56][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:50:56][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "2ae8dfb0-69bd-48b5-82f0-dbb7a692defa"
+}
+
+[2019-02-27 23:50:56][DEBUG] TunnelService [closeTunnel] => {
+    "tunnelId": "2ae8dfb0-69bd-48b5-82f0-dbb7a692defa"
+}
+
+[2019-02-27 23:50:56][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"2ae8dfb0-69bd-48b5-82f0-dbb7a692defa\"],\"type\":\"close\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "20fd724badf9cb57d39288422a5fd25b28ce70f0"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": []
+        }
+    },
+    "[耗时]": "191ms"
+}
+
+[2019-02-27 23:54:06][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"d320e3c1-e1b4-4011-8199-eaf75cc06e6b\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=d320e3c1-e1b4-4011-8199-eaf75cc06e6b&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "504d5bbcfcfee3cd1682c1bfeed1de2bde053395"
+    },
+    "[耗时]": "288ms"
+}
+
+[2019-02-27 23:54:06][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "d320e3c1-e1b4-4011-8199-eaf75cc06e6b"
+}
+
+[2019-02-27 23:54:07][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"d320e3c1-e1b4-4011-8199-eaf75cc06e6b\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "e8bbbc00810fbcf572e3523d9b18813537f73dc8"
+}
+
+[2019-02-27 23:54:07][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:54:07][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "d320e3c1-e1b4-4011-8199-eaf75cc06e6b"
+}
+
+[2019-02-27 23:54:07][DEBUG] TunnelService [closeTunnel] => {
+    "tunnelId": "d320e3c1-e1b4-4011-8199-eaf75cc06e6b"
+}
+
+[2019-02-27 23:54:07][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d320e3c1-e1b4-4011-8199-eaf75cc06e6b\"],\"type\":\"close\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "bfc6214413d04dae2e9b5185a87f3fec95e427f3"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": []
+        }
+    },
+    "[耗时]": "222ms"
+}
+
+[2019-02-27 23:54:21][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"08ffb577-9254-40ea-8c47-038d335dcd9a\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=08ffb577-9254-40ea-8c47-038d335dcd9a&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "5b8b930b0d087e4bfda61cceedc01d0889681665"
+    },
+    "[耗时]": "292ms"
+}
+
+[2019-02-27 23:54:21][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "08ffb577-9254-40ea-8c47-038d335dcd9a"
+}
+
+[2019-02-27 23:54:22][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"08ffb577-9254-40ea-8c47-038d335dcd9a\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "f5d237d86e70471aa21b792a07cb3b794ec11e06"
+}
+
+[2019-02-27 23:54:22][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:54:22][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "08ffb577-9254-40ea-8c47-038d335dcd9a"
+}
+
+[2019-02-27 23:54:22][DEBUG] TunnelService [closeTunnel] => {
+    "tunnelId": "08ffb577-9254-40ea-8c47-038d335dcd9a"
+}
+
+[2019-02-27 23:54:22][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"08ffb577-9254-40ea-8c47-038d335dcd9a\"],\"type\":\"close\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "abbc6a6a09a4e28ed47cbba618a3637b5b576994"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": []
+        }
+    },
+    "[耗时]": "209ms"
+}
+
+[2019-02-27 23:54:50][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"4c4c40e2-f61b-40bd-93eb-4718c608ba68\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=4c4c40e2-f61b-40bd-93eb-4718c608ba68&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "9a2b122cf41bbcbe80ae51f0824fc519af0a0a05"
+    },
+    "[耗时]": "177ms"
+}
+
+[2019-02-27 23:54:50][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "4c4c40e2-f61b-40bd-93eb-4718c608ba68"
+}
+
+[2019-02-27 23:54:51][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"4c4c40e2-f61b-40bd-93eb-4718c608ba68\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "f71ef1cf1fcc413043aa8ae02e30be58b46a67de"
+}
+
+[2019-02-27 23:54:51][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:54:51][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "4c4c40e2-f61b-40bd-93eb-4718c608ba68"
+}
+
+[2019-02-27 23:54:51][DEBUG] TunnelService [closeTunnel] => {
+    "tunnelId": "4c4c40e2-f61b-40bd-93eb-4718c608ba68"
+}
+
+[2019-02-27 23:54:51][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"4c4c40e2-f61b-40bd-93eb-4718c608ba68\"],\"type\":\"close\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "e6e3722ceef358d2f694e33e6238fa04f08f2a7a"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": []
+        }
+    },
+    "[耗时]": "229ms"
+}
+
+[2019-02-27 23:55:15][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"e5800d4b-9f6b-4a5c-99d0-a4e4eca622a6\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=e5800d4b-9f6b-4a5c-99d0-a4e4eca622a6&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "fb423cf34c58a4b8f8ee9dacf99895b10a2b31fe"
+    },
+    "[耗时]": "184ms"
+}
+
+[2019-02-27 23:55:15][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "e5800d4b-9f6b-4a5c-99d0-a4e4eca622a6"
+}
+
+[2019-02-27 23:55:16][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"e5800d4b-9f6b-4a5c-99d0-a4e4eca622a6\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "c632472965e171e3ca9dd9f40c6469434f582f1a"
+}
+
+[2019-02-27 23:55:16][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:55:16][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "e5800d4b-9f6b-4a5c-99d0-a4e4eca622a6"
+}
+
+[2019-02-27 23:55:16][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "e5800d4b-9f6b-4a5c-99d0-a4e4eca622a6",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 364,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1551229212,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-27 23:55:16][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"e5800d4b-9f6b-4a5c-99d0-a4e4eca622a6\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":364,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1551229212,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "cd2bd3aa0c5b0aa883925528f69d63297deb2510"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "276ms"
+}
+
+[2019-02-27 23:57:13][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"1653660b-8d54-4970-a9f2-495b05dcdb1e\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=1653660b-8d54-4970-a9f2-495b05dcdb1e&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "964072dc2ab8eb019309ea67f2e14b57d732a794"
+    },
+    "[耗时]": "298ms"
+}
+
+[2019-02-27 23:57:13][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "1653660b-8d54-4970-a9f2-495b05dcdb1e"
+}
+
+[2019-02-27 23:57:13][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"1653660b-8d54-4970-a9f2-495b05dcdb1e\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "60d6e465a79609042ed680b8830dd80fc47c43c3"
+}
+
+[2019-02-27 23:57:13][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:57:13][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "1653660b-8d54-4970-a9f2-495b05dcdb1e"
+}
+
+[2019-02-27 23:57:13][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "1653660b-8d54-4970-a9f2-495b05dcdb1e",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "people",
+    "messageContent": {
+        "total": 365,
+        "enter": {
+            "openId": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+            "nickName": "海",
+            "gender": 1,
+            "language": "zh_CN",
+            "city": "Bijie",
+            "province": "Guizhou",
+            "country": "China",
+            "avatarUrl": "https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132",
+            "watermark": {
+                "timestamp": 1551229212,
+                "appid": "wxfa21ea4bdaef03e9"
+            }
+        }
+    }
+}
+
+[2019-02-27 23:57:13][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"1653660b-8d54-4970-a9f2-495b05dcdb1e\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"people\\\",\\\"content\\\":{\\\"total\\\":365,\\\"enter\\\":{\\\"openId\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"nickName\\\":\\\"海\\\",\\\"gender\\\":1,\\\"language\\\":\\\"zh_CN\\\",\\\"city\\\":\\\"Bijie\\\",\\\"province\\\":\\\"Guizhou\\\",\\\"country\\\":\\\"China\\\",\\\"avatarUrl\\\":\\\"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/UBJru313UuUKSWlZcqXTIVVsJvESlqHPOjbic97OZkUWjyPolAYc8b4DaPpyfoYF0mQQcSdXZw85Dic6HA3ib7O8w\/132\\\",\\\"watermark\\\":{\\\"timestamp\\\":1551229212,\\\"appid\\\":\\\"wxfa21ea4bdaef03e9\\\"}}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "f16385e9787707f2ee95fd86c1f0b02c6b63ba0e"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "1653660b-8d54-4970-a9f2-495b05dcdb1e",
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "270ms"
+}
+
+[2019-02-27 23:57:23][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"166aebee-dfeb-45d7-ae24-566e4f2bfc39\",\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1549117997flkQN\\\"}}\"}",
+    "dataEncode": "json",
+    "signature": "71cf20b4dd37263cadbe566bada3a814fc9efd9d"
+}
+
+[2019-02-27 23:57:23][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:57:23][DEBUG] ITunnelHandler [onMessage] => {
+    "tunnelId": "166aebee-dfeb-45d7-ae24-566e4f2bfc39",
+    "type": "order",
+    "content": {
+        "order_id": "1549117997flkQN"
+    }
+}
+
+[2019-02-27 23:57:23][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "1653660b-8d54-4970-a9f2-495b05dcdb1e",
+        "585025a8-e7ed-4283-9c5d-a173834662c9"
+    ],
+    "messageType": "order",
+    "messageContent": {
+        "who": "system",
+        "order_info": {
+            "order": {
+                "order_id": "1549117997flkQN",
+                "open_id": "opexV4zhvLlfWOeMuUifxymsoCqA",
+                "address_id": "33",
+                "timeStamp": "1549117997",
+                "order_date": "",
+                "pay_status": "SUCCESS",
+                "logistics_status": null,
+                "seller_act": "SIGNED",
+                "total_fee": "0.1",
+                "user_words": "",
+                "nonceStr": "pq4x05ajfxkccwxi3hojkqt9cdhuwjjp",
+                "paySign": "3A792336B48610E84DD3FC695660A50C",
+                "package": "",
+                "picker_id": "opexV46WZFz9Is4xAI2zZWc4YiQE",
+                "postman_id": "",
+                "refund_reason": null,
+                "refund_status": null
+            },
+            "address": {
+                "address_id": "33",
+                "open_id": "opexV4zhvLlfWOeMuUifxymsoCqA",
+                "province": "贵州省",
+                "city": "毕节市",
+                "county": "七星关区",
+                "detail": "s打发士大夫",
+                "name": "刘强东",
+                "telphone": "13309878909",
+                "default_address": "0"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1549117997flkQN",
+                    "goods_id": "2",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "中公教育2019国家公务员考试用书 历年真题精解试卷 行测 行政职业能力测验 ",
+                    "face_img": "https:\/\/img14.360buyimg.com\/n1\/jfs\/t1\/7867\/10\/6852\/365246\/5be245aeE471248ab\/7c1a99630e064de3.jpg",
+                    "price": "24"
+                },
+                {
+                    "order_id": "1549117997flkQN",
+                    "goods_id": "5",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "中公2019贵州公务员考试用书申论行测教材历年全真模拟公共基础8本贵州省公务员考试用书真题",
+                    "face_img": "https:\/\/img13.360buyimg.com\/n5\/jfs\/t25300\/278\/254091626\/568679\/6142e616\/5b6a7866Nb498a212.png",
+                    "price": "142"
+                }
+            ]
+        }
+    }
+}
+
+[2019-02-27 23:57:23][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"1653660b-8d54-4970-a9f2-495b05dcdb1e\",\"585025a8-e7ed-4283-9c5d-a173834662c9\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"who\\\":\\\"system\\\",\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"open_id\\\":\\\"opexV4zhvLlfWOeMuUifxymsoCqA\\\",\\\"address_id\\\":\\\"33\\\",\\\"timeStamp\\\":\\\"1549117997\\\",\\\"order_date\\\":\\\"\\\",\\\"pay_status\\\":\\\"SUCCESS\\\",\\\"logistics_status\\\":null,\\\"seller_act\\\":\\\"SIGNED\\\",\\\"total_fee\\\":\\\"0.1\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"pq4x05ajfxkccwxi3hojkqt9cdhuwjjp\\\",\\\"paySign\\\":\\\"3A792336B48610E84DD3FC695660A50C\\\",\\\"package\\\":\\\"\\\",\\\"picker_id\\\":\\\"opexV46WZFz9Is4xAI2zZWc4YiQE\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":null,\\\"refund_status\\\":null},\\\"address\\\":{\\\"address_id\\\":\\\"33\\\",\\\"open_id\\\":\\\"opexV4zhvLlfWOeMuUifxymsoCqA\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"毕节市\\\",\\\"county\\\":\\\"七星关区\\\",\\\"detail\\\":\\\"s打发士大夫\\\",\\\"name\\\":\\\"刘强东\\\",\\\"telphone\\\":\\\"13309878909\\\",\\\"default_address\\\":\\\"0\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"goods_id\\\":\\\"2\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"中公教育2019国家公务员考试用书 历年真题精解试卷 行测 行政职业能力测验 \\\",\\\"face_img\\\":\\\"https:\/\/img14.360buyimg.com\/n1\/jfs\/t1\/7867\/10\/6852\/365246\/5be245aeE471248ab\/7c1a99630e064de3.jpg\\\",\\\"price\\\":\\\"24\\\"},{\\\"order_id\\\":\\\"1549117997flkQN\\\",\\\"goods_id\\\":\\\"5\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"中公2019贵州公务员考试用书申论行测教材历年全真模拟公共基础8本贵州省公务员考试用书真题\\\",\\\"face_img\\\":\\\"https:\/\/img13.360buyimg.com\/n5\/jfs\/t25300\/278\/254091626\/568679\/6142e616\/5b6a7866Nb498a212.png\\\",\\\"price\\\":\\\"142\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "abd105960647e5d43a912015c98c76ab0bc00538"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "1653660b-8d54-4970-a9f2-495b05dcdb1e",
+                "585025a8-e7ed-4283-9c5d-a173834662c9"
+            ]
+        }
+    },
+    "[耗时]": "242ms"
+}
+
+[2019-02-27 23:59:10][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"92b4e681-0682-45ae-9371-8427033319b5\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=92b4e681-0682-45ae-9371-8427033319b5&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "2763ffc90e29d431769a1a857583b0e1ebc95f3c"
+    },
+    "[耗时]": "274ms"
+}
+
+[2019-02-27 23:59:10][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "92b4e681-0682-45ae-9371-8427033319b5"
+}
+
+[2019-02-27 23:59:10][DEBUG] TunnelService::handle [post payload] => {
+    "data": "{\"tunnelId\":\"92b4e681-0682-45ae-9371-8427033319b5\",\"type\":\"connect\"}",
+    "dataEncode": "json",
+    "signature": "fd366228d352a51d8fda0b0a74f9a9e6ccdff5dd"
+}
+
+[2019-02-27 23:59:10][DEBUG] Util::writeJsonResult => [200] {
+    "code": 0,
+    "message": "ok"
+}
+
+[2019-02-27 23:59:10][DEBUG] ITunnelHandler [onConnect] => {
+    "tunnelId": "92b4e681-0682-45ae-9371-8427033319b5"
+}
+
+[2019-02-27 23:59:10][DEBUG] TunnelService [closeTunnel] => {
+    "tunnelId": "92b4e681-0682-45ae-9371-8427033319b5"
+}
+
+[2019-02-27 23:59:11][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"92b4e681-0682-45ae-9371-8427033319b5\"],\"type\":\"close\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "44d5fabfd7df40b9de5459e1fea1d0000143378d"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": []
+        }
+    },
+    "[耗时]": "221ms"
+}
+

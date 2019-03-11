@@ -57,10 +57,9 @@ class Goods_class extends CI_Controller{
 
     /*
      *生成分类页面需要的父亲儿子节点列表
-     *
      * */
     public function get_parent_son(){
-        $conditions = "rgt>lft+1 AND onoff='on' ";//相当于遍历了整棵树，得到所有非叶子节点
+        $conditions = "rgt>lft+1 AND onoff='on' order by layer,priority";//相当于遍历了整棵树，得到所有非叶子节点
         $nodes = DB::select('goods_class',['*'],$conditions);
         $parent_son = [];
         foreach($nodes as $node){
@@ -71,4 +70,22 @@ class Goods_class extends CI_Controller{
         $this->json( $parent_son);
     }
 
+    //根据父节点名称获取整个从父节点到叶子的分类树
+    public function get_pslist_by_parent_name(){
+        $name = $_POST['name'];
+        $root = DB::row('goods_class',['*'],['class_name'=>$name]);
+        if(isset($root)){
+            $conditions = "rgt>lft+1 AND onoff='on' AND lft>$root->lft AND rgt<$root->rgt order by layer,priority";//相当于遍历了整棵树，得到所有非叶子节点
+            $nodes = DB::select('goods_class',['*'],$conditions);
+            array_unshift($nodes,$root);
+            //var_dump($nodes);
+            $parent_son = [];
+            foreach($nodes as $node){
+                $sons = self::get_sons($node);
+                $jnode = ['parent_id'=>$node->class_id,'son_list'=>$sons];
+                array_push($parent_son,$jnode);
+            }
+            $this->json( $parent_son);
+        }
+    }
 }
