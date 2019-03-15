@@ -29,7 +29,7 @@ class Goods_class extends CI_Controller{
 
     //onoff为off表示本类关闭，不需要显示
     private static function get_sons($node){
-        $conditions = "lft>$node->lft AND rgt<$node->rgt AND layer=$node->layer+1 AND onoff='on'";
+        $conditions = "lft>$node->lft AND rgt<$node->rgt AND layer=$node->layer+1 AND onoff='on' order by layer,priority";
         $sons = DB::select('goods_class',['*'],$conditions);
         return $sons;
     }
@@ -78,7 +78,6 @@ class Goods_class extends CI_Controller{
             $conditions = "rgt>lft+1 AND onoff='on' AND lft>$root->lft AND rgt<$root->rgt order by layer,priority";//相当于遍历了整棵树，得到所有非叶子节点
             $nodes = DB::select('goods_class',['*'],$conditions);
             array_unshift($nodes,$root);
-            //var_dump($nodes);
             $parent_son = [];
             foreach($nodes as $node){
                 $sons = self::get_sons($node);

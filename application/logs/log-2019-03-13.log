@@ -1,0 +1,21 @@
+[2019-03-13 14:14:19][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"3e7eb0a4-9064-4b3a-adff-2e6de17900f3\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=3e7eb0a4-9064-4b3a-adff-2e6de17900f3&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "92e177fcc1f26728bdfd53737ea619ca98f2b168"
+    },
+    "[耗时]": "486ms"
+}
+
+[2019-03-13 14:14:19][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "3e7eb0a4-9064-4b3a-adff-2e6de17900f3"
+}
+

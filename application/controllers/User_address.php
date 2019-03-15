@@ -1,15 +1,12 @@
 <?PHP
 //本文件为前端提供商品的信息
+use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
 defined('BASEPATH') OR exit('No direct script access allowed');
 class User_address extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('user_address_model');
         $this->load->helper('url_helper');
-    }
-
-    public function index() {
-        echo "ok";
     }
 
     public function set_default_address($open_id,$address_id){
@@ -21,7 +18,8 @@ class User_address extends CI_Controller {
     }
 
     public function get_user_default_address($open_id) {
-        $data = $this->user_address_model->select_user_default_address($open_id);
+        $data = DB::row('user_address',['*'],['open_id'=>$open_id,'default_address'=>1]);
+        //$data = $this->user_address_model->select_user_default_address($open_id);
         $this->json($data);
     }
 
