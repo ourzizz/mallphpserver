@@ -1,5 +1,6 @@
 <?PHP
 /*
+ * 本文件专门处理客户订单的业务逻辑
  * 订单所有状态以及各个状态组合方式下的顾客、商家应该做出的操作
 * */
 use \QCloud_WeApp_SDK\Tunnel\ITunnelHandler as ITunnelHandler;
@@ -28,11 +29,12 @@ class Order extends CI_Controller {
             $appid        = Conf::getAppId();
             $key          = Conf::getKey();
             $mch_id       = Conf::getMchId();
+            $notify_url   = Conf::getNotifyUrl();
             $openid       = $order_info['open_id'];
             $total_fee    = $order_info['total_fee'];
             $out_trade_no = $order_id;
             $body = $order_info['body'];
-            $weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee);
+            $weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$notify_url);
             $return = $weixinpay->pay();
             $return['order_id'] = $order_id;
             $order_info['order_id'] = $order_id;
@@ -69,9 +71,9 @@ class Order extends CI_Controller {
      */
     public function user_sign_order($open_id,$order_id){
         $condition = "open_id='$open_id' AND order_id='$order_id' ";
-        if(!$condition){
+        //if(!$condition){
             DB:: update('user_order',['logistics_status'=>'SIGNED'],$condition);
-        }
+        //}
     }
 
     /*
@@ -85,22 +87,18 @@ class Order extends CI_Controller {
     /*
      *取出待签收订单的信息
      *下一步如果加入快递单号，另外加个字段，尽量不要动能正常使用的代码
+     *货到付款需要在conditions中加入查询限定
      */
     public function get_wait_sign_order_list(){
         $open_id = $_POST['open_id'];
-        //$conditions = "open_id='$open_id' AND pay_status='SUCCESS' AND logistics_status is NULL AND refund_reason is NULL";
-        $conditions = array(
-            'open_id' => $open_id,
-            'pay_status'=>'SUCCESS',
-            'logistics_status' => '',
-            'refund_reason' => ''
-        );
+        $conditions = "open_id='$open_id' AND (pay_status='SUCCESS' OR pay_status='OFFLINE') AND logistics_status ='' AND refund_reason='' ";
+        //$conditions = array( 'open_id' => $open_id, 'pay_status'=>'SUCCESS', 'logistics_status' => '', 'refund_reason' => '');
         $row = DB::select('user_order',['order_id'],$conditions,'AND','order by timeStamp desc');
-        $wait_pay_orders = [];
+        $wait_sign_orders = [];
         foreach($row as $order){
-            array_push($wait_pay_orders,$this->get_order_info($order->order_id));
+            array_push($wait_sign_orders,$this->get_order_info($order->order_id));
         }
-        $this->json($wait_pay_orders);
+        $this->json($wait_sign_orders);
     }
 
     /*
@@ -108,7 +106,7 @@ class Order extends CI_Controller {
      */
     public function get_finished_order_list(){
         $open_id = $_POST['open_id'];
-        $conditions = "open_id='$open_id' AND pay_status='SUCCESS' AND logistics_status = 'SIGNED' AND customer_act!='SHUTDOWN'";
+        $conditions = "open_id='$open_id' AND (pay_status='SUCCESS' OR pay_status='OFFLINE') AND logistics_status = 'SIGNED' AND customer_act!='SHUTDOWN'";
         $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
         $orders = [];
         foreach($row as $order){
@@ -130,7 +128,7 @@ class Order extends CI_Controller {
      */
     public function get_wait_pay_order(){
         $open_id = $_POST['open_id'];
-        $conditions = "unix_timestamp(now()) - timeStamp <= 1800 and open_id='$open_id' and pay_status!='SUCCESS'";
+        $conditions = "unix_timestamp(now()) - timeStamp <= 1800 AND open_id='$open_id' AND (pay_status!='SUCCESS' AND pay_status!='OFFLINE')";
         $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
         $wait_pay_orders = [];
         foreach($row as $order){
@@ -170,6 +168,12 @@ class Order extends CI_Controller {
             'paySign'    => $order_info['paySign'],
             'package'    => $order_info['package'],
         ];
+        if(isset($order_info['pay_status'])){//如果货到付款，这里的pay_status为OFFLINE
+            $order['pay_status'] = $order_info['pay_status'];
+        }
+        if(isset($order_info['seller_act'])){//如果货到付款，需要将其设置为WAIT_PICK
+            $order['seller_act'] = $order_info['seller_act'];
+        }
         DB::insert('user_order',$order);
         foreach($order_info['goods_list'] as $goods) {
             $goods['order_id'] = $order['order_id'];
@@ -203,6 +207,7 @@ class Order extends CI_Controller {
         $this->json($telphone);
     }
 
+    //发起退款请求
     public function request_refund(){
         //if($this->checkLogin()){
         $open_id = $_POST['open_id'];
@@ -234,6 +239,28 @@ class Order extends CI_Controller {
             ]);
             return false;
         }
+    }
+
+    /*
+     *货到付款
+     *本函数需要完成1DB中订单支付态为offline
+     *给商家信道发送订单
+     * */ 
+    public function pay_offline(){
+        //生成订单详细信息存储DB
+        $timestamp = time();
+        $order_info = json_decode($_POST['order_info'],true);
+        $order_info['order_id'] = $timestamp.Util::getNum(5);//时间戳加上5位随机码生成订单号
+        $order_info['timestamp'] = $timestamp;
+        $order_info['pay_status'] = 'OFFLINE';
+        $order_info['seller_act'] = 'WAIT_PICK';
+        $order_info['nonceStr']  = '';
+        $order_info['paySign']  = '';
+        $order_info['package']  = '';
+        $this->store_order($order_info);
+        //下单信息进行信道广播
+        //OrderTunnel::broadcast('order',['order_id'=>$order_info['order_id']]);;
+        $this->json($order_info['order_id']);
     }
 }
 
