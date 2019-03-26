@@ -14,6 +14,7 @@ use \QCloud_WeApp_SDK\WxPay  as Pay;
 
 require APPPATH.'business/WeixinPay.php';
 require APPPATH.'business/OrderTunnel.php';
+
 class Order extends CI_Controller {
     /**
      * 生成订单,将用户选购商品入库 
@@ -50,15 +51,17 @@ class Order extends CI_Controller {
      */
     public function get_order_info($order_id){
         $order = DB::row('user_order',['*'],"order_id='$order_id'");
-        $address = DB::row('user_address',['*'],"address_id='$order->address_id'");
-        $goods_list = DB::select('goods_in_order',['*'],"order_id='$order_id'");
-        foreach($goods_list as &$goods){
-            $goods_id = $goods->goods_id;
-            $goods_info = DB::select('goods',['name','face_img','price'],"goods_id='$goods_id'");
-            $goods = array_merge((array)($goods),(array)($goods_info[0]));
+        if(isset($order)) {
+            $address = DB::row('user_address',['*'],"address_id='$order->address_id'");
+            $goods_list = DB::select('goods_in_order',['*'],"order_id='$order_id'");
+            foreach($goods_list as &$goods){
+                $goods_id = $goods->goods_id;
+                $goods_info = DB::select('goods',['name','face_img','price'],"goods_id='$goods_id'");
+                $goods = array_merge((array)($goods),(array)($goods_info[0]));
+            }
+            $res = compact('order','address','goods_list');
+            return $res;
         }
-        $res = compact('order','address','goods_list');
-        return $res;
     }
 
     public function re_pay($order_id){
@@ -106,8 +109,8 @@ class Order extends CI_Controller {
      */
     public function get_finished_order_list(){
         $open_id = $_POST['open_id'];
-        $conditions = "open_id='$open_id' AND (pay_status='SUCCESS' OR pay_status='OFFLINE') AND logistics_status = 'SIGNED' AND customer_act!='SHUTDOWN'";
-        $row = DB::select('user_order',['order_id'],$conditions,'and','order by timeStamp desc');
+        $conditions = "open_id='$open_id' AND (pay_status='SUCCESS' OR pay_status='OFFLINE') AND logistics_status = 'SIGNED' AND customer_act!='SHUTDOWN' ";
+        $row = DB::select('user_order',['order_id'],$conditions,'and','order by order_date desc');
         $orders = [];
         foreach($row as $order){
             array_push($orders,$this->get_order_info($order->order_id));
@@ -117,7 +120,9 @@ class Order extends CI_Controller {
 
     /*
      *退款完成，或者一些订单看着碍眼，用户设置其为shutdown就不再出现在用户列表中
-     */
+     *用户删除订单，意思是前台不再显示，
+     *这个可是最后要算总账的怎么可能删掉。故而将customer_act设置为SHUTDOWN
+     * */
     public function shutdown_order($order_id){
         $conditions = "order_id='$order_id'";
         DB::update("user_order",['customer_act'=>'SHUTDOWN'],$conditions);
@@ -167,6 +172,7 @@ class Order extends CI_Controller {
             'nonceStr'   => $order_info['nonceStr'],
             'paySign'    => $order_info['paySign'],
             'package'    => $order_info['package'],
+            'user_words' => $order_info['user_words'],
         ];
         if(isset($order_info['pay_status'])){//如果货到付款，这里的pay_status为OFFLINE
             $order['pay_status'] = $order_info['pay_status'];
@@ -259,8 +265,11 @@ class Order extends CI_Controller {
         $order_info['package']  = '';
         $this->store_order($order_info);
         //下单信息进行信道广播
-        //OrderTunnel::broadcast('order',['order_id'=>$order_info['order_id']]);;
-        $this->json($order_info['order_id']);
+        $broadcast_order_info = $this->get_order_info($order_info['order_id']);
+        OrderTunnel::broadcast('order',array(
+                'who' => "system",
+                'order_info' => $broadcast_order_info,
+            ));
+        $this->json($broadcast_order_info);
     }
 }
-
