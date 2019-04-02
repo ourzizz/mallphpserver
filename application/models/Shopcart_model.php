@@ -74,7 +74,7 @@ class Shopcart_model extends CI_Model {
         return $query->result_array();
     }
     public function select_user_has_goods($open_id) {
-        $query = $this->db->query(sprintf("SELECT shop_cart.open_id,shop_cart.count,shop_cart.timestrap,goods.name,goods.price,goods.goods_id,goods.face_img,goods.remain from goods,shop_cart WHERE goods.goods_id = shop_cart.goods_id and shop_cart.open_id = '%s' ",$open_id));
+        $query = $this->db->query(sprintf("SELECT shop_cart.open_id,shop_cart.count,shop_cart.timestrap,goods.name,goods.price,goods.goods_id,goods.face_img,goods.remain,goods.danwei from goods,shop_cart WHERE goods.goods_id = shop_cart.goods_id and shop_cart.open_id = '%s' ",$open_id));
         return $query->result_array();
     }
 

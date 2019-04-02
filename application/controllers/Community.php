@@ -5,14 +5,12 @@ use \QCloud_WeApp_SDK\Conf as Conf;
 use \QCloud_WeApp_SDK\Cos\CosAPI as Cos;
 use \QCloud_WeApp_SDK\Constants as Constants;
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Community extends CI_Controller {
-
     /*
      * */
     public function get_msgs_by_class_id (){
         $class_id = $_POST['class_id'];
-        $conditions = "class_id='$class_id' AND onoff='on' order by msg_id desc limit 10";
+        $conditions = "class_id='$class_id' AND onoff='on' order by msg_id desc limit 5";
         $msgs = DB::select('community_msg',['*'],$conditions);
         $this->json($msgs);
     }
@@ -22,7 +20,11 @@ class Community extends CI_Controller {
     public function get_msg_by_id (){
         $msg_id = $_POST['msg_id'];
         $msg = DB::row('community_msg',['*'],['msg_id'=>$msg_id]);
-        $this->json($msg);
+        $class_name = DB::row('goods_class',['class_name'],['class_id'=>$msg->class_id]);
+        $res['message'] = $msg;
+        $res['class_name'] = $class_name->class_name;
+        //$this->json($msg);
+        $this->json($res);
     }
 
     /*获取用户发布的消息列表
@@ -39,7 +41,7 @@ class Community extends CI_Controller {
     public function lazy_load_msg() {
         $class_id = $_POST['class_id'];
         $min_id = $_POST['min_id'];
-        $conditions = "class_id='$class_id' AND msg_id<$min_id AND onoff='on' order by msg_id desc limit 10";
+        $conditions = "class_id='$class_id' AND msg_id<$min_id AND onoff='on' order by msg_id desc limit 5";
         $msgs = DB::select('community_msg',['*'],$conditions);
         $this->json($msgs);
     }

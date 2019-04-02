@@ -1,6 +1,7 @@
 
 <?PHP
 //本文件为前端提供商品的信息
+use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Shopcart extends CI_Controller {
     public function __construct() {
@@ -14,6 +15,7 @@ class Shopcart extends CI_Controller {
     }
     public function get_user_has_goods($open_id) {//返回用户收藏的所有商品
         $data = $this->shopcart_model->select_user_has_goods($open_id);
+        //$data = DB::select('shop_cart',['*'],['open_id'=>$open_id]);
         $this->json($data);
     }
     public function get_cart_sum_count($open_id) {//购物车数量求和

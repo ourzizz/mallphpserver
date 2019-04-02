@@ -1,0 +1,473 @@
+[2019-04-01 14:50:38][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=d90c87c6-a7e3-45a8-8ef2-22b021937988&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "c1d637044928dd7bec9fabda1d4630f1f8b6703e"
+    },
+    "[耗时]": "282ms"
+}
+
+[2019-04-01 14:50:38][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "d90c87c6-a7e3-45a8-8ef2-22b021937988"
+}
+
+[2019-04-01 14:50:44][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1553781217jj5IM"
+    }
+}
+
+[2019-04-01 14:50:44][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553781217jj5IM\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "4e61d1e1f6976a0ad66c892d6df7cf51dcf9912f"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "301ms"
+}
+
+[2019-04-01 14:50:49][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1553818265bJtjK"
+    }
+}
+
+[2019-04-01 14:50:49][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553818265bJtjK\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "360250e2f60b3aec46a25de5914b83e18708284d"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "178ms"
+}
+
+[2019-04-01 14:50:53][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1553818272KI61p"
+    }
+}
+
+[2019-04-01 14:50:54][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553818272KI61p\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "e1afe805b24b7cdae3ac773884846b0a5bf9c4e3"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "305ms"
+}
+
+[2019-04-01 14:50:59][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "picked",
+    "messageContent": {
+        "order_id": "1553820112Fd6lu"
+    }
+}
+
+[2019-04-01 14:50:59][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"picked\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553820112Fd6lu\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "ee26b921290539ceee2a678a931164bea6c1ef70"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "216ms"
+}
+
+[2019-04-01 14:51:02][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "1553818301ufDGS",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "44",
+                "timeStamp": "1553818301",
+                "order_date": "2019-03-29 08:11:41",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "13",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "44",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "毕节市",
+                "county": "七星关区",
+                "detail": "6栋1单元502",
+                "name": "刘老师",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1553818301ufDGS",
+                    "goods_id": "18",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "红星二锅头酒大二绿瓶56度 500ml",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i2\/2200629337422\/O1CN01Tnw3SA24hK5yJ21BF_!!2200629337422-0-scmitem6000.jpg",
+                    "price": "13"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-01 14:51:02][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1553818301ufDGS\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"44\\\",\\\"timeStamp\\\":\\\"1553818301\\\",\\\"order_date\\\":\\\"2019-03-29 08:11:41\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"13\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"44\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"毕节市\\\",\\\"county\\\":\\\"七星关区\\\",\\\"detail\\\":\\\"6栋1单元502\\\",\\\"name\\\":\\\"刘老师\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1553818301ufDGS\\\",\\\"goods_id\\\":\\\"18\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"红星二锅头酒大二绿瓶56度 500ml\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i2\/2200629337422\/O1CN01Tnw3SA24hK5yJ21BF_!!2200629337422-0-scmitem6000.jpg\\\",\\\"price\\\":\\\"13\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "5bf9b895dba2e4e839b602fba99db9c064cbe5fa"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "304ms"
+}
+
+[2019-04-01 14:51:04][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "1553820112Fd6lu",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "44",
+                "timeStamp": "1553820112",
+                "order_date": "2019-03-29 08:41:52",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "2097",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "44",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "毕节市",
+                "county": "七星关区",
+                "detail": "6栋1单元502",
+                "name": "刘老师",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1553820112Fd6lu",
+                    "goods_id": "16",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "五粮液52度500mL普五浓香型高度白酒",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i2\/726984974\/TB2L_fpaR6xQeBjSszgXXXGPFXa-726984974.jpg",
+                    "price": "1089"
+                },
+                {
+                    "order_id": "1553820112Fd6lu",
+                    "goods_id": "17",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "剑南春金剑南K6浓香型白酒52度500ml*6瓶整箱装酒席宴请",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i2\/725677994\/TB2vWoHbChlpuFjSspkXXa1ApXa_!!725677994.jpg",
+                    "price": "1008"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-01 14:51:04][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1553820112Fd6lu\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"44\\\",\\\"timeStamp\\\":\\\"1553820112\\\",\\\"order_date\\\":\\\"2019-03-29 08:41:52\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"2097\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"44\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"毕节市\\\",\\\"county\\\":\\\"七星关区\\\",\\\"detail\\\":\\\"6栋1单元502\\\",\\\"name\\\":\\\"刘老师\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1553820112Fd6lu\\\",\\\"goods_id\\\":\\\"16\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"五粮液52度500mL普五浓香型高度白酒\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i2\/726984974\/TB2L_fpaR6xQeBjSszgXXXGPFXa-726984974.jpg\\\",\\\"price\\\":\\\"1089\\\"},{\\\"order_id\\\":\\\"1553820112Fd6lu\\\",\\\"goods_id\\\":\\\"17\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"剑南春金剑南K6浓香型白酒52度500ml*6瓶整箱装酒席宴请\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i2\/725677994\/TB2vWoHbChlpuFjSspkXXa1ApXa_!!725677994.jpg\\\",\\\"price\\\":\\\"1008\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "3f949d969ac336d49bef39c5ec951b3a0a82ea01"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "220ms"
+}
+
+[2019-04-01 14:51:07][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1553781357xj0oQ"
+    }
+}
+
+[2019-04-01 14:51:07][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553781357xj0oQ\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "bf7ba9a640a161d36fcbca39f4e4be12e36b2ff9"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "177ms"
+}
+
+[2019-04-01 14:51:09][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1553781364pjWHJ"
+    }
+}
+
+[2019-04-01 14:51:09][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553781364pjWHJ\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "64a2c3f386d372dfd9e5500995cf5c7b6ded6f4a"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "231ms"
+}
+
+[2019-04-01 14:51:11][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1553818257OCLQJ"
+    }
+}
+
+[2019-04-01 14:51:11][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553818257OCLQJ\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "d7ed6051047e43bfdd90a78e329b6d90261e5bb6"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "181ms"
+}
+
+[2019-04-01 14:51:13][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1553818280mpGHf"
+    }
+}
+
+[2019-04-01 14:51:13][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553818280mpGHf\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "851a268e464d5d852938799ac5207ee44d83359b"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "178ms"
+}
+
+[2019-04-01 14:51:15][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1553818301ufDGS"
+    }
+}
+
+[2019-04-01 14:51:15][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553818301ufDGS\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "9260ea2f49b6fc05aefdbf48079962d6ffdab4d7"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "178ms"
+}
+
+[2019-04-01 14:51:17][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "d90c87c6-a7e3-45a8-8ef2-22b021937988",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1553820112Fd6lu"
+    }
+}
+
+[2019-04-01 14:51:17][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"d90c87c6-a7e3-45a8-8ef2-22b021937988\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1553820112Fd6lu\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "0d9fda8cd2a7624cd7b7f96b0acdef2d174b84b8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "185ms"
+}
+
