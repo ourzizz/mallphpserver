@@ -1,0 +1,1254 @@
+[2019-04-04 07:42:00][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"3b8d8a6c-4163-4408-b08a-63745a839030\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=3b8d8a6c-4163-4408-b08a-63745a839030&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "475abe2ad8bf65eb698d02b9d02e8f433903cfba"
+    },
+    "[耗时]": "274ms"
+}
+
+[2019-04-04 07:42:00][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "3b8d8a6c-4163-4408-b08a-63745a839030"
+}
+
+[2019-04-04 11:27:09][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=f61fb07c-e237-4c19-8714-bb149972a6fb&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "69c4641c2c59364ce79fbb9c938bfa92bbbefb89"
+    },
+    "[耗时]": "268ms"
+}
+
+[2019-04-04 11:27:09][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "f61fb07c-e237-4c19-8714-bb149972a6fb"
+}
+
+[2019-04-04 11:27:13][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3b8d8a6c-4163-4408-b08a-63745a839030",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "picked",
+    "messageContent": {
+        "order_id": "1554280211EQFG3"
+    }
+}
+
+[2019-04-04 11:27:13][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3b8d8a6c-4163-4408-b08a-63745a839030\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"picked\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554280211EQFG3\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "9850d6de7856dad06a3489a76aee3aed0f153022"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "3b8d8a6c-4163-4408-b08a-63745a839030"
+            ]
+        }
+    },
+    "[耗时]": "180ms"
+}
+
+[2019-04-04 11:27:17][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3b8d8a6c-4163-4408-b08a-63745a839030",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "1554280211EQFG3",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "44",
+                "timeStamp": "1554280211",
+                "order_date": "2019-04-03 16:30:11",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "78",
+                "user_words": "两包长征",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4gljmJuwwuQm3D1EiyYIOzc",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "44",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "安顺市",
+                "county": "西秀区",
+                "detail": "6栋1单元502",
+                "name": "刘老师",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1554280211EQFG3",
+                    "goods_id": "1449",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "重庆小面",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i2\/2645124890\/TB2kNe4atfJ8KJjy0FeXXXKEXXa_!!2645124890.jpg_430x430q90.jpg",
+                    "price": "5",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554280211EQFG3",
+                    "goods_id": "1611",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "蒂花之秀洗发水750ML",
+                    "face_img": "https:\/\/gd2.alicdn.com\/imgextra\/i2\/2576112136\/TB2QOufXML8F1JjSszbXXbguVXa_!!2576112136.jpg_400x400.jpg",
+                    "price": "35",
+                    "danwei": "瓶"
+                },
+                {
+                    "order_id": "1554280211EQFG3",
+                    "goods_id": "1612",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "拉芳洗发水1L",
+                    "face_img": "https:\/\/gd1.alicdn.com\/imgextra\/i1\/2864287979\/O1CN01dsuqbS28oQhP8plHW_!!2864287979.jpg_400x400.jpg",
+                    "price": "38",
+                    "danwei": "瓶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-04 11:27:17][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3b8d8a6c-4163-4408-b08a-63745a839030\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1554280211EQFG3\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"44\\\",\\\"timeStamp\\\":\\\"1554280211\\\",\\\"order_date\\\":\\\"2019-04-03 16:30:11\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"78\\\",\\\"user_words\\\":\\\"两包长征\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4gljmJuwwuQm3D1EiyYIOzc\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"44\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"安顺市\\\",\\\"county\\\":\\\"西秀区\\\",\\\"detail\\\":\\\"6栋1单元502\\\",\\\"name\\\":\\\"刘老师\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1554280211EQFG3\\\",\\\"goods_id\\\":\\\"1449\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"重庆小面\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i2\/2645124890\/TB2kNe4atfJ8KJjy0FeXXXKEXXa_!!2645124890.jpg_430x430q90.jpg\\\",\\\"price\\\":\\\"5\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554280211EQFG3\\\",\\\"goods_id\\\":\\\"1611\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"蒂花之秀洗发水750ML\\\",\\\"face_img\\\":\\\"https:\/\/gd2.alicdn.com\/imgextra\/i2\/2576112136\/TB2QOufXML8F1JjSszbXXbguVXa_!!2576112136.jpg_400x400.jpg\\\",\\\"price\\\":\\\"35\\\",\\\"danwei\\\":\\\"瓶\\\"},{\\\"order_id\\\":\\\"1554280211EQFG3\\\",\\\"goods_id\\\":\\\"1612\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"拉芳洗发水1L\\\",\\\"face_img\\\":\\\"https:\/\/gd1.alicdn.com\/imgextra\/i1\/2864287979\/O1CN01dsuqbS28oQhP8plHW_!!2864287979.jpg_400x400.jpg\\\",\\\"price\\\":\\\"38\\\",\\\"danwei\\\":\\\"瓶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "28946419d06b4906c6f9690890dee266ed17de5e"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "3b8d8a6c-4163-4408-b08a-63745a839030",
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "260ms"
+}
+
+[2019-04-04 11:42:36][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=3e02bdae-e13b-44a6-97a9-99859656507f&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "f2e18c418732a255cce5b85fc1024ff22fb7542e"
+    },
+    "[耗时]": "275ms"
+}
+
+[2019-04-04 11:42:36][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "3e02bdae-e13b-44a6-97a9-99859656507f"
+}
+
+[2019-04-04 11:42:46][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "picked",
+    "messageContent": {
+        "order_id": "15542802602Od7K"
+    }
+}
+
+[2019-04-04 11:42:46][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"picked\\\",\\\"content\\\":{\\\"order_id\\\":\\\"15542802602Od7K\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "711d27a5416f2c64b454dd77a82e50d4c73a13eb"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "3e02bdae-e13b-44a6-97a9-99859656507f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "231ms"
+}
+
+[2019-04-04 11:42:49][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "picked",
+    "messageContent": {
+        "order_id": "1554286197ZOrOm"
+    }
+}
+
+[2019-04-04 11:42:49][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"picked\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554286197ZOrOm\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "9a367b38cbdb12efe3e40e9983b393a87a070ffb"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "f61fb07c-e237-4c19-8714-bb149972a6fb",
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+            ]
+        }
+    },
+    "[耗时]": "275ms"
+}
+
+[2019-04-04 11:42:51][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "picked",
+    "messageContent": {
+        "order_id": "1554299455kwswo"
+    }
+}
+
+[2019-04-04 11:42:51][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"picked\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554299455kwswo\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "5d3020b550c628942cf0cd2e56012964d01cb922"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "177ms"
+}
+
+[2019-04-04 11:42:57][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "1554260176t32AW",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "44",
+                "timeStamp": "1554260176",
+                "order_date": "2019-04-03 10:56:16",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "7",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "44",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "安顺市",
+                "county": "西秀区",
+                "detail": "6栋1单元502",
+                "name": "刘老师",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1554260176t32AW",
+                    "goods_id": "1634",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "立白500g",
+                    "face_img": "https:\/\/gd1.alicdn.com\/imgextra\/i1\/2156076254\/O1CN01Kzbwwd1w4NV2FTWjK_!!2156076254.png",
+                    "price": "5",
+                    "danwei": "瓶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-04 11:42:57][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1554260176t32AW\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"44\\\",\\\"timeStamp\\\":\\\"1554260176\\\",\\\"order_date\\\":\\\"2019-04-03 10:56:16\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"7\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"44\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"安顺市\\\",\\\"county\\\":\\\"西秀区\\\",\\\"detail\\\":\\\"6栋1单元502\\\",\\\"name\\\":\\\"刘老师\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1554260176t32AW\\\",\\\"goods_id\\\":\\\"1634\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"立白500g\\\",\\\"face_img\\\":\\\"https:\/\/gd1.alicdn.com\/imgextra\/i1\/2156076254\/O1CN01Kzbwwd1w4NV2FTWjK_!!2156076254.png\\\",\\\"price\\\":\\\"5\\\",\\\"danwei\\\":\\\"瓶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "5067067fa9ec100c4ec3e16463a06895fd74d68f"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "218ms"
+}
+
+[2019-04-04 11:43:00][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "15542802602Od7K",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "44",
+                "timeStamp": "1554280260",
+                "order_date": "2019-04-03 16:31:00",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "6",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "44",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "安顺市",
+                "county": "西秀区",
+                "detail": "6栋1单元502",
+                "name": "刘老师",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "15542802602Od7K",
+                    "goods_id": "1451",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "康师傅老坛酸菜面",
+                    "face_img": "https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg",
+                    "price": "4",
+                    "danwei": "桶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-04 11:43:00][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"15542802602Od7K\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"44\\\",\\\"timeStamp\\\":\\\"1554280260\\\",\\\"order_date\\\":\\\"2019-04-03 16:31:00\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"6\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"44\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"安顺市\\\",\\\"county\\\":\\\"西秀区\\\",\\\"detail\\\":\\\"6栋1单元502\\\",\\\"name\\\":\\\"刘老师\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"15542802602Od7K\\\",\\\"goods_id\\\":\\\"1451\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"康师傅老坛酸菜面\\\",\\\"face_img\\\":\\\"https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg\\\",\\\"price\\\":\\\"4\\\",\\\"danwei\\\":\\\"桶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "d48a1368354a40f179f5bf4841f14867981ffd89"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "219ms"
+}
+
+[2019-04-04 11:43:03][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "1554286197ZOrOm",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "44",
+                "timeStamp": "1554286197",
+                "order_date": "2019-04-03 18:09:57",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "14",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "44",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "安顺市",
+                "county": "西秀区",
+                "detail": "6栋1单元502",
+                "name": "刘老师",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1554286197ZOrOm",
+                    "goods_id": "1450",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "火鸡面",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i4\/3904347384\/O1CN01xO00uF24Pv2qpPWxq_!!3904347384-0-scmitem6000.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554286197ZOrOm",
+                    "goods_id": "1451",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "康师傅老坛酸菜面",
+                    "face_img": "https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg",
+                    "price": "4",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554286197ZOrOm",
+                    "goods_id": "1452",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "麻辣牛肉面",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i4\/2932889983\/TB2l4DFncLJ8KJjy0FnXXcFDpXa_!!2932889983.jpg",
+                    "price": "4",
+                    "danwei": "桶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-04 11:43:03][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1554286197ZOrOm\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"44\\\",\\\"timeStamp\\\":\\\"1554286197\\\",\\\"order_date\\\":\\\"2019-04-03 18:09:57\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"14\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"44\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"安顺市\\\",\\\"county\\\":\\\"西秀区\\\",\\\"detail\\\":\\\"6栋1单元502\\\",\\\"name\\\":\\\"刘老师\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1554286197ZOrOm\\\",\\\"goods_id\\\":\\\"1450\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"火鸡面\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i4\/3904347384\/O1CN01xO00uF24Pv2qpPWxq_!!3904347384-0-scmitem6000.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554286197ZOrOm\\\",\\\"goods_id\\\":\\\"1451\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"康师傅老坛酸菜面\\\",\\\"face_img\\\":\\\"https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg\\\",\\\"price\\\":\\\"4\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554286197ZOrOm\\\",\\\"goods_id\\\":\\\"1452\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"麻辣牛肉面\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i4\/2932889983\/TB2l4DFncLJ8KJjy0FnXXcFDpXa_!!2932889983.jpg\\\",\\\"price\\\":\\\"4\\\",\\\"danwei\\\":\\\"桶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "d69449f40239930e8879fb5bb69676b3814755b5"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "224ms"
+}
+
+[2019-04-04 11:43:05][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "1554299455kwswo",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "44",
+                "timeStamp": "1554299455",
+                "order_date": "2019-04-03 21:50:55",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "20",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "44",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "安顺市",
+                "county": "西秀区",
+                "detail": "6栋1单元502",
+                "name": "刘老师",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1554299455kwswo",
+                    "goods_id": "1613",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "飘柔(家庭护理)400ml",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i2\/TB1hXkZFFXXXXalXXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg",
+                    "price": "20",
+                    "danwei": "瓶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-04 11:43:05][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1554299455kwswo\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"44\\\",\\\"timeStamp\\\":\\\"1554299455\\\",\\\"order_date\\\":\\\"2019-04-03 21:50:55\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"20\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"44\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"安顺市\\\",\\\"county\\\":\\\"西秀区\\\",\\\"detail\\\":\\\"6栋1单元502\\\",\\\"name\\\":\\\"刘老师\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1554299455kwswo\\\",\\\"goods_id\\\":\\\"1613\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"飘柔(家庭护理)400ml\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i2\/TB1hXkZFFXXXXalXXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg\\\",\\\"price\\\":\\\"20\\\",\\\"danwei\\\":\\\"瓶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "cd17007ecae6eeea9718c475640a10cd7f91ef37"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "346ms"
+}
+
+[2019-04-04 11:43:12][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1554259917VHKlQ"
+    }
+}
+
+[2019-04-04 11:43:12][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554259917VHKlQ\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "2dbf0964b9972fe9513464d5dd04de744a8b10d7"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "3e02bdae-e13b-44a6-97a9-99859656507f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "211ms"
+}
+
+[2019-04-04 11:43:14][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1554259964cakIp"
+    }
+}
+
+[2019-04-04 11:43:14][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554259964cakIp\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "49f29d674a7dcfb8119e56578555aa647093a544"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "202ms"
+}
+
+[2019-04-04 11:43:16][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1554260144iJNq1"
+    }
+}
+
+[2019-04-04 11:43:17][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554260144iJNq1\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "16e32456a16edf43f31a45ec595f9edc36555db1"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "183ms"
+}
+
+[2019-04-04 11:43:20][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1554286197ZOrOm"
+    }
+}
+
+[2019-04-04 11:43:20][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554286197ZOrOm\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "547f05fc52fc71367af28cb8524daa9bedbdaaa0"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "189ms"
+}
+
+[2019-04-04 11:43:22][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1554260176t32AW"
+    }
+}
+
+[2019-04-04 11:43:22][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554260176t32AW\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "980646bbc49943189e136ef71bbb1be851f706e2"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "3e02bdae-e13b-44a6-97a9-99859656507f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "193ms"
+}
+
+[2019-04-04 11:43:25][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1554280211EQFG3"
+    }
+}
+
+[2019-04-04 11:43:25][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554280211EQFG3\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "a4bde6de8ffd73382f89526a7c849c7fa85647d9"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "3e02bdae-e13b-44a6-97a9-99859656507f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "189ms"
+}
+
+[2019-04-04 11:43:27][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "15542802602Od7K"
+    }
+}
+
+[2019-04-04 11:43:27][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"15542802602Od7K\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "0f23a9ba7373cc3d3ac38d4c6b3e4ccd8bd7c6cd"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "180ms"
+}
+
+[2019-04-04 11:43:29][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "3e02bdae-e13b-44a6-97a9-99859656507f",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "user_signed",
+    "messageContent": {
+        "order_id": "1554299455kwswo"
+    }
+}
+
+[2019-04-04 11:43:29][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"3e02bdae-e13b-44a6-97a9-99859656507f\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"user_signed\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554299455kwswo\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "1d027a68253d938cb028e1f1babccacf6d7a2ffa"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "190ms"
+}
+
+[2019-04-04 12:09:55][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"caf4c7fc-3065-43c1-b076-0ebcce1c2202\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=caf4c7fc-3065-43c1-b076-0ebcce1c2202&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "4307b03849e3bc4f95138d81d3b574810264ef25"
+    },
+    "[耗时]": "286ms"
+}
+
+[2019-04-04 12:09:55][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "caf4c7fc-3065-43c1-b076-0ebcce1c2202"
+}
+
+[2019-04-04 14:02:43][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"826cc792-c528-4425-8c32-e4d0406a6a8f\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=826cc792-c528-4425-8c32-e4d0406a6a8f&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "e012c041c0af0a267838fa7ae6da5e4927a0d160"
+    },
+    "[耗时]": "282ms"
+}
+
+[2019-04-04 14:02:43][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "826cc792-c528-4425-8c32-e4d0406a6a8f"
+}
+
+[2019-04-04 22:26:36][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"ebdddb0b-88ba-4031-9eac-e85d55e14c65\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=ebdddb0b-88ba-4031-9eac-e85d55e14c65&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "d44668fe617e3ab326e3fd3bcab96bdaf027c671"
+    },
+    "[耗时]": "282ms"
+}
+
+[2019-04-04 22:26:36][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "ebdddb0b-88ba-4031-9eac-e85d55e14c65"
+}
+
+[2019-04-04 23:45:44][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "ebdddb0b-88ba-4031-9eac-e85d55e14c65",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "order",
+    "messageContent": {
+        "who": "system",
+        "order_info": {
+            "order": {
+                "order_id": "155439274434pET",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "46",
+                "timeStamp": "1554392744",
+                "order_date": "2019-04-04 23:45:44",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "WAIT_PICK",
+                "customer_act": "",
+                "total_fee": "6",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": null,
+            "goods_list": [
+                {
+                    "order_id": "155439274434pET",
+                    "goods_id": "1451",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "康师傅老坛酸菜面",
+                    "face_img": "https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg",
+                    "price": "4",
+                    "danwei": "桶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-04 23:45:45][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"ebdddb0b-88ba-4031-9eac-e85d55e14c65\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"who\\\":\\\"system\\\",\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"155439274434pET\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"46\\\",\\\"timeStamp\\\":\\\"1554392744\\\",\\\"order_date\\\":\\\"2019-04-04 23:45:44\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"WAIT_PICK\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"6\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":null,\\\"goods_list\\\":[{\\\"order_id\\\":\\\"155439274434pET\\\",\\\"goods_id\\\":\\\"1451\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"康师傅老坛酸菜面\\\",\\\"face_img\\\":\\\"https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg\\\",\\\"price\\\":\\\"4\\\",\\\"danwei\\\":\\\"桶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "846864e4fe29655040f7e93167a22be50834daa3"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb",
+                "ebdddb0b-88ba-4031-9eac-e85d55e14c65"
+            ]
+        }
+    },
+    "[耗时]": "344ms"
+}
+
+[2019-04-04 23:45:54][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"1355e5cb-e89a-4f8d-9399-c1b41ad521bb\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=1355e5cb-e89a-4f8d-9399-c1b41ad521bb&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "4ed95e876005a9808d8f5e0c5a906356e8aba817"
+    },
+    "[耗时]": "202ms"
+}
+
+[2019-04-04 23:45:54][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "1355e5cb-e89a-4f8d-9399-c1b41ad521bb"
+}
+
+[2019-04-04 23:45:54][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "1355e5cb-e89a-4f8d-9399-c1b41ad521bb",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "picked",
+    "messageContent": {
+        "order_id": "155439274434pET"
+    }
+}
+
+[2019-04-04 23:45:54][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"1355e5cb-e89a-4f8d-9399-c1b41ad521bb\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"picked\\\",\\\"content\\\":{\\\"order_id\\\":\\\"155439274434pET\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "b668a64cb280816222ba05539734d4fb117c67ec"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "191ms"
+}
+
+[2019-04-04 23:46:11][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "1355e5cb-e89a-4f8d-9399-c1b41ad521bb",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "picked",
+    "messageContent": {
+        "order_id": "155439274434pET"
+    }
+}
+
+[2019-04-04 23:46:11][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"1355e5cb-e89a-4f8d-9399-c1b41ad521bb\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"picked\\\",\\\"content\\\":{\\\"order_id\\\":\\\"155439274434pET\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "b668a64cb280816222ba05539734d4fb117c67ec"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "186ms"
+}
+
+[2019-04-04 23:46:21][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "1355e5cb-e89a-4f8d-9399-c1b41ad521bb",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "155439274434pET",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "46",
+                "timeStamp": "1554392744",
+                "order_date": "2019-04-04 23:45:44",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "6",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": null,
+            "goods_list": [
+                {
+                    "order_id": "155439274434pET",
+                    "goods_id": "1451",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "康师傅老坛酸菜面",
+                    "face_img": "https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg",
+                    "price": "4",
+                    "danwei": "桶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-04 23:46:21][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"1355e5cb-e89a-4f8d-9399-c1b41ad521bb\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"155439274434pET\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"46\\\",\\\"timeStamp\\\":\\\"1554392744\\\",\\\"order_date\\\":\\\"2019-04-04 23:45:44\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"6\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":null,\\\"goods_list\\\":[{\\\"order_id\\\":\\\"155439274434pET\\\",\\\"goods_id\\\":\\\"1451\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"康师傅老坛酸菜面\\\",\\\"face_img\\\":\\\"https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg\\\",\\\"price\\\":\\\"4\\\",\\\"danwei\\\":\\\"桶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "585d86909c60c2905ac802dd8ff3f1ae0756be47"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "1355e5cb-e89a-4f8d-9399-c1b41ad521bb",
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "235ms"
+}
+
+[2019-04-04 23:56:00][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "f61fb07c-e237-4c19-8714-bb149972a6fb",
+        "1355e5cb-e89a-4f8d-9399-c1b41ad521bb",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "order",
+    "messageContent": {
+        "who": "system",
+        "order_info": {
+            "order": {
+                "order_id": "15543933603JSfj",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "47",
+                "timeStamp": "1554393360",
+                "order_date": "2019-04-04 23:56:00",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "WAIT_PICK",
+                "customer_act": "",
+                "total_fee": "12.5",
+                "user_words": "帶兩包中華",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "47",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "毕节市",
+                "county": "七星关区",
+                "detail": "三栋502",
+                "name": "马德华",
+                "telphone": "13308570523",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "15543933603JSfj",
+                    "goods_id": "1448",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "过桥米线",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i1\/2335284926\/TB24CyOtZj_B1NjSZFHXXaDWpXa_!!2335284926.jpg_430x430q90.jpg",
+                    "price": "4.5",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "15543933603JSfj",
+                    "goods_id": "1450",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "火鸡面",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i4\/3904347384\/O1CN01xO00uF24Pv2qpPWxq_!!3904347384-0-scmitem6000.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-04 23:56:01][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"f61fb07c-e237-4c19-8714-bb149972a6fb\",\"1355e5cb-e89a-4f8d-9399-c1b41ad521bb\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"who\\\":\\\"system\\\",\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"15543933603JSfj\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"47\\\",\\\"timeStamp\\\":\\\"1554393360\\\",\\\"order_date\\\":\\\"2019-04-04 23:56:00\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"WAIT_PICK\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"12.5\\\",\\\"user_words\\\":\\\"帶兩包中華\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"47\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"毕节市\\\",\\\"county\\\":\\\"七星关区\\\",\\\"detail\\\":\\\"三栋502\\\",\\\"name\\\":\\\"马德华\\\",\\\"telphone\\\":\\\"13308570523\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"15543933603JSfj\\\",\\\"goods_id\\\":\\\"1448\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"过桥米线\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i1\/2335284926\/TB24CyOtZj_B1NjSZFHXXaDWpXa_!!2335284926.jpg_430x430q90.jpg\\\",\\\"price\\\":\\\"4.5\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"15543933603JSfj\\\",\\\"goods_id\\\":\\\"1450\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"火鸡面\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i4\/3904347384\/O1CN01xO00uF24Pv2qpPWxq_!!3904347384-0-scmitem6000.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "436aa8f69b1e6f7f1dcf37e790fae8df3f34d518"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "1355e5cb-e89a-4f8d-9399-c1b41ad521bb",
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "f61fb07c-e237-4c19-8714-bb149972a6fb"
+            ]
+        }
+    },
+    "[耗时]": "323ms"
+}
+

@@ -1809,3 +1809,586 @@
     "[耗时]": "251ms"
 }
 
+[2019-04-02 20:39:18][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "887e663b-c8d3-437f-80d7-31ea43d1fb40",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "order",
+    "messageContent": {
+        "who": "system",
+        "order_info": {
+            "order": {
+                "order_id": "1554208758Ta9xM",
+                "open_id": "omTXr4gljmJuwwuQm3D1EiyYIOzc",
+                "address_id": "42",
+                "timeStamp": "1554208758",
+                "order_date": "2019-04-02 20:39:18",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "WAIT_PICK",
+                "customer_act": "",
+                "total_fee": "29.5",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "42",
+                "open_id": "omTXr4gljmJuwwuQm3D1EiyYIOzc",
+                "province": "贵州省",
+                "city": "毕节市",
+                "county": "七星关区",
+                "detail": "半岛水湾",
+                "name": "大哥大",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1554208758Ta9xM",
+                    "goods_id": "1448",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "过桥米线",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i1\/2335284926\/TB24CyOtZj_B1NjSZFHXXaDWpXa_!!2335284926.jpg_430x430q90.jpg",
+                    "price": "4.5",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554208758Ta9xM",
+                    "goods_id": "1449",
+                    "count": "3",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "重庆小面",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i2\/2645124890\/TB2kNe4atfJ8KJjy0FeXXXKEXXa_!!2645124890.jpg_430x430q90.jpg",
+                    "price": "5",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554208758Ta9xM",
+                    "goods_id": "1450",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "火鸡面",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i4\/3904347384\/O1CN01xO00uF24Pv2qpPWxq_!!3904347384-0-scmitem6000.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554208758Ta9xM",
+                    "goods_id": "1451",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "康师傅老坛酸菜面",
+                    "face_img": "https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg",
+                    "price": "4",
+                    "danwei": "桶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-02 20:39:18][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"887e663b-c8d3-437f-80d7-31ea43d1fb40\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"who\\\":\\\"system\\\",\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"open_id\\\":\\\"omTXr4gljmJuwwuQm3D1EiyYIOzc\\\",\\\"address_id\\\":\\\"42\\\",\\\"timeStamp\\\":\\\"1554208758\\\",\\\"order_date\\\":\\\"2019-04-02 20:39:18\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"WAIT_PICK\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"29.5\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"42\\\",\\\"open_id\\\":\\\"omTXr4gljmJuwwuQm3D1EiyYIOzc\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"毕节市\\\",\\\"county\\\":\\\"七星关区\\\",\\\"detail\\\":\\\"半岛水湾\\\",\\\"name\\\":\\\"大哥大\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"goods_id\\\":\\\"1448\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"过桥米线\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i1\/2335284926\/TB24CyOtZj_B1NjSZFHXXaDWpXa_!!2335284926.jpg_430x430q90.jpg\\\",\\\"price\\\":\\\"4.5\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"goods_id\\\":\\\"1449\\\",\\\"count\\\":\\\"3\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"重庆小面\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i2\/2645124890\/TB2kNe4atfJ8KJjy0FeXXXKEXXa_!!2645124890.jpg_430x430q90.jpg\\\",\\\"price\\\":\\\"5\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"goods_id\\\":\\\"1450\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"火鸡面\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i4\/3904347384\/O1CN01xO00uF24Pv2qpPWxq_!!3904347384-0-scmitem6000.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"goods_id\\\":\\\"1451\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"康师傅老坛酸菜面\\\",\\\"face_img\\\":\\\"https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg\\\",\\\"price\\\":\\\"4\\\",\\\"danwei\\\":\\\"桶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "d2df419b25bcecd8c06bf914d7559b85bb6c67c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "887e663b-c8d3-437f-80d7-31ea43d1fb40"
+            ]
+        }
+    },
+    "[耗时]": "352ms"
+}
+
+[2019-04-02 20:42:38][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"c7a755cd-7c26-433a-961d-2a31222b4a20\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=c7a755cd-7c26-433a-961d-2a31222b4a20&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "2b178c953c808194b55d04b7369836de9d142f35"
+    },
+    "[耗时]": "282ms"
+}
+
+[2019-04-02 20:42:38][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "c7a755cd-7c26-433a-961d-2a31222b4a20"
+}
+
+[2019-04-02 23:33:49][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "c7a755cd-7c26-433a-961d-2a31222b4a20",
+        "887e663b-c8d3-437f-80d7-31ea43d1fb40",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "order",
+    "messageContent": {
+        "who": "system",
+        "order_info": {
+            "order": {
+                "order_id": "1554219229iIV8u",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "44",
+                "timeStamp": "1554219229",
+                "order_date": "2019-04-02 23:33:49",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "WAIT_PICK",
+                "customer_act": "",
+                "total_fee": "24",
+                "user_words": "泡好，谢谢了",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "44",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "安顺市",
+                "county": "西秀区",
+                "detail": "6栋1单元502",
+                "name": "刘老师",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1554219229iIV8u",
+                    "goods_id": "1458",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "海吃家酸辣粉",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i1\/867878429\/O1CN01kjloLy2C8WwS1iulT_!!867878429.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554219229iIV8u",
+                    "goods_id": "1459",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "合味道香辣牛肉",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q90.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554219229iIV8u",
+                    "goods_id": "1460",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "合味道五香牛肉",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q91.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554219229iIV8u",
+                    "goods_id": "1461",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "合味道香辣海鲜",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q92.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-02 23:33:50][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"c7a755cd-7c26-433a-961d-2a31222b4a20\",\"887e663b-c8d3-437f-80d7-31ea43d1fb40\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"order\\\",\\\"content\\\":{\\\"who\\\":\\\"system\\\",\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"44\\\",\\\"timeStamp\\\":\\\"1554219229\\\",\\\"order_date\\\":\\\"2019-04-02 23:33:49\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"WAIT_PICK\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"24\\\",\\\"user_words\\\":\\\"泡好，谢谢了\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"44\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"安顺市\\\",\\\"county\\\":\\\"西秀区\\\",\\\"detail\\\":\\\"6栋1单元502\\\",\\\"name\\\":\\\"刘老师\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"goods_id\\\":\\\"1458\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"海吃家酸辣粉\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i1\/867878429\/O1CN01kjloLy2C8WwS1iulT_!!867878429.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"goods_id\\\":\\\"1459\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"合味道香辣牛肉\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q90.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"goods_id\\\":\\\"1460\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"合味道五香牛肉\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q91.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"goods_id\\\":\\\"1461\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"合味道香辣海鲜\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q92.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "7e02ee4459458432ba6db959b68ac58a6e4b1aac"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "c7a755cd-7c26-433a-961d-2a31222b4a20",
+                "887e663b-c8d3-437f-80d7-31ea43d1fb40"
+            ]
+        }
+    },
+    "[耗时]": "465ms"
+}
+
+[2019-04-02 23:34:12][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"6fda1728-b5cf-4752-8927-7a0c0089efa6\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=6fda1728-b5cf-4752-8927-7a0c0089efa6&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "3c2956808082d4318c40bf166aadd567e7c31bd9"
+    },
+    "[耗时]": "279ms"
+}
+
+[2019-04-02 23:34:12][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "6fda1728-b5cf-4752-8927-7a0c0089efa6"
+}
+
+[2019-04-02 23:34:15][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "c7a755cd-7c26-433a-961d-2a31222b4a20",
+        "6fda1728-b5cf-4752-8927-7a0c0089efa6",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "picked",
+    "messageContent": {
+        "order_id": "1554208758Ta9xM"
+    }
+}
+
+[2019-04-02 23:34:15][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"c7a755cd-7c26-433a-961d-2a31222b4a20\",\"6fda1728-b5cf-4752-8927-7a0c0089efa6\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"picked\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554208758Ta9xM\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "1acf6032cf896932116d3595dc310ebb7c680331"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "c7a755cd-7c26-433a-961d-2a31222b4a20"
+            ]
+        }
+    },
+    "[耗时]": "186ms"
+}
+
+[2019-04-02 23:34:17][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "c7a755cd-7c26-433a-961d-2a31222b4a20",
+        "6fda1728-b5cf-4752-8927-7a0c0089efa6",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "picked",
+    "messageContent": {
+        "order_id": "1554219229iIV8u"
+    }
+}
+
+[2019-04-02 23:34:17][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"c7a755cd-7c26-433a-961d-2a31222b4a20\",\"6fda1728-b5cf-4752-8927-7a0c0089efa6\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"picked\\\",\\\"content\\\":{\\\"order_id\\\":\\\"1554219229iIV8u\\\"}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "f0c995a7d5ecbb8169993c7ecf3085b3649d04be"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "c7a755cd-7c26-433a-961d-2a31222b4a20"
+            ]
+        }
+    },
+    "[耗时]": "198ms"
+}
+
+[2019-04-02 23:34:23][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "c7a755cd-7c26-433a-961d-2a31222b4a20",
+        "6fda1728-b5cf-4752-8927-7a0c0089efa6",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "1554219229iIV8u",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "address_id": "44",
+                "timeStamp": "1554219229",
+                "order_date": "2019-04-02 23:33:49",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "24",
+                "user_words": "泡好，谢谢了",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "44",
+                "open_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "province": "贵州省",
+                "city": "安顺市",
+                "county": "西秀区",
+                "detail": "6栋1单元502",
+                "name": "刘老师",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1554219229iIV8u",
+                    "goods_id": "1458",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "海吃家酸辣粉",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i1\/867878429\/O1CN01kjloLy2C8WwS1iulT_!!867878429.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554219229iIV8u",
+                    "goods_id": "1459",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "合味道香辣牛肉",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q90.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554219229iIV8u",
+                    "goods_id": "1460",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "合味道五香牛肉",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q91.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554219229iIV8u",
+                    "goods_id": "1461",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "合味道香辣海鲜",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q92.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-02 23:34:23][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"c7a755cd-7c26-433a-961d-2a31222b4a20\",\"6fda1728-b5cf-4752-8927-7a0c0089efa6\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"address_id\\\":\\\"44\\\",\\\"timeStamp\\\":\\\"1554219229\\\",\\\"order_date\\\":\\\"2019-04-02 23:33:49\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"24\\\",\\\"user_words\\\":\\\"泡好，谢谢了\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"44\\\",\\\"open_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"安顺市\\\",\\\"county\\\":\\\"西秀区\\\",\\\"detail\\\":\\\"6栋1单元502\\\",\\\"name\\\":\\\"刘老师\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"goods_id\\\":\\\"1458\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"海吃家酸辣粉\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i1\/867878429\/O1CN01kjloLy2C8WwS1iulT_!!867878429.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"goods_id\\\":\\\"1459\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"合味道香辣牛肉\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q90.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"goods_id\\\":\\\"1460\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"合味道五香牛肉\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q91.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554219229iIV8u\\\",\\\"goods_id\\\":\\\"1461\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"合味道香辣海鲜\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i3\/3087622110\/O1CN01ZWs7Rx1RSQBLbeGLt_!!3087622110.jpg_430x430q92.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "51239c6dc5328d97f0f420ca41a45105e88feb5b"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "c7a755cd-7c26-433a-961d-2a31222b4a20"
+            ]
+        }
+    },
+    "[耗时]": "448ms"
+}
+
+[2019-04-02 23:34:25][DEBUG] TunnelService [broadcast] => {
+    "tunnelIds": [
+        "c7a755cd-7c26-433a-961d-2a31222b4a20",
+        "6fda1728-b5cf-4752-8927-7a0c0089efa6",
+        "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f"
+    ],
+    "messageType": "delivery",
+    "messageContent": {
+        "order_info": {
+            "order": {
+                "order_id": "1554208758Ta9xM",
+                "open_id": "omTXr4gljmJuwwuQm3D1EiyYIOzc",
+                "address_id": "42",
+                "timeStamp": "1554208758",
+                "order_date": "2019-04-02 20:39:18",
+                "pay_status": "OFFLINE",
+                "logistics_status": "",
+                "seller_act": "DELIVERY",
+                "customer_act": "",
+                "total_fee": "29.5",
+                "user_words": "",
+                "nonceStr": "",
+                "paySign": "",
+                "package": "",
+                "out_refund_no": "",
+                "picker_id": "omTXr4hIyW2RgQ3nzN_O8jeGb3wM",
+                "postman_id": "",
+                "refund_reason": "",
+                "refund_status": ""
+            },
+            "address": {
+                "address_id": "42",
+                "open_id": "omTXr4gljmJuwwuQm3D1EiyYIOzc",
+                "province": "贵州省",
+                "city": "毕节市",
+                "county": "七星关区",
+                "detail": "半岛水湾",
+                "name": "大哥大",
+                "telphone": "13985877756",
+                "default_address": "1"
+            },
+            "goods_list": [
+                {
+                    "order_id": "1554208758Ta9xM",
+                    "goods_id": "1448",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "过桥米线",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i1\/2335284926\/TB24CyOtZj_B1NjSZFHXXaDWpXa_!!2335284926.jpg_430x430q90.jpg",
+                    "price": "4.5",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554208758Ta9xM",
+                    "goods_id": "1449",
+                    "count": "3",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "重庆小面",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i2\/2645124890\/TB2kNe4atfJ8KJjy0FeXXXKEXXa_!!2645124890.jpg_430x430q90.jpg",
+                    "price": "5",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554208758Ta9xM",
+                    "goods_id": "1450",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "火鸡面",
+                    "face_img": "https:\/\/img.alicdn.com\/imgextra\/i4\/3904347384\/O1CN01xO00uF24Pv2qpPWxq_!!3904347384-0-scmitem6000.jpg",
+                    "price": "6",
+                    "danwei": "桶"
+                },
+                {
+                    "order_id": "1554208758Ta9xM",
+                    "goods_id": "1451",
+                    "count": "1",
+                    "size": null,
+                    "color": null,
+                    "evaluation": null,
+                    "name": "康师傅老坛酸菜面",
+                    "face_img": "https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg",
+                    "price": "4",
+                    "danwei": "桶"
+                }
+            ]
+        }
+    }
+}
+
+[2019-04-02 23:34:26][DEBUG] POST https://tunnel.ws.qcloud.la/ws/push => [200] {
+    "[请求]": {
+        "data": "[{\"tunnelIds\":[\"c7a755cd-7c26-433a-961d-2a31222b4a20\",\"6fda1728-b5cf-4752-8927-7a0c0089efa6\",\"5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f\"],\"type\":\"message\",\"content\":\"{\\\"type\\\":\\\"delivery\\\",\\\"content\\\":{\\\"order_info\\\":{\\\"order\\\":{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"open_id\\\":\\\"omTXr4gljmJuwwuQm3D1EiyYIOzc\\\",\\\"address_id\\\":\\\"42\\\",\\\"timeStamp\\\":\\\"1554208758\\\",\\\"order_date\\\":\\\"2019-04-02 20:39:18\\\",\\\"pay_status\\\":\\\"OFFLINE\\\",\\\"logistics_status\\\":\\\"\\\",\\\"seller_act\\\":\\\"DELIVERY\\\",\\\"customer_act\\\":\\\"\\\",\\\"total_fee\\\":\\\"29.5\\\",\\\"user_words\\\":\\\"\\\",\\\"nonceStr\\\":\\\"\\\",\\\"paySign\\\":\\\"\\\",\\\"package\\\":\\\"\\\",\\\"out_refund_no\\\":\\\"\\\",\\\"picker_id\\\":\\\"omTXr4hIyW2RgQ3nzN_O8jeGb3wM\\\",\\\"postman_id\\\":\\\"\\\",\\\"refund_reason\\\":\\\"\\\",\\\"refund_status\\\":\\\"\\\"},\\\"address\\\":{\\\"address_id\\\":\\\"42\\\",\\\"open_id\\\":\\\"omTXr4gljmJuwwuQm3D1EiyYIOzc\\\",\\\"province\\\":\\\"贵州省\\\",\\\"city\\\":\\\"毕节市\\\",\\\"county\\\":\\\"七星关区\\\",\\\"detail\\\":\\\"半岛水湾\\\",\\\"name\\\":\\\"大哥大\\\",\\\"telphone\\\":\\\"13985877756\\\",\\\"default_address\\\":\\\"1\\\"},\\\"goods_list\\\":[{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"goods_id\\\":\\\"1448\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"过桥米线\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i1\/2335284926\/TB24CyOtZj_B1NjSZFHXXaDWpXa_!!2335284926.jpg_430x430q90.jpg\\\",\\\"price\\\":\\\"4.5\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"goods_id\\\":\\\"1449\\\",\\\"count\\\":\\\"3\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"重庆小面\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i2\/2645124890\/TB2kNe4atfJ8KJjy0FeXXXKEXXa_!!2645124890.jpg_430x430q90.jpg\\\",\\\"price\\\":\\\"5\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"goods_id\\\":\\\"1450\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"火鸡面\\\",\\\"face_img\\\":\\\"https:\/\/img.alicdn.com\/imgextra\/i4\/3904347384\/O1CN01xO00uF24Pv2qpPWxq_!!3904347384-0-scmitem6000.jpg\\\",\\\"price\\\":\\\"6\\\",\\\"danwei\\\":\\\"桶\\\"},{\\\"order_id\\\":\\\"1554208758Ta9xM\\\",\\\"goods_id\\\":\\\"1451\\\",\\\"count\\\":\\\"1\\\",\\\"size\\\":null,\\\"color\\\":null,\\\"evaluation\\\":null,\\\"name\\\":\\\"康师傅老坛酸菜面\\\",\\\"face_img\\\":\\\"https:\/\/gd1.alicdn.com\/imgextra\/i1\/2557876680\/TB2KQJ5xHuWBuNjSszgXXb8jVXa_!!2557876680.jpg\\\",\\\"price\\\":\\\"4\\\",\\\"danwei\\\":\\\"桶\\\"}]}}}\"}]",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "signature": "7388a1e8d34c8c9e233c496f14775cf7d4b9f993"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": {
+            "invalidTunnelIds": [
+                "5efd6dfd-97e3-408d-aa61-a0ae78ec8e3f",
+                "c7a755cd-7c26-433a-961d-2a31222b4a20"
+            ]
+        }
+    },
+    "[耗时]": "247ms"
+}
+
+[2019-04-02 23:39:22][DEBUG] POST https://tunnel.ws.qcloud.la/get/wsurl => [200] {
+    "[请求]": {
+        "data": "{\"receiveUrl\":\"http:\/\/58.87.119.233\/bjks\/index.php\",\"protocolType\":\"wss\"}",
+        "tcId": "c6bf5fdd57d8548da5d53245151cf0e7",
+        "tcKey": "sdfsdfsdfsdfjk",
+        "signature": "695405bf0a692ebd533649be4114f591aa6e94c8"
+    },
+    "[响应]": {
+        "code": 0,
+        "message": "OK",
+        "data": "{\"tunnelId\":\"0de6bdc2-53af-4eb4-9635-4f5783af1e1f\",\"connectUrl\":\"wss:\/\/tunnel.ws.qcloud.la\/qcloud\/ws?tunnelId=0de6bdc2-53af-4eb4-9635-4f5783af1e1f&tcId=c6bf5fdd57d8548da5d53245151cf0e7\"}",
+        "dataEncode": "json",
+        "signature": "a28a9a5ea44b9dd8f17af67b62b22dc3dd78c65b"
+    },
+    "[耗时]": "259ms"
+}
+
+[2019-04-02 23:39:22][DEBUG] ITunnelHandler [onRequest] => {
+    "tunnelId": "0de6bdc2-53af-4eb4-9635-4f5783af1e1f"
+}
+

@@ -14,6 +14,9 @@ use \QCloud_WeApp_SDK\WxPay  as Pay;
 
 require APPPATH.'business/WeixinPay.php';
 require APPPATH.'business/OrderTunnel.php';
+require "/data/wwwroot/default/supermall/vendor/qcloud/qcloudsms_php/src/index.php";
+use Qcloud\Sms\SmsSingleSender;
+use Qcloud\Sms\SmsMultiSender;
 
 class Order extends CI_Controller {
     /**
@@ -264,6 +267,7 @@ class Order extends CI_Controller {
         $order_info['paySign']  = '';
         $order_info['package']  = '';
         $this->store_order($order_info);
+        self::sms_notify($order_info['order_id']);//短信告知商家
         //下单信息进行信道广播
         $broadcast_order_info = $this->get_order_info($order_info['order_id']);
         OrderTunnel::broadcast('order',array(
@@ -271,5 +275,26 @@ class Order extends CI_Controller {
                 'order_info' => $broadcast_order_info,
             ));
         $this->json($broadcast_order_info);
+    }
+
+    public static function sms_notify($order_id){
+        $appid=1400198588;
+        $appkey='af0c3cc4ea6a6ac22a4c29f3c45a9ca2';
+        // 需要发送短信的手机号码
+        $phoneNumbers = ["13308570523","18798391866"];
+        //$phoneNumbers = ["13339676699"];
+        $templateId = 309624;  // NOTE: 这里的模板ID`7839`只是一个示例，真实的模板ID需要在短信控制台中申请
+        $smsSign = "快乐猫"; // NOTE: 签名参数使用的是`签名内容`，而不是`签名ID`。这里的签名"腾讯云"只是一个示例，真实的签名需要在短信控制台申请
+        try {
+            //$ssender = new SmsSingleSender($appid, $appkey);//单发
+            $ssender = new SmsMultiSender($appid, $appkey);//群发Kj
+            $params = [substr($order_id,11)];//数组具体的元素个数和模板中变量个数必须一致，例如事例中 templateId:5678对应一个变量，参数数组中元素个数也必须是一个;
+            $result = $ssender->sendWithParam("86", $phoneNumbers, $templateId,
+                $params, $smsSign, "", "");  // 签名参数未提供或者为空时，会使用默认签名发送短信
+            $rsp = json_decode($result);
+            echo $result;
+        } catch(\Exception $e) {
+            echo var_dump($e);
+        }
     }
 }
