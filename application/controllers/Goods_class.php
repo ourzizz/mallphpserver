@@ -36,7 +36,10 @@ class Goods_class extends CI_Controller{
 
     //获取分类页面的商品，这里商品不需要详细信息
     private static function get_class_page_goods($class_id){
-        $goods = DB::select('goods',['goods_id','class_id','name','price','remain','face_img','danwei'],['class_id'=>$class_id]);
+        //$goods = DB::select('goods',['goods_id','class_id','name','price','remain','face_img','danwei'],['class_id'=>$class_id]);
+        //$goods = DB::select('goods',['*'],['class_id'=>$class_id,'onoff'=>'on']);
+        $conditions = "class_id=$class_id AND onoff!='off'";
+        $goods = DB::select('goods',['*'],$conditions);
         return $goods;
     }
 
