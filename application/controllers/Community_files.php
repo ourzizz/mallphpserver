@@ -18,8 +18,17 @@ class Community_files extends CI_Controller {
         $this->json($files);
     }
 
+    //public function get_file_content($file_id){
+        //$content = DB::row('community_files',['*'],['file_id'=>$file_id]);
+        //$this->json($content);
+    //}
+
     public function get_file_content($file_id){
         $content = DB::row('community_files',['*'],['file_id'=>$file_id]);
-        $this->json($content);
+        $images = DB::select('imgs_buket',['url'],['type_id'=>$file_id,'type'=>'community_file']);
+        $res = [];
+        $res['content']=$content;
+        $res['images']= array_values($images);
+        $this->json($res);
     }
 }

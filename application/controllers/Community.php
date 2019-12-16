@@ -1,9 +1,11 @@
 <?PHP
-//本文件为前端提供商品的信息
+//本文件社区业主发文逻辑
 use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
 use \QCloud_WeApp_SDK\Conf as Conf;
 use \QCloud_WeApp_SDK\Cos\CosAPI as Cos;
 use \QCloud_WeApp_SDK\Constants as Constants;
+use \QCloud_WeApp_SDK\Myapi\Mingan as MG;
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Community extends CI_Controller {
     /*
@@ -86,12 +88,17 @@ class Community extends CI_Controller {
 
     public function user_publish_message(){
         $message = json_decode($_POST['message'],true);
-        $forbidden = self::forbidden_publish($message['open_id']);
-        if(isset($message) && !$forbidden){
-            $result = self::store_message($message);
-            $this->json(['result'=>$result]);
+        $ismingan = MG::includeMgc($message['content']);
+        if($ismingan['errcode'] == 87014){//是否通过敏感测试
+            $this->json(['result'=>'mingan']);//敏感
         }else{
-            $this->json(['result'=>'forbidden']);
+            $forbidden = self::forbidden_publish($message['open_id']);
+            if(isset($message) && !$forbidden){
+                $result = self::store_message($message);
+                $this->json(['result'=>$result]);
+            }else{
+                $this->json(['result'=>'forbidden']);
+            }
         }
     }
 
