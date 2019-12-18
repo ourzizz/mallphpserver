@@ -1,13 +1,13 @@
 <?php
+//检测敏感词 和校验不规范图片
 namespace QCloud_WeApp_SDK\Myapi;
-
 use \QCloud_WeApp_SDK\Helper\Request as Request;
 use \QCloud_WeApp_SDK\Constants as Constants;
 use \QCloud_WeApp_SDK\Conf as Conf;
 
 class Mingan
 {
-    public static function includeMgc($text){
+    public static function check_words($text){
         $requestParams = [
             'grant_type' => 'client_credential',
             'appid' => 'wx98b3be7df79c0bdc',
@@ -21,7 +21,6 @@ class Mingan
         $access_token = $body['access_token'];
 
         //下面是提交api
-        //$text = '朱元璋jk';
         $options = [];
         $data['content'] = $text;
         $options['url'] = 'https://api.weixin.qq.com/wxa/msg_sec_check?access_token=' . $access_token;
@@ -33,5 +32,7 @@ class Mingan
         ));
         list($status, $body) = array_values(Request::send($options));
         return $body;
+    }
+    public static function check_img() {
     }
 }

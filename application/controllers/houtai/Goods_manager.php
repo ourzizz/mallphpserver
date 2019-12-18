@@ -15,9 +15,8 @@ class Goods_manager extends CI_Controller{
         return $node;
     }
 
-    /*
-     *获取该节点的所有祖先节点
-     * */
+    //获取该节点的所有祖先节点
+     
     private static function get_ancestors_node($node){
         if ($node->lft != 1){//根节点左值为1,没有父节点
             $conditions = "lft < $node->lft and rgt > $node->rgt";
@@ -35,10 +34,9 @@ class Goods_manager extends CI_Controller{
         return $goods;
     }
 
-    /*
-     *因为存在高级别分类有商品，而给出的是低级别的class_id此时也需要整个路径上的所有商品
-     *
-     * */
+    //因为存在高级别分类有商品，而给出的是低级别的class_id此时也需要整个路径上的所有商品
+    
+     
     public function get_goods_list_by_class_id($class_id){
         $node = self::get_node_by_id($class_id);
         $ancestors = self::get_ancestors_node($node);

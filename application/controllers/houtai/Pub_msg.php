@@ -93,5 +93,4 @@ class Pub_msg extends CI_Controller {
 
     public function pub_msgdb_add_img(){
     }
-
 }

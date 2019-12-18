@@ -88,7 +88,7 @@ class Community extends CI_Controller {
 
     public function user_publish_message(){
         $message = json_decode($_POST['message'],true);
-        $ismingan = MG::includeMgc($message['content']);
+        $ismingan = MG::check_words($message['content']);
         if($ismingan['errcode'] == 87014){//是否通过敏感测试
             $this->json(['result'=>'mingan']);//敏感
         }else{
