@@ -16,7 +16,6 @@ class Goods_manager extends CI_Controller{
     }
 
     //获取该节点的所有祖先节点
-     
     private static function get_ancestors_node($node){
         if ($node->lft != 1){//根节点左值为1,没有父节点
             $conditions = "lft < $node->lft and rgt > $node->rgt";
@@ -35,8 +34,6 @@ class Goods_manager extends CI_Controller{
     }
 
     //因为存在高级别分类有商品，而给出的是低级别的class_id此时也需要整个路径上的所有商品
-    
-     
     public function get_goods_list_by_class_id($class_id){
         $node = self::get_node_by_id($class_id);
         $ancestors = self::get_ancestors_node($node);
@@ -48,18 +45,18 @@ class Goods_manager extends CI_Controller{
         $this->json($goods_list);
     }
 
-    public function new_goods(){
-        $goodsChanges = json_decode($_POST['new_goods'],true);
-        DB::insert('goods',$goodsChanges);
-    }
-    public function update_goods(){
-        $goodsChanges = json_decode($_POST['goods_info'],true);
-        $goods_id = $_POST['goods_id'];
-        DB::update('goods',$goodsChanges,['goods_id'=>$goods_id]);
-    }
-    public function delete_goods(){
-        //$openId = $_POST['openId'];
-        $goods_id = $_POST['goods_id'];//没有设置操作密码
-        DB::delete('goods',['goods_id'=>$goods_id]);
-    }
+    //public function new_goods(){
+        //$goodsChanges = json_decode($_POST['new_goods'],true);
+        //DB::insert('goods',$goodsChanges);
+    //}
+    //public function update_goods(){
+        //$goodsChanges = json_decode($_POST['goods_info'],true);
+        //$goods_id = $_POST['goods_id'];
+        //DB::update('goods',$goodsChanges,['goods_id'=>$goods_id]);
+    //}
+    //public function delete_goods(){
+        ////$openId = $_POST['openId'];
+        //$goods_id = $_POST['goods_id'];//没有设置操作密码
+        //DB::delete('goods',['goods_id'=>$goods_id]);
+    //}
 }

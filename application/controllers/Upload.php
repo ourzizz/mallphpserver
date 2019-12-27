@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 use \QCloud_WeApp_SDK\Conf as Conf;
 use \QCloud_WeApp_SDK\Cos\CosAPI as Cos;
 use \QCloud_WeApp_SDK\Constants as Constants;
+use \QCloud_WeApp_SDK\Myapi\Mingan as MG;
 
 class Upload extends CI_Controller {
     public function index() {
@@ -21,7 +22,17 @@ class Upload extends CI_Controller {
             ]);
             return;
         }
-        
+
+        $img = file_get_contents($file['tmp_name']);
+        $isminganimg = MG::check_img($img);
+        $this->json($isminganimg);
+        if($isminganimg['errcode'] == 87014){
+            $this->json([
+                'code' => 5,
+                'data' => 'mingantu'
+            ]);
+            return;
+        }
         // 限制文件大小：5M 以内
         if ($file['size'] > 5 * 1024 * 1024) {
             $this->json([

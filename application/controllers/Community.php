@@ -59,6 +59,8 @@ class Community extends CI_Controller {
         return  $result;
     }
 
+    /*对cos进行第一道删除再删掉本条消息
+     * */
     public function user_delete_msg($msg_id){
         $msg = DB::row('community_msg',['images_name'],['msg_id'=>$msg_id]);
         $nameList = explode(",",$msg->images_name);
@@ -88,7 +90,7 @@ class Community extends CI_Controller {
 
     public function user_publish_message(){
         $message = json_decode($_POST['message'],true);
-        $ismingan = MG::check_words($message['content']);
+        $ismingan = MG::check_words($message['content'].$message['name']);
         if($ismingan['errcode'] == 87014){//是否通过敏感测试
             $this->json(['result'=>'mingan']);//敏感
         }else{
