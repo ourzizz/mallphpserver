@@ -45,18 +45,18 @@ class Goods_manager extends CI_Controller{
         $this->json($goods_list);
     }
 
-    //public function new_goods(){
-        //$goodsChanges = json_decode($_POST['new_goods'],true);
-        //DB::insert('goods',$goodsChanges);
-    //}
-    //public function update_goods(){
-        //$goodsChanges = json_decode($_POST['goods_info'],true);
-        //$goods_id = $_POST['goods_id'];
-        //DB::update('goods',$goodsChanges,['goods_id'=>$goods_id]);
-    //}
-    //public function delete_goods(){
-        ////$openId = $_POST['openId'];
-        //$goods_id = $_POST['goods_id'];//没有设置操作密码
-        //DB::delete('goods',['goods_id'=>$goods_id]);
-    //}
+    public function new_goods(){
+        $goodsChanges = json_decode($_POST['new_goods'],true);
+        DB::insert('goods',$goodsChanges);
+    }
+    public function update_goods(){
+        $goodsChanges = json_decode($_POST['goods_info'],true);
+        $goods_id = $_POST['goods_id'];
+        DB::update('goods',$goodsChanges,['goods_id'=>$goods_id]);
+    }
+    public function delete_goods(){
+        //$openId = $_POST['openId'];
+        $goods_id = $_POST['goods_id'];//没有设置操作密码
+        DB::delete('goods',['goods_id'=>$goods_id]);
+    }
 }

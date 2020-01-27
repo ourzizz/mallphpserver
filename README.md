@@ -4,6 +4,7 @@
 1 对于自己的配置项 需要在vendor/qcloud/weapp-sdk/conf.php中进行声明 且首字母大写
 2 在项目根目录的config.php中进行配置
 Cos
+千万不要做compose update 你写进sdk的代码会被全部清除
 # Wafer 服务端 Demo - PHP
 
 本仓库是 [Wafer](https://github.com/tencentyun/wafer) 组成部分，提供 PHP 版本业务服务器示例。示例需要和[微信小程序客户端示例](https://github.com/tencentyun/weapp-client-demo)配合一起使用。

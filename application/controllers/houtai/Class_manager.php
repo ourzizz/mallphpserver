@@ -66,25 +66,25 @@ class Class_manager extends CI_Controller{
     }
 
     //根据父节点名称获取整个从父节点到叶子的分类树
-    //public function get_pslist_by_parent_name(){
-        //$name = $_POST['name'];
-        //$root = DB::row('goods_class',['*'],['class_name'=>$name]);
-        //$res = [];
-        //if(isset($root)){
-            //$conditions = "rgt>lft+1 AND lft>$root->lft AND rgt<$root->rgt order by layer,priority";//相当于遍历了整棵树，得到所有非叶子节点
-            //$nodes = DB::select('goods_class',['*'],$conditions);
-            //array_unshift($nodes,$root);
-            //$parent_son = [];
-            //foreach($nodes as $node){
-                //$sons = self::get_sons($node);
-                //$jnode = ['parent_id'=>$node->class_id,'son_list'=>$sons];
-                //array_push($parent_son,$jnode);
-            //}
-            //$res['root']=$root;
-            //$res['parent_son']=$parent_son;
-            //$this->json( $res);
-        //}
-    //}
+    public function get_pslist_by_parent_name(){
+        $name = $_POST['name'];
+        $root = DB::row('goods_class',['*'],['class_name'=>$name]);
+        $res = [];
+        if(isset($root)){
+            $conditions = "rgt>lft+1 AND lft>$root->lft AND rgt<$root->rgt order by layer,priority";//相当于遍历了整棵树，得到所有非叶子节点
+            $nodes = DB::select('goods_class',['*'],$conditions);
+            array_unshift($nodes,$root);
+            $parent_son = [];
+            foreach($nodes as $node){
+                $sons = self::get_sons($node);
+                $jnode = ['parent_id'=>$node->class_id,'son_list'=>$sons];
+                array_push($parent_son,$jnode);
+            }
+            $res['root']=$root;
+            $res['parent_son']=$parent_son;
+            $this->json( $res);
+        }
+    }
 
     public function user_update_class(){//name:1,telphone2,area3,detail:4
        //数据格式[{"key":1,"value":"chenhai"},{"key":2,"value":"123123123"},{"key":3,"value":["湖北省","黄石市","黄石港区"]},{"key":4,"value":"xxxxx"}] 
