@@ -281,8 +281,7 @@ class Order extends CI_Controller {
         $appid=1400198588;
         $appkey='af0c3cc4ea6a6ac22a4c29f3c45a9ca2';
         // 需要发送短信的手机号码
-        $phoneNumbers = ["13308570523"];
-        //$phoneNumbers = ["13339676699"];
+        $phoneNumbers = ["13308570523","18798391866"];
         $templateId = 309624;  // NOTE: 这里的模板ID`7839`只是一个示例，真实的模板ID需要在短信控制台中申请
         $smsSign = "快乐猫"; // NOTE: 签名参数使用的是`签名内容`，而不是`签名ID`。这里的签名"腾讯云"只是一个示例，真实的签名需要在短信控制台申请
         try {
