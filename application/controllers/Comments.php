@@ -1,13 +1,15 @@
 <?PHP
 //本文件为前端提供商品的信息
+//为了适应多个模块复用 评论的功能 后台给定的 api需要区别是关于那个tablename
 use \QCloud_WeApp_SDK\Mysql\Mysql as DB;
 use \QCloud_WeApp_SDK\Conf as Conf;
 use \QCloud_WeApp_SDK\Cos\CosAPI as Cos;
 use \QCloud_WeApp_SDK\Constants as Constants;
+use \QCloud_WeApp_SDK\Myapi\Mingan as MG;
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Comments extends CI_Controller {
-    public function get_formarted_comments_by_fileId($file_id){
-        $rows = DB::select('file_comment',['*'],['file_id'=>$file_id],'and','order by floor,father_id');
+    public function get_formarted_comments_by_fileId($tableName,$file_id){
+        $rows = DB::select('file_comment',['*'],['tableName'=>$tableName,'file_id'=>$file_id],'and','order by floor,father_id');
         $comments = [];
         $floor = [];
         $floorId = '';
@@ -30,8 +32,8 @@ class Comments extends CI_Controller {
         $this->json($comments);
     }
 
-    public function get_comments_by_fileId($fileId){
-        $rows = DB::select('file_comment',['*'],['file_id'=>$fileId],'and','order by floor,father_id');
+    public function get_comments_by_fileId($tableName,$fileId){
+        $rows = DB::select('file_comment',['*'],['tableName'=>$tableName,'file_id'=>$fileId],'and','order by floor,father_id');
         $this->json($rows);
     }
 
@@ -42,11 +44,18 @@ class Comments extends CI_Controller {
         $this->json($rows);
     }
 
-    public function storege_comment(){
+    public function storage_comment(){
         $comment = json_decode($_POST['comment'],true);
-        DB::insert('file_comment',$comment);
-        $row = DB::row('file_comment',['comment_id'],['open_id'=>$comment['open_id'],'pubtime'=>$comment['pubtime']]);
-        $this->json($row);
+        $ismingan = MG::check_words($comment['content']);
+        if($ismingan['errcode'] == 87014){
+            $res['mingan'] = true;
+        }else{
+            DB::insert('file_comment',$comment);
+            $row = DB::row('file_comment',['comment_id'],['open_id'=>$comment['open_id'],'pubtime'=>$comment['pubtime']]);
+            $res['mingan'] = false;
+            $res['comment_id'] = $row->comment_id;
+        }
+        $this->json($res);
     }
 
     //赞同取消赞同
@@ -72,7 +81,15 @@ class Comments extends CI_Controller {
     public function update_comment(){
         $comment_id = $_POST['comment_id'];
         $content = $_POST['content'];
-        $condition = "comment_id = '$comment_id'";
-        DB::update('file_comment',['content'=>$content],$condition);
+        $ismingan = MG::check_words($content);
+        if($ismingan['errcode'] == 87014){
+            $res['mingan'] = true;
+        }else{
+            $condition = "comment_id = '$comment_id'";
+            DB::update('file_comment',['content'=>$content],$condition);
+            $res['mingan'] = false;
+        }
+        $this->json($res);
+
     }
 }

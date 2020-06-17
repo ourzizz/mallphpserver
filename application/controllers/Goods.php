@@ -13,8 +13,10 @@ class Goods extends CI_Controller {
         $this->json($data);
     }
     public function get_goods_info($goods_id) {
-        $data = $this->goods_model->select_goods_by_goodsid($goods_id);
-        $this->json($data[0]);
+        //$data = $this->goods_model->select_goods_by_goodsid($goods_id);
+        //$this->json($data[0]);
+        $res = DB::row('goods',['*'],['goods_id'=>$goods_id]);
+        $this->json($res);
     }
     public function get_goods_list_info($json) {//json格式为"{"goods_list":[{"goods_id":"5","count":"1"},{"good…t":"4"},{"goods_id":"4","count":"2"}],"cost":873}"}"
         //$json = '{"goods_list":[{"goods_id":"5","count":"1"},{"goods_id":"4","count":"1"},{"goods_id":"1","count":"2"}],"cost":873}';
@@ -26,5 +28,11 @@ class Goods extends CI_Controller {
             array_push($data,$info[0]);
         }
         $this->json($data);
+    }
+    public function searchGoods(){
+        $searchStr = $_POST['searchStr'];
+        $sql = "SELECT * from goods WHERE name LIKE '%$searchStr%' or searchKey LIKE '%$searchStr%'";
+        $res = (DB::raw($sql))->fetchAll(PDO::FETCH_ASSOC);
+        $this->json($res);
     }
 }

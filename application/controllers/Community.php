@@ -61,18 +61,21 @@ class Community extends CI_Controller {
 
     /*对cos进行第一道删除再删掉本条消息
      * */
-    public function user_delete_msg($msg_id){
-        $msg = DB::row('community_msg',['images_name'],['msg_id'=>$msg_id]);
-        $nameList = explode(",",$msg->images_name);
-        foreach($nameList as $img_name){
-            if($img_name !== ''){
-                self::delete_object($img_name);
-            }
-        }
-        $conditions = "msg_id='$msg_id'";
-        $res = DB::delete('community_msg',$conditions);
-    }
+    //public function user_delete_msg($msg_id){
+        //$msg = DB::row('community_msg',['images_name'],['msg_id'=>$msg_id]);
+        //$nameList = explode(",",$msg->images_name);
+        //foreach($nameList as $img_name){
+            //if($img_name !== ''){
+                //self::delete_object($img_name);
+            //}
+        //}
+        //$conditions = "msg_id='$msg_id'";
+        //$res = DB::delete('community_msg',$conditions);
+    //}
 
+    public function user_delete_msg($msg_id){
+        DB::update('community_msg',['onoff'=>'off'],['msg_id'=>$msg_id]);
+    }
     /*发布锁
     * */
     public static function forbidden_publish($open_id){

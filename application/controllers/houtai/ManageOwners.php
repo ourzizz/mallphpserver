@@ -9,6 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class ManageOwners extends CI_Controller{
     public function getManagerRole($openId){
         $res = DB::row('seller',['*'],['open_id'=>$openId]);
+        if($res == null){
+            $res['role'] = 'nobody';
+        }
         $this->json($res);
     }
     public function getWaitAuthList(){
@@ -29,5 +32,9 @@ class ManageOwners extends CI_Controller{
         DB::update('houseOwner',['houseAuthState'=>'refuse','houseReason'=>$reason],['openId'=>$openId]);
     }
     public function updateOwner($openId){//审核结果直接update过来简化操作
+    }
+    public function getOwnerByHouseId($houseId){//可能存在多个一户多业主的情况
+        $res = DB::select('houseOwner',['*'],['houseId'=>$houseId]);
+        $this->json($res);
     }
 }
